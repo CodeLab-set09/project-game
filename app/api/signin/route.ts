@@ -8,7 +8,19 @@ export const POST = async (req: NextRequest) => {
     const { email, password } = req.json();
     const user = await userModel.findOne({ email });
     if (user) {
-      const check = await bcrypt.compare(password, user.password);
+      const check = await bcryptjs.compare(password, user?.password);
+      if (check) {
+        return NextResponse.json({
+          message: "sign in sucessfull",
+          status: 201,
+          data: user,
+        });
+      } else {
+        return NextResponse.json({
+          message: "error getting password",
+          status: 404,
+        });
+      }
     } else {
       return NextResponse.json({
         message: "error getting user",
