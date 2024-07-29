@@ -5,8 +5,8 @@ import { redirect } from "next/navigation";
 
 const page = async () => {
   const user = await getServerSession(options);
-  console.log(user);
-  if (user) {
+
+  if (!user) {
     return redirect("/landing-page");
   } else {
     return redirect("/dashboard");
