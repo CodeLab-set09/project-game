@@ -14,16 +14,15 @@ export const PATCH = async (req: NextRequest) => {
       const forgetPassword = await userModel.findByIdAndUpdate(user._id, {
         verifyToken: rand,
       });
-
       return NextResponse.json({
-        message: "",
+        message: "password changed",
         status: 200,
         data: forgetPassword,
       });
     } else {
       return NextResponse.json({
         message: "Please verify account",
-        status: 404,
+        status: 200,
       });
     }
   } catch (error) {
