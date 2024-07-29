@@ -1,4 +1,5 @@
 export const DB_URL = process.env.DB_STRING as string;
+
 export const USER_MAIL = process.env.USER_MAIL as string;
 
 export const LIVE_URL = process.env.LIVE_URL as string;
