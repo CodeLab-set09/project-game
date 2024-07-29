@@ -33,7 +33,7 @@ export const AccountOpening = async (user: any) => {
       },
     });
 
-    const url = `${LIVE_URL}/sign-in/${user?._id}`;
+    const url = `${LIVE_URL}/verify-account/${user?._id}`;
 
     const mailOptions = {
       from: USER_MAIL,
@@ -44,6 +44,7 @@ export const AccountOpening = async (user: any) => {
         <div>
         <h1>Welcome to our platform!</h1>
         <p>You've successfully created an account.</p>
+        <p>Here is your sign up token: ${user.verifyToken}</p>
         <p>Please click the link below to sign in:</p>
         <a href="${url}">Sign In</a>
         </div>`,
