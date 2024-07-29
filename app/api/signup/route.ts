@@ -2,7 +2,7 @@ import { dbConfig } from "@/utils/dbConfig";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import userModel from "@/utils/model/userModel";
-import { AccountOpening } from "@/utils/email";
+import { AccountOpeningEmail } from "@/utils/email";
 
 export const POST = async (req: NextRequest) => {
   try {
@@ -12,19 +12,40 @@ export const POST = async (req: NextRequest) => {
     const hashed = await bcrypt.hash(password, salt);
 
     const rand = () => {
-      return Math.floor(Math.random() * 1000000 + 1);
+      return Math.floor(Math.random() * (99999 - 10000 + 1) + 99999);
     };
+
     const user = await userModel.create({
-      name,
+      userName: name,
       email,
       password: hashed,
       verifyToken: rand(),
     });
-    AccountOpening(user);
+
+    AccountOpeningEmail(user);
+
     return NextResponse.json({
       message: "User created",
       status: 200,
       data: user,
+    });
+  } catch (error: any) {
+    return NextResponse.json({
+      message: "Error Occured",
+      status: 400,
+      error: error.message,
+    });
+  }
+};
+
+export const GET = async () => {
+  try {
+    await dbConfig();
+    const user = await userModel.find();
+    return NextResponse.json({
+      message: "All Users",
+      data: user,
+      status: 200,
     });
   } catch (error: any) {
     return NextResponse.json({
