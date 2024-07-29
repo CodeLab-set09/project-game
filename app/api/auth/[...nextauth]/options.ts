@@ -18,7 +18,7 @@ export const options: NextAuthOptions = {
         password: { name: "password", label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        const URL: string = "https://localhost:3000/api/signin";
+        const URL: string = "https://project-game-ot04.onrender.com/api/signin";
 
         const res = await fetch(URL, {
           method: "POST",

@@ -1,11 +1,12 @@
 import { dbConfig } from "@/utils/dbConfig";
 import userModel from "@/utils/model/userModel";
 import { NextRequest, NextResponse } from "next/server";
+import bcryptjs from "bcryptjs";
 
 export const POST = async (req: NextRequest) => {
   try {
     await dbConfig();
-    const { email, password } = req.json();
+    const { email, password } = await req.json();
     const user = await userModel.findOne({ email });
     if (user) {
       const check = await bcryptjs.compare(password, user?.password);
