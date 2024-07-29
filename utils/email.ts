@@ -29,7 +29,7 @@ export const AccountOpeningEmail = async (user: any) => {
     const transport = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "ghettodeveloper@gmail.com",
+        user: USER_MAIL,
         type: "OAuth2",
         clientId: GOOGLE_CLIENT,
         clientSecret: GOOGLE_SECRET_KEY,
@@ -44,7 +44,7 @@ export const AccountOpeningEmail = async (user: any) => {
 
     const mailOptions = {
       from: "Gamer🔥🎮🔥 <ghettodeveloper@gmail.com>",
-      to: "ghettodeveloper@gmail.com",
+      to: user?.email,
       subject: "Account Opening",
       text: "Welcome to our platform!",
       html: `

@@ -18,6 +18,7 @@ const userSchema = new Schema<iUserData>(
     },
     verify: {
       type: Boolean,
+      default: false,
     },
     avatar: {
       type: String,
