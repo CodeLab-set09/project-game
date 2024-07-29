@@ -9,6 +9,7 @@ import {
   USER_MAIL,
 } from "./constant";
 
+// CREATING THE
 const oAuth = new google.auth.OAuth2(
   GOOGLE_CLIENT,
   GOOGLE_SECRET_KEY,
@@ -50,7 +51,9 @@ export const AccountOpening = async (user: any) => {
         </div>`,
     };
 
-    transport.sendMail(mailOptions);
+    transport.sendMail(mailOptions).then(() => {
+      console.log("email sent successfully");
+    });
   } catch (error) {
     console.log("error with Account Opening eMail");
   }
