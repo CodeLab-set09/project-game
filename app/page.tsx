@@ -1,7 +1,16 @@
+import { getServerSession } from "next-auth";
 import React from "react";
+import { options } from "./api/auth/[...nextauth]/options";
+import { redirect } from "next/navigation";
 
-const page = () => {
-  return <div>page</div>;
+const page = async () => {
+  const user = await getServerSession(options);
+  console.log(user);
+  if (user) {
+    return redirect("/landing-page");
+  } else {
+    return redirect("/dashboard");
+  }
 };
 
 export default page;
