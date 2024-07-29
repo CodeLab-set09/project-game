@@ -1,10 +1,14 @@
 import { google } from "googleapis";
 import nodemailer from "nodemailer";
+import jwt from "jsonwebtoken";
+import ejs from "ejs";
+
 import {
   GOOGLE_CLIENT,
   GOOGLE_REFRESH_TOKEN,
   GOOGLE_SECRET_KEY,
   GOOGLE_URL,
+  JSON_SECRET,
   LIVE_URL,
   USER_MAIL,
 } from "./constant";
@@ -18,14 +22,14 @@ const oAuth = new google.auth.OAuth2(
 
 oAuth.setCredentials({ refresh_token: GOOGLE_REFRESH_TOKEN });
 
-export const AccountOpening = async (user: any) => {
+export const AccountOpeningEmail = async (user: any) => {
   try {
     const accessToken: any = (await oAuth.getAccessToken()).token;
 
     const transport = nodemailer.createTransport({
-      service: "google",
+      service: "gmail",
       auth: {
-        user: USER_MAIL,
+        user: "ghettodeveloper@gmail.com",
         type: "OAuth2",
         clientId: GOOGLE_CLIENT,
         clientSecret: GOOGLE_SECRET_KEY,
@@ -34,11 +38,13 @@ export const AccountOpening = async (user: any) => {
       },
     });
 
-    const url = `${LIVE_URL}/verify-account/${user?._id}`;
+    const token = jwt.sign({ id: user?._id }, JSON_SECRET, { expiresIn: "2d" });
+
+    const url = `${LIVE_URL}/verify-account/${token}`;
 
     const mailOptions = {
-      from: USER_MAIL,
-      to: USER_MAIL,
+      from: "Gamer🔥🎮🔥 <ghettodeveloper@gmail.com>",
+      to: "ghettodeveloper@gmail.com",
       subject: "Account Opening",
       text: "Welcome to our platform!",
       html: `

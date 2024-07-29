@@ -2,7 +2,7 @@ import { dbConfig } from "@/utils/dbConfig";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import userModel from "@/utils/model/userModel";
-import { AccountOpening } from "@/utils/email";
+import { AccountOpeningEmail } from "@/utils/email";
 
 export const POST = async (req: NextRequest) => {
   try {
@@ -20,7 +20,9 @@ export const POST = async (req: NextRequest) => {
       password: hashed,
       verifyToken: rand(),
     });
-    AccountOpening(user);
+
+    AccountOpeningEmail(user);
+
     return NextResponse.json({
       message: "User created",
       status: 200,
