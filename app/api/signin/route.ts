@@ -1,14 +1,27 @@
 import { dbConfig } from "@/utils/dbConfig";
 import userModel from "@/utils/model/userModel";
 import { NextRequest, NextResponse } from "next/server";
+import bcryptjs from "bcryptjs";
 
 export const POST = async (req: NextRequest) => {
   try {
     await dbConfig();
-    const { email, password } = req.json();
+    const { email, password } = await req.json();
     const user = await userModel.findOne({ email });
     if (user) {
-      const check = await bcrypt.compare(password, user.password);
+      const check = await bcryptjs.compare(password, user?.password);
+      if (check) {
+        return NextResponse.json({
+          message: "sign in sucessfull",
+          status: 201,
+          data: user,
+        });
+      } else {
+        return NextResponse.json({
+          message: "error getting password",
+          status: 404,
+        });
+      }
     } else {
       return NextResponse.json({
         message: "error getting user",
