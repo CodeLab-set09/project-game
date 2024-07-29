@@ -19,5 +19,5 @@ export const middleware = (request: NextRequest) => {
 };
 
 export const config = {
-  matcher: ["/private"],
+  matcher: ["/dashbord"],
 };
