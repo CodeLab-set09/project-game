@@ -14,7 +14,6 @@ export const POST = async (req: NextRequest) => {
     const rand = () => {
       return Math.floor(Math.random() * (99999 - 10000 + 1) + 99999);
     };
-    // console.log(rand());
 
     const user = await userModel.create({
       userName: name,
