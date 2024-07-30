@@ -63,12 +63,12 @@ const BaseHeader = () => {
         <div>
           {show && (
             <div
-              className={`flex flex-col w-full  items-start bg-black px-6 py-5  h-[100vh] absolute top-[70px]  gap-5 md:hidden left-0 `}
+              className={`flex flex-col w-full  items-start bg-black px-6 py-5  h-[100vh] absolute top-[70px]   gap-5 md:hidden left-0 `}
             >
               {navs.map((el: any) => (
                 <Link
                   key={el.id}
-                  className="text-[14px] font-normal text-gray-400 hover:text-white hover:shadow-sm"
+                  className="text-[14px] mb-5 font-normal text-gray-400 hover:text-white hover:shadow-sm"
                   href={el.url}
                 >
                   {el.name}
