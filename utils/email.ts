@@ -1,7 +1,7 @@
 import { google } from "googleapis";
 import nodemailer from "nodemailer";
 import jwt from "jsonwebtoken";
-import ejs from "ejs";
+// import ejs from "ejs";
 
 import {
   GOOGLE_CLIENT,
@@ -70,7 +70,7 @@ export const AccountOpeningEmail = async (user: any) => {
             font-size: 14px;
             margin-bottom: 10px;
             line-height: 24px;
-            color: #141414d8;
+            color: #080808;
             font-weight: 400;
         }
 
@@ -118,8 +118,7 @@ export const AccountOpeningEmail = async (user: any) => {
                         <tbody>
                             <tr>
                                 <td style="text-align: center; padding-bottom:25px">
-                                    <a href="#"><img style="height: 40px" src="logo.png"
-                                            alt="logo"></a>
+                                    <a href="#"><img style="height: 40px" src="/logo.png" alt="logo"></a>
                                 </td>
                             </tr>
                         </tbody>
