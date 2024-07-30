@@ -55,7 +55,7 @@ const page = () => {
               <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md">
                 <MdEmail className="text-[20px]" />
                 <input
-                  className="outline-none bg-inherit placeholder:text-[14px] "
+                  className="outline-none w-full text-[14px] h-[25px] curser bg-inherit placeholder:text-[14px] "
                   type="text"
                   placeholder="Email"
                   name="email"
@@ -64,7 +64,7 @@ const page = () => {
               <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md">
                 <MdEmail className="text-[20px]" />
                 <input
-                  className="outline-none bg-inherit placeholder:text-[14px]  "
+                  className="outline-none text-[14px] h-[25px] w-full bg-inherit placeholder:text-[14px]  "
                   type="text"
                   placeholder="Username"
                   name="username"
@@ -73,7 +73,7 @@ const page = () => {
               <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md">
                 <MdEmail className="text-[20px]" />
                 <input
-                  className="outline-none bg-inherit placeholder:text-[14px] "
+                  className="outline-none w-full text-[14px] h-[25px] bg-inherit placeholder:text-[14px] "
                   type="text"
                   placeholder="Password"
                   name="password"
