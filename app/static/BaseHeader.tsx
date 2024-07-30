@@ -13,8 +13,8 @@ const BaseHeader = () => {
   ];
   const [show, setShow] = useState(false);
   return (
-    <main className="pb-20">
-      <div className="flex h-[70px] w-[100%] fixed border-b justify-center items-center">
+    <main className="pb-16 ">
+      <div className="flex h-[70px] w-[100%] fixed bg-white border-b justify-center items-center">
         <div className="w-[100%] p-5 md:px-16 flex  h-full items-center justify-between">
           <div className="flex gap-20 items-center">
             <div>

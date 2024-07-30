@@ -48,14 +48,8 @@ export const AccountOpeningEmail = async (user: any) => {
       subject: "Account Opening",
       text: "Welcome to our platform!",
       html: `
-        // <div>
-        // <h1>Welcome to our platform!</h1>
-        // <p>You've successfully created an account.</p>
-        // <p>Here is your sign up token: ${user.verifyToken}</p>
-        // <p>Please click the link below to sign in:</p>
-        // <a href="${url}">Sign In</a>
-        // </div>,
-        <head>
+
+    <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,7 +70,7 @@ export const AccountOpeningEmail = async (user: any) => {
             font-size: 14px;
             margin-bottom: 10px;
             line-height: 24px;
-            color: #8094ae;
+            color: #080808;
             font-weight: 400;
         }
 
@@ -124,8 +118,7 @@ export const AccountOpeningEmail = async (user: any) => {
                         <tbody>
                             <tr>
                                 <td style="text-align: center; padding-bottom:25px">
-                                    <a href="#"><img style="height: 40px" src="images/instagram-logo.png"
-                                            alt="logo"></a>
+                                    <a href="#"><img style="height: 40px" src="/logo.png" alt="logo"></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -134,8 +127,8 @@ export const AccountOpeningEmail = async (user: any) => {
                         <tbody>
                             <tr>
                                 <td style="padding: 30px 30px 15px 30px;">
-                                    <h2 style="font-size: 18px; color: #6576ff; font-weight: 600; margin: 0;">Confirm
-                                        Your E-Mail Address</h2>
+                                    <h2 style="font-size: 18px; color: #141414; font-weight: 600; margin: 0;">Verify
+                                        Your Account</h2>
                                 </td>
                             </tr>
                             <tr>
@@ -179,38 +172,10 @@ export const AccountOpeningEmail = async (user: any) => {
                                         please contact us at codebook@gmail.com</p>
                                 </td>
                             </tr>
-                        </tbody>
+                           
+                        </tbody> 
                     </table>
-                    <table style="width:100%;max-width:620px;margin:0 auto;">
-                        <tbody>
-                            <tr>
-                                <td style="text-align: center; padding:25px 20px 0;">
-                                    <ul style="margin: 10px -4px 0;padding: 0;">
-                                        <li style="display: inline-block; list-style: none; padding: 4px;"><a
-                                                style="display: inline-block; height: 30px; width:30px;border-radius: 50%; background-color: #ffffff"
-                                                href="#"><img style="width: 30px" src="images/brand-b.png"
-                                                    alt="brand"></a></li>
-                                        <li style="display: inline-block; list-style: none; padding: 4px;"><a
-                                                style="display: inline-block; height: 30px; width:30px;border-radius: 50%; background-color: #ffffff"
-                                                href="#"><img style="width: 30px" src="images/brand-e.png"
-                                                    alt="brand"></a></li>
-                                        <li style="display: inline-block; list-style: none; padding: 4px;"><a
-                                                style="display: inline-block; height: 30px; width:30px;border-radius: 50%; background-color: #ffffff"
-                                                href="#"><img style="width: 30px" src="images/brand-d.png"
-                                                    alt="brand"></a></li>
-                                        <li style="display: inline-block; list-style: none; padding: 4px;"><a
-                                                style="display: inline-block; height: 30px; width:30px;border-radius: 50%; background-color: #ffffff"
-                                                href="#"><img style="width: 30px" src="images/brand-c.png"
-                                                    alt="brand"></a></li>
-                                    </ul>
-                                    <p style="padding-top: 15px; font-size: 12px;">This email was sent to you as a
-                                        registered user of <a style="color: #6576ff; text-decoration:none;"
-                                            href="">techmindhelps.com</a>. To update your emails preferences <a
-                                            style="color: #6576ff; text-decoration:none;" href="#">click here</a>.</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    
                 </td>
             </tr>
         </table>
