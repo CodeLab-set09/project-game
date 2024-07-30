@@ -39,11 +39,11 @@ const page = () => {
               <div className="flex justify-center gap-3">
                 <div className="border cursor-pointer p-2 rounded-md flex justify-center gap-2 items-center">
                   <FcGoogle />
-                  <h2 className="text-[13px]">Sign up with GitHub</h2>
+                  <h2 className="text-[13px]">Sign up with Google</h2>
                 </div>
                 <div className="border p-2  cursor-pointer rounded-md flex justify-center gap-2 items-center">
-                  <BsGoogle />
-                  <h2 className="text-[13px]">Sign in with Google</h2>
+                  <BsGithub />
+                  <h2 className="text-[13px]">Sign in with Github</h2>
                 </div>
               </div>
             </div>
