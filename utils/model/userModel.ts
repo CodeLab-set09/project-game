@@ -14,7 +14,7 @@ const userSchema = new Schema<iUserData>(
       type: String,
     },
     verifyToken: {
-      type: Number,
+      type: Number || null,
     },
     verify: {
       type: Boolean,

@@ -11,7 +11,7 @@ export const POST = async (req: NextRequest) => {
     if (user) {
       const check = await bcryptjs.compare(password, user?.password);
       if (check) {
-        if (user.verify === true) {
+        if (user.verify === true && !user.verifyToken) {
           return NextResponse.json({
             message: "sign in sucessfull",
             status: 201,
