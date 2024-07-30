@@ -5,20 +5,22 @@ import {
   InputOTPSeparator,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
-import Link from "next/link";
+// import Link from "next/link";
 import { redirect, usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
-import { JSON_SECRET } from "@/utils/constant";
+// import { JSON_SECRET } from "@/utils/constant";
 import { toast } from "@/components/ui/use-toast";
 
-const Tokenpage = ({ params }: any) => {
-  const { token }: any = params;
-  const { id }: any = jwtDecode(token);
-  const [state, setState] = useState();
+
+
+const page = ({ params }: any) => {
+  const { token }:any = params;
+  const { id }:any = jwtDecode<any>(token)
+  const [state, setState] = useState<any>();
 
   const verifyAccount = async () => {
-    return await fetch(`/api/evrify-account/${id}`, {
+    return await fetch(`/api/vevrify-account/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -81,4 +83,4 @@ const Tokenpage = ({ params }: any) => {
   );
 };
 
-export default Tokenpage;
+export default page;
