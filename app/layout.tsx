@@ -4,6 +4,7 @@ import "./globals.css";
 import { dbConfig } from "@/utils/dbConfig";
 import Provider from "./static/Provider";
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "./static/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,14 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Provider>
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
 
           <Toaster />
         </Provider>
