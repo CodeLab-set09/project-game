@@ -2,22 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-<<<<<<< HEAD
 import { redirect } from "next/navigation";
 import React, { useState } from "react";
-=======
-import React from "react";
->>>>>>> 8c12f342c3c14d9e38e43dc7b164fc00277d669a
 import { BsGithub, BsGoogle } from "react-icons/bs";
 import { MdEmail, MdPassword, MdPerson } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import Image from "next/image";
-<<<<<<< HEAD
 import { LIVE_URL } from "@/utils/constant";
 import { toast, useToast } from "@/components/ui/use-toast";
 import { Spinner } from "@/app/static/Spinner";
-=======
->>>>>>> 8c12f342c3c14d9e38e43dc7b164fc00277d669a
 import { signIn } from "next-auth/react";
 
 const page = () => {
@@ -31,7 +24,6 @@ const page = () => {
     const password = formData.get("password");
 
     signIn("credentials", { email, password });
-<<<<<<< HEAD
 
     // const url = `/api/signin`;
     // await fetch(url, {
@@ -55,8 +47,6 @@ const page = () => {
     //   .finally(() => {
     //     setToggle(false);
     //   });
-=======
->>>>>>> 8c12f342c3c14d9e38e43dc7b164fc00277d669a
   };
   return (
     <div>
@@ -119,7 +109,6 @@ const page = () => {
               <Button disabled={toggle} type="submit" className="mt-5 py-6 ">
                 {toggle ? <Spinner /> : " Sign In"}
               </Button>
-<<<<<<< HEAD
 
               <p className="text-[12px] font-light text-center my-[5px]">
                 Don't have an Account?{" "}
@@ -127,22 +116,6 @@ const page = () => {
                   Sign Up
                 </Link>
               </p>
-=======
-              <div className="flex flex-col gap-2 mt-[-10px]">
-                <p className="text-[12px] font-light ">
-                  Don't have an account?{" "}
-                  <Link className="font-bold" href={"/signup"}>
-                    Sign Up
-                  </Link>
-                </p>
-                <p className="text-[12px] font-light ">
-                  Forget password?
-                  <Link className="font-bold" href={"/verify-account"}>
-                    click here
-                  </Link>
-                </p>
-              </div>
->>>>>>> 8c12f342c3c14d9e38e43dc7b164fc00277d669a
             </div>
           </div>
         </form>
