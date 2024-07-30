@@ -14,7 +14,7 @@ const Provider: FC<iSession> = ({ children }) => {
       {children}
       <ProgressBar
         height="4px"
-        color="#fffd00"
+        color="#0F172A"
         options={{ showSpinner: true }}
         shallowRouting
       />

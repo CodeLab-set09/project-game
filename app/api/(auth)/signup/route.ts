@@ -26,7 +26,7 @@ export const POST = async (req: NextRequest) => {
 
     return NextResponse.json({
       message: "User created",
-      status: 200,
+      status: 201,
       data: user,
     });
   } catch (error: any) {

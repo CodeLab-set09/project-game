@@ -62,7 +62,7 @@ export const AccountOpeningEmail = async (user: any) => {
     <meta name="x-apple-disable-message-reformatting">
     <title></title>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet" type="text/css">
     
 
     <style>
@@ -72,7 +72,7 @@ export const AccountOpeningEmail = async (user: any) => {
             padding: 0 !important;
             height: 100% !important;
             width: 100% !important;
-            font-family: 'Roboto', sans-serif !important;
+            font-family: 'Poppins', sans-serif !important;
             font-size: 14px;
             margin-bottom: 10px;
             line-height: 24px;
@@ -140,13 +140,16 @@ export const AccountOpeningEmail = async (user: any) => {
                             </tr>
                             <tr>
                                 <td style="padding: 0 30px 20px">
-                                    <p style="margin-bottom: 10px;">Hi Sundar,</p>
+                                    <p style="margin-bottom: 10px;">Hi ${user?.userName},</p>
                                     <p style="margin-bottom: 10px;">Welcome! <br> You are receiving this email because
                                         you have registered on our site.</p>
-                                    <p style="margin-bottom: 10px;">Click the link below to active your TokenWiz
-                                        account.</p>
+                                    <p style="margin-bottom: 10px;">Click the link below to active your CodeBook
+                                        Account.</p>
                                     <p style="margin-bottom: 25px;">This link will expire in 15 minutes and can only be
-                                        used once.</p>
+                                        used once. and here is your OTP code
+                                        <p 
+                                        style="color:#0f172a;font-size:14px; margin:"10px";font-weight:600;">${user?.verifyToken}</p>
+                                        </p>
                                     <a href="#"
                                         style="background-color:#6576ff;border-radius:4px;color:#ffffff;display:inline-block;font-size:13px;font-weight:600;line-height:44px;text-align:center;text-decoration:none;text-transform: uppercase; padding: 0 30px">Verify
                                         Email</a>
@@ -160,7 +163,7 @@ export const AccountOpeningEmail = async (user: any) => {
                                     <p style="margin-bottom: 10px;">If the button above does not work, paste this link
                                         into your web browser:</p>
                                     <a href="#"
-                                        style="color: #6576ff; text-decoration:none;word-break: break-all;">https://icocrypto.com/account?login_token=dacb711d08a0ee7bda83ce1660918c31e8b43c30</a>
+                                        style="color: #6576ff; text-decoration:none;word-break: break-all;">${LIVE_URL}/verify-account/${token}</a>
                                 </td>
                             </tr>
                             <tr>
@@ -168,7 +171,12 @@ export const AccountOpeningEmail = async (user: any) => {
                                     <p>If you did not make this request, please contact us or ignore this message.</p>
                                     <p style="margin: 0; font-size: 13px; line-height: 22px; color:#9ea8bb;">This is an
                                         automatically generated email please do not reply to this email. If you face any
-                                        issues, please contact us at odinakaahamba@gmail.com</p>
+                                        issues, 
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        
+                                        please contact us at codebook@gmail.com</p>
                                 </td>
                             </tr>
                         </tbody>
@@ -207,7 +215,7 @@ export const AccountOpeningEmail = async (user: any) => {
             </tr>
         </table>
     </main>
-</body>`
+</body>`,
     };
 
     transport.sendMail(mailOptions).then(() => {
