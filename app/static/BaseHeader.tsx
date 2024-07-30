@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { ModeToggle } from "./ModeToggle";
 import Link from "next/link";
 import { MdCancel, MdMenu } from "react-icons/md";
+import Image from "next/image";
 
 const BaseHeader = () => {
   const navs = [
@@ -14,14 +15,16 @@ const BaseHeader = () => {
   return (
     <main className="pb-20">
       <div className="flex h-[70px] w-[100%] fixed border-b justify-center items-center">
-        <div className="w-[90%] flex  h-full items-center justify-between">
-          <div className="flex gap-10 items-center">
-            <div>Logo</div>
+        <div className="w-[100%] p-5 md:px-16 flex  h-full items-center justify-between">
+          <div className="flex gap-20 items-center">
+            <div>
+              <Image src={"/cbb.png"} alt="#" width={160} height={160} />
+            </div>
             <div className="md:flex gap-5 hidden">
               {navs.map((el: any) => (
                 <Link
                   key={el.id}
-                  className="text-[13px] font-normal text-neutral-500"
+                  className="text-[14px] font-normal text-neutral-500"
                   href={el.url}
                 >
                   {el.name}

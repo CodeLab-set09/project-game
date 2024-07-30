@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import React from "react";
 import { BsGithub, BsGoogle } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
+import { PiGooglePlayLogoDuotone } from "react-icons/pi";
 
 const page = () => {
   const formAction = async (formData: FormData) => {
@@ -24,19 +26,21 @@ const page = () => {
       <div className="flex justify-center items-center h-[100vh] w-full">
         <form
           action={formAction}
-          className=" items-center border p-3 rounded-md mt-5"
+          className=" items-center border p-3 pb-4 rounded-md mt-5"
         >
           <div className="flex justify-center items-center w-full ">
             <div className="w-full">
-              <div className="flex items-center w-full justify-center mb-6">
-                <h1>Logo</h1>
+              <div className="flex items-center w-full justify-center mt-3 mb-8">
+                <div>
+                  <Image src={"/cbb.png"} alt="#" width={160} height={160} />
+                </div>
               </div>
               <div className="flex justify-center gap-3">
-                <div className="border p-2 rounded-md flex justify-center gap-2 items-center">
+                <div className="border cursor-pointer p-2 rounded-md flex justify-center gap-2 items-center">
                   <BsGithub />
                   <h2 className="text-[13px]">Sign up with GitHub</h2>
                 </div>
-                <div className="border p-2 rounded-md flex justify-center gap-2 items-center">
+                <div className="border p-2  cursor-pointer rounded-md flex justify-center gap-2 items-center">
                   <BsGoogle />
                   <h2 className="text-[13px]">Sign in with Google</h2>
                 </div>
@@ -52,7 +56,7 @@ const page = () => {
 
           <div>
             <div className="mt-5 flex flex-col gap-4">
-              <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md">
+              <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-sm">
                 <MdEmail className="text-[20px]" />
                 <input
                   className="outline-none w-full text-[14px] h-[25px] curser bg-inherit placeholder:text-[14px] "
@@ -61,7 +65,7 @@ const page = () => {
                   name="email"
                 />
               </div>
-              <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md">
+              <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-sm">
                 <MdEmail className="text-[20px]" />
                 <input
                   className="outline-none text-[14px] h-[25px] w-full bg-inherit placeholder:text-[14px]  "
@@ -70,7 +74,7 @@ const page = () => {
                   name="username"
                 />
               </div>
-              <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md">
+              <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-sm">
                 <MdEmail className="text-[20px]" />
                 <input
                   className="outline-none w-full text-[14px] h-[25px] bg-inherit placeholder:text-[14px] "
