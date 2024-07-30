@@ -153,7 +153,7 @@ export const AccountOpeningEmail = async (user: any) => {
                                 </td>
                             </tr>
                            
-                        </tbody>
+                        </tbody> 
                     </table>
                     
                 </td>
