@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/input-otp";
 import Link from "next/link";
 import { redirect, usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import { JSON_SECRET } from "@/utils/constant";
 import { toast } from "@/components/ui/use-toast";
