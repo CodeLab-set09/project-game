@@ -1,7 +1,7 @@
 import { google } from "googleapis";
 import nodemailer from "nodemailer";
 import jwt from "jsonwebtoken";
-import ejs from "ejs";
+// import ejs from "ejs";
 
 import {
   GOOGLE_CLIENT,
