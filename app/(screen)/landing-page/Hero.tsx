@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 import React from 'react'
 
 
@@ -10,7 +11,9 @@ const Hero = () => {
           <p className='text-center text-[12px] md:text-[16px] gap-3 md:w-[650px] '>Improve your development skills by training with your peers on code kata that continuously 
           challenge and push your coding practice.</p>
           <Button className='h-[30px]  md:h-[50px] w-[100px] text-[14px] '>
-            Get Started
+            <Link href={"/signup"}>
+              Get Started
+            </Link>
           </Button>
         </div>
     </main>

@@ -80,7 +80,7 @@ const page = () => {
               </Button>
               <p className="text-[12px] font-light mt-[-10px]">
                 Don't have an account?{" "}
-                <Link className="font-bold" href={"/signin"}>
+                <Link className="font-bold" href={"/signup"}>
                   Sign Up
                 </Link>
               </p>
