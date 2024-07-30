@@ -1,24 +1,19 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import React from "react";
 import { BsGithub, BsGoogle } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import Image from "next/image";
+import { signIn } from "next-auth/react";
 
 const page = () => {
   const formAction = async (formData: FormData) => {
     "use server";
     const email = formData.get("email");
     const password = formData.get("password");
-    const url = "http:localhost:3000/api/signin";
-    await fetch(url, {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-    }).then(() => {
-      redirect("/dashboard");
-    });
+
+    signIn("credentials", { email, password });
   };
   return (
     <div>
@@ -78,12 +73,20 @@ const page = () => {
               <Button type="submit" className="mt-5">
                 Sign In
               </Button>
-              <p className="text-[12px] font-light mt-[-10px]">
-                Don't have an account?{" "}
-                <Link className="font-bold" href={"/signup"}>
-                  Sign Up
-                </Link>
-              </p>
+              <div className="flex flex-col gap-2 mt-[-10px]">
+                <p className="text-[12px] font-light ">
+                  Don't have an account?{" "}
+                  <Link className="font-bold" href={"/signup"}>
+                    Sign Up
+                  </Link>
+                </p>
+                <p className="text-[12px] font-light ">
+                  Forget password?
+                  <Link className="font-bold" href={"/verify-account"}>
+                    click here
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
         </form>
