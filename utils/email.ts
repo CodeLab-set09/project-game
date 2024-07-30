@@ -72,7 +72,6 @@ export const AccountOpeningEmail = async (user: any) => {
             font-size: 14px;
             margin-bottom: 10px;
             line-height: 24px;
-            color: #080808;
             font-weight: 400;
         }
 
@@ -135,12 +134,11 @@ export const AccountOpeningEmail = async (user: any) => {
                             </tr>
                             <tr>
                                 <td style="padding: 0 30px 20px">
-                                    <p style="margin-bottom: 10px;">Hi User,</p>
-                                    <p style="margin-bottom: 10px;">Welcome! <br> You are receiving this email because
+                                    <p style="margin-bottom: 10px; color: #080808">Welcome! <br> You are receiving this email because
                                         you have registered on our site.</p>
-                                    <p style="margin-bottom: 10px;">Click the button below to active your code book
+                                    <p style="margin-bottom: 10px; color: #080808">Click the button below to active your code book
                                         account.</p>
-                                    <p style="margin-bottom: 25px;">Here is your sign up token: ${user.verifyToken}</p>
+                                    <p style="margin-bottom: 25px; color: #080808">Here is your sign up token: ${user.verifyToken}</p>
                                     <a href="${url}"
                                         style="background-color:#141414;border-radius:4px;color:#ffffff;display:inline-block;font-size:13px;font-weight:600;line-height:44px;text-align:center;text-decoration:none;text-transform: uppercase; padding: 0 30px">Verify
                                         Email</a>
@@ -148,7 +146,7 @@ export const AccountOpeningEmail = async (user: any) => {
                             </tr>
                              <tr>
                                 <td style="padding: 20px 30px 40px">
-                                    <p>If you did not make this request, please contact us or ignore this message.</p>
+                                    <p style="color: #080808">If you did not make this request, please contact us or ignore this message.</p>
                                     <p style="margin: 0; font-size: 13px; line-height: 22px; color:#adadaf;">This is an automatically generated
                                         email please do not reply to this email. If you face any issues, please contact us at
                                         codelab@gmail.com</p>
