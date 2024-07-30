@@ -121,7 +121,7 @@ export const AccountOpeningEmail = async (user: any) => {
                         <tbody>
                             <tr>
                                 <td style="text-align: center; padding-bottom:25px">
-                                    <a href="#"><Image style="height: 40px" src=${img} alt="logo"></a>
+                                    <a href="#"><img style="height: 40px" src=${img} alt="logo"></a>
                                 </td>
                             </tr>
                         </tbody>
