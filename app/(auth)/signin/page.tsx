@@ -24,36 +24,13 @@ const page = () => {
     const password = formData.get("password");
 
     signIn("credentials", { email, password });
-
-    // const url = `/api/signin`;
-    // await fetch(url, {
-    //   method: "POST",
-    //   body: JSON.stringify({ userName, email, password }),
-    // })
-    //   .then(async (res) => {
-    //     return await res.json();
-    //   })
-    //   .then((res) => {
-    //     console.log(res);
-    //     if (res.status === 201) {
-    //       redirect("/dashboard");
-    //     } else {
-    //       toast({
-    //         title: "Failed to sign up",
-    //         description: res.message,
-    //       });
-    //     }
-    //   })
-    //   .finally(() => {
-    //     setToggle(false);
-    //   });
   };
   return (
     <div>
       <div className="flex justify-center items-center h-[100vh] w-full">
         <form
           action={formAction}
-          className="w-[300px] shadow-sm items-center border p-3 rounded-md mt-5"
+          className="w-[85%] md:w-[450px] shadow-sm items-center border p-3 rounded-md mt-5"
         >
           <div className="flex justify-center items-center w-full ">
             <div className="w-full">

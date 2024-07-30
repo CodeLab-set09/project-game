@@ -50,7 +50,7 @@ const page = () => {
   return (
     <div>
       <div className="flex justify-center items-center h-[100vh] w-full">
-        <main className="w-[300px] shadow-sm items-center border p-3 rounded-md mt-5">
+        <main className="w-[85%] md:w-[450px] shadow-sm items-center border p-3 rounded-md mt-5">
           <div className="flex justify-center items-center w-full ">
             <div className="w-full">
               <div className="flex items-center w-full justify-center mt-3 mb-8">
