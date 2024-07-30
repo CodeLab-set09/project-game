@@ -33,10 +33,10 @@ const BaseHeader = () => {
             </div>
           </div>
           <div className="md:flex gap-4 hidden">
-            <button className="px-4 py-2 rounded-md text-[15px] font-semibold border">
+            <button className="px-4 py-2 rounded-md text-[15px] font-semibold border text-black">
               <Link href={"/signin"}> Log in</Link>
             </button>
-            <button className="px-4 py-2 border-red-500 rounded-md text-[15px] font-semibold border">
+            <button className="px-4 py-2 border-red-500 rounded-md text-[15px] font-semibold border text-black">
               <Link href={"/signup"}>Join</Link>
             </button>
           </div>
@@ -47,14 +47,14 @@ const BaseHeader = () => {
                 onClick={() => {
                   setShow(false);
                 }}
-                className="text-neutral-600 text-[30px]"
+                className="text-neutral-600 text-[30px] cursor-pointer"
               />
             ) : (
               <MdMenu
                 onClick={() => {
                   setShow(true);
                 }}
-                className="text-neutral-600 text-[30px]"
+                className="text-neutral-600 text-[30px] cursor-pointer"
               />
             )}
           </div>

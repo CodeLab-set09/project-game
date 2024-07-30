@@ -1,6 +1,9 @@
 import { google } from "googleapis";
 import nodemailer from "nodemailer";
 import jwt from "jsonwebtoken";
+import Image from "next/image";
+import img from "../public/cbb.png";
+
 // import ejs from "ejs";
 
 import {
@@ -41,6 +44,7 @@ export const AccountOpeningEmail = async (user: any) => {
     const token = jwt.sign({ id: user?._id }, JSON_SECRET, { expiresIn: "2d" });
 
     const url = `${LIVE_URL}/verify-account/${token}`;
+    
 
     const mailOptions = {
       from: "Gamer🔥🎮🔥 <ghettodeveloper@gmail.com>",
@@ -118,7 +122,11 @@ export const AccountOpeningEmail = async (user: any) => {
                         <tbody>
                             <tr>
                                 <td style="text-align: center; padding-bottom:25px">
-                                    <a href="#"><img style="height: 40px" src="/logo.png" alt="logo"></a>
+
+                                    <Image src=${img} alt="#" width={160} height={160} />
+
+                                   
+
                                 </td>
                             </tr>
                         </tbody>
@@ -161,7 +169,7 @@ export const AccountOpeningEmail = async (user: any) => {
         </table>
     </main>
 </body>
-        `
+        `,
     };
 
     transport.sendMail(mailOptions).then(() => {

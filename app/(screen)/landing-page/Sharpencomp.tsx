@@ -4,9 +4,11 @@ import React from "react";
 
 const Sharpencomp = () => {
   return (
+
     <main className="w-[100%] h-[500px] md:w-full md:h-[calc(100vh-170px)]  md:flex md:justify-center md:items-center mt-5">
       <section className="grid grid-cols-1 h-full w-full md:grid md:grid-cols-4 md:w-[90%] md:h-full  rounded-[50px] border ">
         <div className="px-5 md:col-span-2  md:px-14">
+
           <div className="mt-16">
             <Image
               src={"/cbb.png"}
@@ -17,6 +19,7 @@ const Sharpencomp = () => {
             />
             <div className="mt-8 px-1">
               <p className=" font-bold text-[30px]">
+
                 Sharpen Your Coding Skills
               </p>
               <p className="font-extralight text-[13px] mt-3 leading-6">
@@ -28,6 +31,7 @@ const Sharpencomp = () => {
               </p>
             </div>
             <div className="mb-3 mt-16 px-1">
+
               <Button>Join the team</Button>
             </div>
           </div>
@@ -39,6 +43,7 @@ const Sharpencomp = () => {
             width={1000}
             height={1000}
             className="pl-1  mb-5  object-cover md:mt-[85px] "
+
           />
         </div>
       </section>

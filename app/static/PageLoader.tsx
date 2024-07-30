@@ -8,7 +8,7 @@ export const AllPageLoader = () => {
       {/* <Component {...pageProps} /> */}
       <ProgressBar
         height="4px"
-        color="#fffd00"
+        color="#ff0000"
         options={{ showSpinner: true }}
         shallowRouting
       />
