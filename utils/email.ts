@@ -48,14 +48,8 @@ export const AccountOpeningEmail = async (user: any) => {
       subject: "Account Opening",
       text: "Welcome to our platform!",
       html: `
-        // <div>
-        // <h1>Welcome to our platform!</h1>
-        // <p>You've successfully created an account.</p>
-        // <p>Here is your sign up token: ${user.verifyToken}</p>
-        // <p>Please click the link below to sign in:</p>
-        // <a href="${url}">Sign In</a>
-        // </div>,
-        <head>
+
+    <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,7 +70,7 @@ export const AccountOpeningEmail = async (user: any) => {
             font-size: 14px;
             margin-bottom: 10px;
             line-height: 24px;
-            color: #8094ae;
+            color: #080808;
             font-weight: 400;
         }
 
@@ -124,8 +118,7 @@ export const AccountOpeningEmail = async (user: any) => {
                         <tbody>
                             <tr>
                                 <td style="text-align: center; padding-bottom:25px">
-                                    <a href="#"><img style="height: 40px" src="images/instagram-logo.png"
-                                            alt="logo"></a>
+                                    <a href="#"><img style="height: 40px" src="/logo.png" alt="logo"></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -134,80 +127,41 @@ export const AccountOpeningEmail = async (user: any) => {
                         <tbody>
                             <tr>
                                 <td style="padding: 30px 30px 15px 30px;">
-                                    <h2 style="font-size: 18px; color: #6576ff; font-weight: 600; margin: 0;">Confirm
-                                        Your E-Mail Address</h2>
+                                    <h2 style="font-size: 18px; color: #141414; font-weight: 600; margin: 0;">Verify
+                                        Your Account</h2>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="padding: 0 30px 20px">
-                                    <p style="margin-bottom: 10px;">Hi Sundar,</p>
+                                    <p style="margin-bottom: 10px;">Hi User,</p>
                                     <p style="margin-bottom: 10px;">Welcome! <br> You are receiving this email because
                                         you have registered on our site.</p>
-                                    <p style="margin-bottom: 10px;">Click the link below to active your TokenWiz
+                                    <p style="margin-bottom: 10px;">Click the button below to active your code book
                                         account.</p>
-                                    <p style="margin-bottom: 25px;">This link will expire in 15 minutes and can only be
-                                        used once.</p>
-                                    <a href="#"
-                                        style="background-color:#6576ff;border-radius:4px;color:#ffffff;display:inline-block;font-size:13px;font-weight:600;line-height:44px;text-align:center;text-decoration:none;text-transform: uppercase; padding: 0 30px">Verify
+                                    <p style="margin-bottom: 25px;">Here is your sign up token: ${user.verifyToken}</p>
+                                    <a href="${url}"
+                                        style="background-color:#141414;border-radius:4px;color:#ffffff;display:inline-block;font-size:13px;font-weight:600;line-height:44px;text-align:center;text-decoration:none;text-transform: uppercase; padding: 0 30px">Verify
                                         Email</a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td style="padding: 0 30px">
-                                    <h4
-                                        style="font-size: 15px; color: #000000; font-weight: 600; margin: 0; text-transform: uppercase; margin-bottom: 10px">
-                                        or</h4>
-                                    <p style="margin-bottom: 10px;">If the button above does not work, paste this link
-                                        into your web browser:</p>
-                                    <a href="#"
-                                        style="color: #6576ff; text-decoration:none;word-break: break-all;">https://icocrypto.com/account?login_token=dacb711d08a0ee7bda83ce1660918c31e8b43c30</a>
-                                </td>
-                            </tr>
-                            <tr>
+                             <tr>
                                 <td style="padding: 20px 30px 40px">
                                     <p>If you did not make this request, please contact us or ignore this message.</p>
-                                    <p style="margin: 0; font-size: 13px; line-height: 22px; color:#9ea8bb;">This is an
-                                        automatically generated email please do not reply to this email. If you face any
-                                        issues, please contact us at odinakaahamba@gmail.com</p>
+                                    <p style="margin: 0; font-size: 13px; line-height: 22px; color:#adadaf;">This is an automatically generated
+                                        email please do not reply to this email. If you face any issues, please contact us at
+                                        codelab@gmail.com</p>
                                 </td>
                             </tr>
-                        </tbody>
+                           
+                        </tbody> 
                     </table>
-                    <table style="width:100%;max-width:620px;margin:0 auto;">
-                        <tbody>
-                            <tr>
-                                <td style="text-align: center; padding:25px 20px 0;">
-                                    <ul style="margin: 10px -4px 0;padding: 0;">
-                                        <li style="display: inline-block; list-style: none; padding: 4px;"><a
-                                                style="display: inline-block; height: 30px; width:30px;border-radius: 50%; background-color: #ffffff"
-                                                href="#"><img style="width: 30px" src="images/brand-b.png"
-                                                    alt="brand"></a></li>
-                                        <li style="display: inline-block; list-style: none; padding: 4px;"><a
-                                                style="display: inline-block; height: 30px; width:30px;border-radius: 50%; background-color: #ffffff"
-                                                href="#"><img style="width: 30px" src="images/brand-e.png"
-                                                    alt="brand"></a></li>
-                                        <li style="display: inline-block; list-style: none; padding: 4px;"><a
-                                                style="display: inline-block; height: 30px; width:30px;border-radius: 50%; background-color: #ffffff"
-                                                href="#"><img style="width: 30px" src="images/brand-d.png"
-                                                    alt="brand"></a></li>
-                                        <li style="display: inline-block; list-style: none; padding: 4px;"><a
-                                                style="display: inline-block; height: 30px; width:30px;border-radius: 50%; background-color: #ffffff"
-                                                href="#"><img style="width: 30px" src="images/brand-c.png"
-                                                    alt="brand"></a></li>
-                                    </ul>
-                                    <p style="padding-top: 15px; font-size: 12px;">This email was sent to you as a
-                                        registered user of <a style="color: #6576ff; text-decoration:none;"
-                                            href="">techmindhelps.com</a>. To update your emails preferences <a
-                                            style="color: #6576ff; text-decoration:none;" href="#">click here</a>.</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    
                 </td>
             </tr>
         </table>
     </main>
-</body>`
+</body>
+        `
     };
 
     transport.sendMail(mailOptions).then(() => {

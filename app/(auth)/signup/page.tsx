@@ -4,6 +4,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import React from "react";
 import { BsGithub, BsGoogle } from "react-icons/bs";
+import { FcGoogle } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
 import { PiGooglePlayLogoDuotone } from "react-icons/pi";
 
@@ -37,7 +38,7 @@ const page = () => {
               </div>
               <div className="flex justify-center gap-3">
                 <div className="border cursor-pointer p-2 rounded-md flex justify-center gap-2 items-center">
-                  <BsGithub />
+                  <FcGoogle />
                   <h2 className="text-[13px]">Sign up with GitHub</h2>
                 </div>
                 <div className="border p-2  cursor-pointer rounded-md flex justify-center gap-2 items-center">
