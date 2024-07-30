@@ -8,17 +8,20 @@ export const PATCH = async (req: NextRequest, { params }: any) => {
 
     const { userID } = params;
 
-    const { verify, verifyToken } = await req.json();
+    const { verifyToken } = await req.json();
 
     const user = await userModel.findById(userID);
 
     if (user) {
-      if (verifyToken === user.verifyToken && verify) {
+      if (verifyToken === user.verifyToken) {
         user.verify = true;
+        user.verifyToken = "";
+
         await user.save();
         return NextResponse.json({
-          status: 200,
+          status: 201,
           message: "Account verified successfully",
+          data: user,
         });
       } else {
         return NextResponse.json({

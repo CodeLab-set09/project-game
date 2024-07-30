@@ -29,7 +29,7 @@ export const AccountOpeningEmail = async (user: any) => {
     const transport = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "ghettodeveloper@gmail.com",
+        user: USER_MAIL,
         type: "OAuth2",
         clientId: GOOGLE_CLIENT,
         clientSecret: GOOGLE_SECRET_KEY,
@@ -44,8 +44,51 @@ export const AccountOpeningEmail = async (user: any) => {
 
     const mailOptions = {
       from: "Gamer🔥🎮🔥 <ghettodeveloper@gmail.com>",
-      to: "ghettodeveloper@gmail.com",
+      to: user?.email,
       subject: "Account Opening",
+      text: "Welcome to our platform!",
+      html: `
+        <div>
+        <h1>Welcome to our platform!</h1>
+        <p>You've successfully created an account.</p>
+        <p>Here is your sign up token: ${user.verifyToken}</p>
+        <p>Please click the link below to sign in:</p>
+        <a href="${url}">Sign In</a>
+        </div>`,
+    };
+
+    transport.sendMail(mailOptions).then(() => {
+      console.log("email sent successfully");
+    });
+  } catch (error) {
+    console.log("error with Account Opening eMail");
+  }
+};
+
+export const resetPasswordEmail = async (user: any) => {
+  try {
+    const accessToken: any = (await oAuth.getAccessToken()).token;
+
+    const transport = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: USER_MAIL,
+        type: "OAuth2",
+        clientId: GOOGLE_CLIENT,
+        clientSecret: GOOGLE_SECRET_KEY,
+        refreshToken: GOOGLE_REFRESH_TOKEN,
+        accessToken,
+      },
+    });
+
+    const token = jwt.sign({ id: user?._id }, JSON_SECRET, { expiresIn: "2d" });
+
+    const url = `${LIVE_URL}/verify-account/${token}`;
+
+    const mailOptions = {
+      from: "Gamer🔥🎮🔥 <ghettodeveloper@gmail.com>",
+      to: user?.email,
+      subject: "Reset Account Password",
       text: "Welcome to our platform!",
       html: `
         <div>

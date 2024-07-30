@@ -6,7 +6,7 @@ interface iUser {
   password: string;
   avatar: string;
   avatarID: string;
-  verifyToken: number;
+  verifyToken: number | null;
   verify: boolean;
 }
 
