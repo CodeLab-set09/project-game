@@ -36,7 +36,7 @@ const page = () => {
       })
       .then((res) => {
         if (res.status === 201) {
-          return router.push("/");
+          return router.push("/verify-account");
         } else {
           toast({
             title: "Failed to sign up",
