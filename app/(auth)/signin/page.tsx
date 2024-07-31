@@ -10,11 +10,9 @@ import Image from "next/image";
 import { useToast } from "@/components/ui/use-toast";
 import { Spinner } from "@/app/static/Spinner";
 import { signIn } from "next-auth/react";
-
 import bg from "@/public/assets/down.png";
 import left from "@/public/assets/left.png";
 import right from "@/public/assets/right.png";
-import { redirect } from "next/navigation";
 
 const page = () => {
   const { toast } = useToast();
@@ -26,9 +24,7 @@ const page = () => {
     const email = formData.get("email");
     const password = formData.get("password");
 
-    signIn("credentials", { email, password }).then(() => {
-      redirect("/")
-    });
+    signIn("credentials", { email, password })
   };
   return (
     <div className="relative w-full">
