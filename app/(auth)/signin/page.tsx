@@ -93,7 +93,7 @@ const page = () => {
               <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md h-[45px]">
                 <MdEmail className="text-[20px] text-slate-600" />
                 <input
-                  className="outline-none bg-inherit placeholder:text-[14px] "
+                  className="outline-none bg-inherit placeholder:text-[14px] w-full "
                   type="text"
                   placeholder="Email"
                   name="email"
@@ -103,7 +103,7 @@ const page = () => {
               <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md h-[45px] ">
                 <MdPassword className="text-[20px] text-slate-600" />
                 <input
-                  className="outline-none bg-inherit placeholder:text-[14px] "
+                  className="outline-none bg-inherit placeholder:text-[14px] w-full "
                   type="text"
                   placeholder="Password"
                   name="password"
