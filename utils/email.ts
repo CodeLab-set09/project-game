@@ -73,7 +73,6 @@ export const AccountOpeningEmail = async (user: any) => {
             font-size: 14px;
             margin-bottom: 10px;
             line-height: 24px;
-            color: #080808;
             font-weight: 400;
         }
 
@@ -146,6 +145,15 @@ export const AccountOpeningEmail = async (user: any) => {
                             </tr>
                             <tr>
                                 <td style="padding: 0 30px 20px">
+<<<<<<< HEAD
+                                    <p style="margin-bottom: 10px; color: #080808">Welcome! <br> You are receiving this email because
+                                        you have registered on our site.</p>
+                                    <p style="margin-bottom: 10px; color: #080808">Click the button below to active your code book
+                                        account.</p>
+                                    <p style="margin-bottom: 25px; color: #080808">Here is your sign up token: ${user.verifyToken}</p>
+                                    <a href="${url}"
+                                        style="background-color:#141414;border-radius:4px;color:#ffffff;display:inline-block;font-size:13px;font-weight:600;line-height:44px;text-align:center;text-decoration:none;text-transform: uppercase; padding: 0 30px">Verify
+=======
                                     <p style="margin-bottom: 10px;">Hi ${user?.userName},</p>
                                     <p style="margin-bottom: 10px;">Welcome! <br> You are receiving this email because
                                         you have registered on our site.</p>
@@ -158,6 +166,7 @@ export const AccountOpeningEmail = async (user: any) => {
                                         </p>
                                     <a href="${LIVE_URL}/verify-account/${token}"
                                         style="background-color:#6576ff;border-radius:4px;color:#ffffff;display:inline-block;font-size:13px;font-weight:600;line-height:44px;text-align:center;text-decoration:none;text-transform: uppercase; padding: 0 30px">Verify
+>>>>>>> 7259b740a3308c61b74ffa0d1cefa13b220dcba9
                                         Email</a>
                                 </td>
                             </tr>
@@ -174,6 +183,12 @@ export const AccountOpeningEmail = async (user: any) => {
                             </tr>
                             <tr>
                                 <td style="padding: 20px 30px 40px">
+<<<<<<< HEAD
+                                    <p style="color: #080808">If you did not make this request, please contact us or ignore this message.</p>
+                                    <p style="margin: 0; font-size: 13px; line-height: 22px; color:#adadaf;">This is an automatically generated
+                                        email please do not reply to this email. If you face any issues, please contact us at
+                                        codelab@gmail.com</p>
+=======
                                     <p>If you did not make this request, please contact us or ignore this message.</p>
                                     <p style="margin: 0; font-size: 13px; line-height: 22px; color:#9ea8bb;">This is an
                                         automatically generated email please do not reply to this email. If you face any
@@ -183,6 +198,7 @@ export const AccountOpeningEmail = async (user: any) => {
                                         <br/>
                                         
                                         please contact us at codebook@gmail.com</p>
+>>>>>>> 7259b740a3308c61b74ffa0d1cefa13b220dcba9
                                 </td>
                             </tr>
                            
