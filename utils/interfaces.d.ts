@@ -8,6 +8,8 @@ interface iUser {
   avatarID: string;
   verifyToken: number | null;
   verify: boolean;
+  firstTimer: boolean;
+  startPlay: {};
 }
 
 export interface iUserData extends iUser, Document {}

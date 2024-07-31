@@ -14,18 +14,21 @@ import { signIn } from "next-auth/react";
 import bg from "@/public/assets/down.png";
 import left from "@/public/assets/left.png";
 import right from "@/public/assets/right.png";
+import { redirect } from "next/navigation";
 
 const page = () => {
   const { toast } = useToast();
   const [toggle, setToggle] = useState<boolean>(false);
 
   const formAction = async (formData: FormData) => {
-    // "use server";
+    
     setToggle(true);
     const email = formData.get("email");
     const password = formData.get("password");
 
-    signIn("credentials", { email, password });
+    signIn("credentials", { email, password }).then(() => {
+      redirect("/")
+    });
   };
   return (
     <div className="relative w-full">
@@ -109,6 +112,12 @@ const page = () => {
                   name="password"
                 />
               </div>
+              <Link
+                href="/forget-password"
+                className="text-end text-[12px] text-[#11192C] -mt-2 font-semibold italic"
+              >
+                Forget Password
+              </Link>
 
               <Button disabled={toggle} type="submit" className="mt-5 py-6 ">
                 {toggle ? <Spinner /> : " Sign In"}
