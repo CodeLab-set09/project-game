@@ -158,7 +158,7 @@ export const AccountOpeningEmail = async (user: any) => {
                                         <p 
                                         style="color:#0f172a;font-size:14px; margin:"10px";font-weight:600;">${user?.verifyToken}</p>
                                         </p>
-                                    <a href="#"
+                                    <a href="${LIVE_URL}/verify-account/${token}"
                                         style="background-color:#6576ff;border-radius:4px;color:#ffffff;display:inline-block;font-size:13px;font-weight:600;line-height:44px;text-align:center;text-decoration:none;text-transform: uppercase; padding: 0 30px">Verify
 >>>>>>> 7259b740a3308c61b74ffa0d1cefa13b220dcba9
                                         Email</a>
@@ -171,7 +171,7 @@ export const AccountOpeningEmail = async (user: any) => {
                                         or</h4>
                                     <p style="margin-bottom: 10px;">If the button above does not work, paste this link
                                         into your web browser:</p>
-                                    <a href="#"
+                                    <a href="${LIVE_URL}/verify-account/${token}"
                                         style="color: #6576ff; text-decoration:none;word-break: break-all;">${LIVE_URL}/verify-account/${token}</a>
                                 </td>
                             </tr>
