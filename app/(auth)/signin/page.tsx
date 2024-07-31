@@ -109,6 +109,12 @@ const page = () => {
                   name="password"
                 />
               </div>
+              <Link
+                href="/forget-password"
+                className="text-end text-[12px] text-[#11192C] -mt-2 font-semibold italic"
+              >
+                Forget Password
+              </Link>
 
               <Button disabled={toggle} type="submit" className="mt-5 py-6 ">
                 {toggle ? <Spinner /> : " Sign In"}

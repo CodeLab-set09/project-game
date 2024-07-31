@@ -15,7 +15,7 @@ export const PATCH = async (req: NextRequest, { params }: any) => {
     if (user) {
       if (verifyToken === user.verifyToken) {
         user.verify = true;
-        user.verifyToken = "";
+        user.verifyToken = null;
 
         await user.save();
         return NextResponse.json({
