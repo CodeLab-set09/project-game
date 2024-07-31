@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const Page = () => {
   return (
@@ -18,12 +19,10 @@ const Page = () => {
                 type="text"
               />
             </div>
-
-            <div className="text-center text-[12px] mt-3">
-              <Link href={"/signin"} className="italic font-semibold">
-                Sign in here
-              </Link>
-            </div>
+            <Button className="border rounded-md outline-none h-[45px] bg-black text-white w-[100%]">
+              <Link href={"/signin"} className="italic font-semibold"></Link>
+              Verify Password
+            </Button>
           </form>
         </section>
       </div>
