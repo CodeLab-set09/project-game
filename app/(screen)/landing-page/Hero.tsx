@@ -13,7 +13,7 @@ const Hero = () => {
           challenge and push your coding practice.</p>
 
           <Link href={"/signup"}>
-          <Button className='h-[50px]  md:h-[60px] w-[130px] text-[14px] border bg-inherit hover:bg-slate-300 '>
+          <Button className='h-[50px]  md:h-[60px] w-[130px] text-[14px] border bg-inherit hover:bg-slate-600 duration-300 transition-all'>
             Get Started
 
           </Button>
