@@ -5,7 +5,7 @@ import React from "react";
 const Sharpencomp = () => {
   return (
 
-    <main className="w-[100%] h-[500px] md:w-full md:h-[calc(100vh-170px)]  md:flex md:justify-center md:items-center mt-5">
+    <main className="w-[100%] min-h-[500px] md:w-full md:h-[calc(100vh-170px)]  md:flex md:justify-center md:items-center mt-5">
       <section className="grid grid-cols-1 h-full w-full md:grid md:grid-cols-4 md:w-[90%] md:h-full  rounded-[50px] border ">
         <div className="px-5 md:col-span-2  md:px-14">
 
