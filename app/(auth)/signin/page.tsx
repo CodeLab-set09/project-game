@@ -2,16 +2,18 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import React, { useState } from "react";
-import { BsGithub, BsGoogle } from "react-icons/bs";
-import { MdEmail, MdPassword, MdPerson } from "react-icons/md";
+import { BsGithub } from "react-icons/bs";
+import { MdEmail, MdPassword } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import Image from "next/image";
-import { LIVE_URL } from "@/utils/constant";
-import { toast, useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/components/ui/use-toast";
 import { Spinner } from "@/app/static/Spinner";
 import { signIn } from "next-auth/react";
+
+import bg from "@/public/assets/down.png";
+import left from "@/public/assets/left.png";
+import right from "@/public/assets/right.png";
 
 const page = () => {
   const { toast } = useToast();
@@ -26,8 +28,33 @@ const page = () => {
     signIn("credentials", { email, password });
   };
   return (
-    <div>
-      <div className="flex justify-center items-center h-[100vh] w-full">
+    <div className="relative w-full">
+      <Image
+        width={1000}
+        height={1000}
+        src={bg}
+        alt="bg"
+        className="w-full absolute bottom-0 h-[150px] -z-10"
+      />
+      <div className="absolute overflow-hidden w-[50%]  h-[200px] left-0 bottom-0">
+        <Image
+          width={1000}
+          height={1000}
+          src={left}
+          alt="bg"
+          className="h-[200px] object-contain w-full absolute  left-0 -bottom-10 "
+        />
+      </div>
+      <div className="absolute  w-[50%] overflow-hidden h-[200px] right-0 bottom-0">
+        <Image
+          width={1000}
+          height={1000}
+          src={right}
+          alt="bg"
+          className="h-[280px] object-contain absolute right-0 -bottom-30 "
+        />
+      </div>
+      <div className="z-50 flex justify-center items-center h-[100vh] w-full">
         <form
           action={formAction}
           className="w-[85%] md:w-[450px] shadow-sm items-center border p-3 rounded-md mt-5"
