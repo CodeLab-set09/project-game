@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const BaseHeader = () => {
   const navs = [
-    { id: 0, name: "Blog", url: "/" },
+    { id: 0, name: "Blog", url: "/landing-page/blog" },
     { id: 1, name: "About", url: "/" },
     { id: 2, name: "Directives", url: "/" },
   ];
