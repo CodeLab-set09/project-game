@@ -44,7 +44,6 @@ export const AccountOpeningEmail = async (user: any) => {
     const token = jwt.sign({ id: user?._id }, JSON_SECRET, { expiresIn: "2d" });
 
     const url = `${LIVE_URL}/verify-account/${token}`;
-    
 
     const mailOptions = {
       from: "Gamer🔥🎮🔥 <ghettodeveloper@gmail.com>",
@@ -60,7 +59,7 @@ export const AccountOpeningEmail = async (user: any) => {
     <meta name="x-apple-disable-message-reformatting">
     <title></title>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet" type="text/css">
     
 
     <style>
@@ -70,7 +69,7 @@ export const AccountOpeningEmail = async (user: any) => {
             padding: 0 !important;
             height: 100% !important;
             width: 100% !important;
-            font-family: 'Roboto', sans-serif !important;
+            font-family: 'Poppins', sans-serif !important;
             font-size: 14px;
             margin-bottom: 10px;
             line-height: 24px;
@@ -140,6 +139,7 @@ export const AccountOpeningEmail = async (user: any) => {
                             </tr>
                             <tr>
                                 <td style="padding: 0 30px 20px">
+<<<<<<< HEAD
                                     <p style="margin-bottom: 10px; color: #080808">Welcome! <br> You are receiving this email because
                                         you have registered on our site.</p>
                                     <p style="margin-bottom: 10px; color: #080808">Click the button below to active your code book
@@ -147,15 +147,52 @@ export const AccountOpeningEmail = async (user: any) => {
                                     <p style="margin-bottom: 25px; color: #080808">Here is your sign up token: ${user.verifyToken}</p>
                                     <a href="${url}"
                                         style="background-color:#141414;border-radius:4px;color:#ffffff;display:inline-block;font-size:13px;font-weight:600;line-height:44px;text-align:center;text-decoration:none;text-transform: uppercase; padding: 0 30px">Verify
+=======
+                                    <p style="margin-bottom: 10px;">Hi ${user?.userName},</p>
+                                    <p style="margin-bottom: 10px;">Welcome! <br> You are receiving this email because
+                                        you have registered on our site.</p>
+                                    <p style="margin-bottom: 10px;">Click the link below to active your CodeBook
+                                        Account.</p>
+                                    <p style="margin-bottom: 25px;">This link will expire in 15 minutes and can only be
+                                        used once. and here is your OTP code
+                                        <p 
+                                        style="color:#0f172a;font-size:14px; margin:"10px";font-weight:600;">${user?.verifyToken}</p>
+                                        </p>
+                                    <a href="#"
+                                        style="background-color:#6576ff;border-radius:4px;color:#ffffff;display:inline-block;font-size:13px;font-weight:600;line-height:44px;text-align:center;text-decoration:none;text-transform: uppercase; padding: 0 30px">Verify
+>>>>>>> 7259b740a3308c61b74ffa0d1cefa13b220dcba9
                                         Email</a>
                                 </td>
                             </tr>
-                             <tr>
+                            <tr>
+                                <td style="padding: 0 30px">
+                                    <h4
+                                        style="font-size: 15px; color: #000000; font-weight: 600; margin: 0; text-transform: uppercase; margin-bottom: 10px">
+                                        or</h4>
+                                    <p style="margin-bottom: 10px;">If the button above does not work, paste this link
+                                        into your web browser:</p>
+                                    <a href="#"
+                                        style="color: #6576ff; text-decoration:none;word-break: break-all;">${LIVE_URL}/verify-account/${token}</a>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td style="padding: 20px 30px 40px">
+<<<<<<< HEAD
                                     <p style="color: #080808">If you did not make this request, please contact us or ignore this message.</p>
                                     <p style="margin: 0; font-size: 13px; line-height: 22px; color:#adadaf;">This is an automatically generated
                                         email please do not reply to this email. If you face any issues, please contact us at
                                         codelab@gmail.com</p>
+=======
+                                    <p>If you did not make this request, please contact us or ignore this message.</p>
+                                    <p style="margin: 0; font-size: 13px; line-height: 22px; color:#9ea8bb;">This is an
+                                        automatically generated email please do not reply to this email. If you face any
+                                        issues, 
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        
+                                        please contact us at codebook@gmail.com</p>
+>>>>>>> 7259b740a3308c61b74ffa0d1cefa13b220dcba9
                                 </td>
                             </tr>
                            
@@ -166,8 +203,7 @@ export const AccountOpeningEmail = async (user: any) => {
             </tr>
         </table>
     </main>
-</body>
-        `,
+</body>`,
     };
 
     transport.sendMail(mailOptions).then(() => {
