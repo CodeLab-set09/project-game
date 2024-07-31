@@ -122,9 +122,15 @@ export const AccountOpeningEmail = async (user: any) => {
                             <tr>
                                 <td style="text-align: center; padding-bottom:25px">
 
-                                    <Image src=${img} alt="#" width={160} height={160} />
+                                    
 
-                                   
+                                   <img 
+                                   alt="logo"
+                                   src="https://res.cloudinary.com/duewdl1ua/image/upload/v1722432802/codebook_black_w1f3i7.png"
+                                   width="500px"
+                                   height="200px"
+                                   object-fit="contain"
+                                   />
 
                                 </td>
                             </tr>

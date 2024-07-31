@@ -20,6 +20,14 @@ const userSchema = new Schema<iUserData>(
       type: Boolean,
       default: false,
     },
+    firstTimer: {
+      type: Boolean,
+      default: true,
+    },
+    startPlay: {
+      type: {},
+      dafault: { level: 1, stage: 1, question: 1 },
+    },
     avatar: {
       type: String,
     },
