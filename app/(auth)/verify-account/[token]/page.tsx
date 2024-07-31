@@ -6,7 +6,7 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 // import Link from "next/link";
-import { redirect, usePathname } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 // import { JSON_SECRET } from "@/utils/constant";
@@ -16,32 +16,41 @@ import Image from "next/image";
 import bg from "@/public/assets/down.png";
 import left from "@/public/assets/left.png";
 import right from "@/public/assets/right.png";
+import { Spinner } from "@/app/static/Spinner";
+import { Button } from "@/components/ui/button";
 
 const page = ({ params }: any) => {
   const { token }: any = params;
   const { id }: any = jwtDecode<any>(token);
   const [state, setState] = useState<any>();
+  const [toggle, setToggle] = useState<boolean>(false);
+
+  const router = useRouter();
 
   const verifyAccount = async () => {
-    return await fetch(`/api/vevrify-account/${id}`, {
+    setToggle(true);
+    return await fetch(`/api/verify-account/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ verifyToken: state }),
+      body: JSON.stringify({ verifyToken: parseInt(state) }),
     })
       .then(async (res) => {
         return await res.json();
       })
       .then((res) => {
         if (res.status === 201) {
-          return redirect("/signin");
+          return router.push("/signin");
         } else {
           toast({
             title: "Error with Verification Token",
-            description: "This token is invalid",
+            description: `This token is invalid ${res.error}`,
           });
         }
+      })
+      .finally(() => {
+        setToggle(false);
       });
   };
 
@@ -98,14 +107,15 @@ const page = ({ params }: any) => {
               </InputOTPGroup>
             </InputOTP>
 
-            <button
-              className="w-[100px] h-[40px] rounded-md bg-neutral-700 hover:bg-neutral-600 text-white mt-4 "
+            <Button
+              className="w-[200px] font-semibold h-[50px] rounded-md text-white mt-4 "
               onClick={() => {
-                console.log(state);
+                verifyAccount();
               }}
+              disabled={toggle}
             >
-              Verify
-            </button>
+              {toggle ? <Spinner /> : "Verify My Account"}
+            </Button>
           </div>
         </div>
       </main>
