@@ -8,7 +8,7 @@ const override: CSSProperties = {
 };
 
 export const Spinner = () => {
-  let [loading, setLoading] = useState(true);
+  let [loading, setLoading] =useState(true);
 
   return (
     <div className="sweet-loading">
