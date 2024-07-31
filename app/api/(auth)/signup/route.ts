@@ -7,7 +7,7 @@ import { AccountOpeningEmail } from "@/utils/email";
 export const POST = async (req: NextRequest) => {
   try {
     await dbConfig();
-    const { name, email, password } = await req.json();
+    const { userName, email, password } = await req.json();
     const salt = await bcrypt.genSalt(10);
     const hashed = await bcrypt.hash(password, salt);
 
@@ -16,7 +16,7 @@ export const POST = async (req: NextRequest) => {
     };
 
     const user = await userModel.create({
-      userName: name,
+      userName,
       email,
       password: hashed,
       verifyToken: rand(),
