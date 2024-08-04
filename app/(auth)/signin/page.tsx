@@ -19,12 +19,11 @@ const page = () => {
   const [toggle, setToggle] = useState<boolean>(false);
 
   const formAction = async (formData: FormData) => {
-    
     setToggle(true);
     const email = formData.get("email");
     const password = formData.get("password");
 
-    signIn("credentials", { email, password })
+    signIn("credentials", { email, password });
   };
   return (
     <div className="relative w-full">
