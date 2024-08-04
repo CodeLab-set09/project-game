@@ -16,7 +16,7 @@ const page = () => {
       headers: { "Content-Type": "Application/json" },
       body: JSON.stringify({ email }),
     }).then(() => {
-      redirect("/verify-account");
+      redirect("/forget-password/verify-account");
     });
   };
   return (
