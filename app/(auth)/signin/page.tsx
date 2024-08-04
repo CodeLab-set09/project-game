@@ -108,7 +108,7 @@ const page = () => {
                 />
               </div>
               <Link
-                href="/forget-password"
+                href="/forget-password/email"
                 className="text-end text-[12px] text-[#11192C] -mt-2 font-semibold italic"
               >
                 Forget Password
