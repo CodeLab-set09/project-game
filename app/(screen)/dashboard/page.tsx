@@ -1,23 +1,47 @@
 "use client";
 
-import { options } from "@/app/api/auth/[...nextauth]/options";
 import { useUserHook } from "@/app/hooks/hooks";
-import { getServerSession } from "next-auth";
+import { Spinner } from "@/app/static/Spinner";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import React from "react";
+import { useEffect, useState } from "react";
 
 const page = () => {
   const router = useRouter();
   const session: any = useSession();
-  const id = session?.data?.user?.id;
+  let id = "";
 
-  const { user }: any = useUserHook(id!);
+  const [userData, setUserData] = useState<any>();
 
-  if (user?.firstTimer) {
-    return router.push("/dashboard/first-screen");
+  useEffect(() => {
+    id = session?.data?.user?.id;
+
+    const getSingleUser = async () => {
+      try {
+        return await fetch(`/api/timer/${id}`, {
+          cache: "no-cache",
+        }).then(async (res) => {
+          return await res.json();
+        });
+      } catch (error) {
+        console.error("error", error);
+      }
+    };
+    getSingleUser().then((res) => {
+      setUserData(res);
+    });
+  }, [session?.data?.user?.id, userData]);
+
+  console.log("show me: ", userData?.data);
+
+  if (userData?.data === undefined) {
+    return <Spinner />;
   } else {
-    return router.push("/dashboard/main-screen");
+    if (userData?.data?.firstTimer) {
+      return router.push("/dashboard/first-screen");
+    } else {
+      return router.push("/dashboard/main-screen");
+    }
   }
 };
 
