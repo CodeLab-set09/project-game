@@ -1,3 +1,4 @@
+"use client";
 import { Spinner } from "@/app/static/Spinner";
 import { Button } from "@/components/ui/button";
 import { redirect } from "next/navigation";
@@ -16,7 +17,7 @@ const page = () => {
       headers: { "Content-Type": "Application/json" },
       body: JSON.stringify({ email }),
     }).then(() => {
-      redirect("/forget-password/verify-account");
+      redirect("/account-verify");
     });
   };
   return (
@@ -32,7 +33,7 @@ const page = () => {
           />
         </div>
         <Button disabled={toggle} type="submit" className="mt-5 py-6 ">
-          {toggle ? <Spinner /> : " Sign In"}
+          {toggle ? <Spinner /> : " Submit"}
         </Button>
       </form>
     </main>
