@@ -12,7 +12,6 @@
     font-size: 17px;
     text-align: center;
     font-weight: 400;
-
   }
 }
 .learn {
@@ -32,7 +31,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(69, 69, 69);
+  background-color: rgb(196, 194, 194);
   border-radius: 10px;
 }
 
