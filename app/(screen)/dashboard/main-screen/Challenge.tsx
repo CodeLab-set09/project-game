@@ -39,7 +39,7 @@ const Challenge = () => {
         </div>
       </div>
 
-      <div className="col-span-2 flex  flex-col gap-3 bg-gradient-to-r from-neutral-500 to-orange-300 md:rounded-r-md md:rounded-bl-none rounded-b-md p-3">
+      <div className="col-span-2 flex  flex-col gap-3 bg-neutral-700 text-white md:rounded-r-md md:rounded-bl-none rounded-b-md p-3">
         <div className="flex gap-2">
           <div className="px-2 py-1 bg-blue-200 rounded-full text-[#5b5b5b] font-semibold flex justify-center items-center text-[10px]">
             Level 1
@@ -92,13 +92,13 @@ const Challenge = () => {
             exercitationem dicta enim eligendi! Eos, molestias!
           </h1>
           <div className="flex gap-1 items-end">
-            <button className="px-2 py-1 text-[12px] bg-[#27282322] rounded-md font-light">
+            <button className="px-2 py-1 text-[12px] bg-[#0c0c0b22] rounded-md font-light">
               Fundamentals
             </button>
-            <button className="px-2 py-1 text-[12px] bg-[#27282322] rounded-md font-light">
+            <button className="px-2 py-1 text-[12px] bg-[#0c0c0b22] rounded-md font-light">
               Algorithms
             </button>
-            <button className="px-2 py-1 text-[12px] bg-[#27282322] rounded-md font-light">
+            <button className="px-2 py-1 text-[12px] bg-[#0c0c0b22] rounded-md font-light">
               Arrays
             </button>
           </div>
