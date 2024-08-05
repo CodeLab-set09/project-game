@@ -77,7 +77,6 @@ const page = () => {
       </Button>
     </main>
   )
-};
 
 export default page;
 

@@ -5,6 +5,7 @@ import { dbConfig } from "@/utils/dbConfig";
 import Provider from "./static/Provider";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "./static/ThemeProvider";
+import ReduxProvider from "./global/ReduxProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: "300" });
@@ -21,21 +22,23 @@ export default async function RootLayout({
 }>) {
   await dbConfig();
   return (
-    <html lang="en">
-      <body className={poppins.className}>
-        <Provider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+    <ReduxProvider>
+      <html lang="en">
+        <body className={poppins.className}>
+          <Provider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
 
-          <Toaster />
-        </Provider>
-      </body>
-    </html>
+            <Toaster />
+          </Provider>
+        </body>
+      </html>
+    </ReduxProvider>
   );
 }
