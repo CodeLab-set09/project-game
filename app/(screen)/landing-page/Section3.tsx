@@ -22,7 +22,7 @@ const Section3 = () => {
 
     ]
   return (
-     <main className='w-full min-h-[calc(180vh-70px)] md:h-[calc(70vh-70px)] flex justify-center md:justify-between gap-5 items-center px-16 flex-col md:flex-row py-4 md:py-0'>
+     <main className='w-full min-h-[calc(180vh-350px)] md:h-[calc(70vh-70px)] flex justify-center md:justify-between gap-5 items-center px-16 flex-col md:flex-row py-4 md:py-0'>
         {
             data.map((el) => (
                 <div key={el.id} className='w-[430px] md:w-[500px] min-h-[450px] md:h-[580px] flex flex-col border rounded-3xl p-6 gap-2 md:gap-4'>

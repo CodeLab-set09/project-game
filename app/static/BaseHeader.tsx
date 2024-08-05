@@ -68,6 +68,9 @@ const BaseHeader = () => {
             >
               {navs.map((el: any) => (
                 <Link
+                  onClick={() => {
+                    setShow(false);
+                  }}
                   key={el.id}
                   className="text-[14px] mb-5 font-normal text-gray-400 hover:text-white hover:shadow-sm"
                   href={el.url}
