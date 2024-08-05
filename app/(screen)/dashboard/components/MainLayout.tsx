@@ -9,6 +9,8 @@ interface iProps {
 
 const MainLayout = ({ children }: iProps) => {
   const toggled = useSelector((state: any) => state.toggle);
+
+  console.log("Toggled: ", toggled);
   return (
     <div
       className={`w-[calc(100vw-60px)] 

@@ -5,7 +5,7 @@ import { changeUserTimer } from "@/app/apiCalls/apiCall";
 import { useSession } from "next-auth/react";
 
 import React, { useEffect } from "react";
-import MainPage from "./MainPage";
+import MainPage from "../components/MainPage";
 
 const Page = () => {
   const session: any = useSession();
@@ -22,7 +22,6 @@ const Page = () => {
   return (
     <div>
       <MainPage />
-      <h1>main</h1>
     </div>
   );
 };
