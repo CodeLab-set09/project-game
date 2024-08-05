@@ -9,7 +9,7 @@ import {
 import { redirect, usePathname, useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
-
+// import { JSON_SECRET } from "@/utils/constant";
 import { toast } from "@/components/ui/use-toast";
 import Image from "next/image";
 
@@ -41,7 +41,7 @@ const page = ({ params }: any) => {
       })
       .then((res) => {
         if (res.status === 201) {
-          return router.push("/signin");
+          return router.push("/forget-password/chnagepassword");
         } else {
           toast({
             title: "Error with Verification Token",
@@ -81,7 +81,7 @@ const page = ({ params }: any) => {
           className="h-[280px] object-contain absolute right-0 -bottom-30 "
         />
       </div>{" "}
-      <main className="w-full h-screen flex justify-center items-center ">
+      <main className="w-full h-[500px] flex justify-center items-center ">
         <div className="min-h-[230px] w-[300px] md:w-[400px] flex flex-col rounded-md border items-center gap-5 p-4 ">
           <p className="font-semibold text-[30px]">Verify Token</p>
           <div className="w-full p-3 flex flex-col  gap-2 justify-center">

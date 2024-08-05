@@ -7,9 +7,10 @@ import Image from "next/image";
 
 const BaseHeader = () => {
   const navs = [
-    { id: 0, name: "Blog", url: "/landing-page/blog" },
-    { id: 1, name: "About", url: "/" },
-    { id: 2, name: "Directives", url: "/" },
+    { id: 0, name: "Home", url: "/landing-page" },
+    { id: 1, name: "Blog", url: "/landing-page/blog" },
+    { id: 2, name: "About", url: "/" },
+    { id: 3, name: "Directives", url: "/" },
   ];
   const [show, setShow] = useState(false);
   return (
@@ -70,6 +71,9 @@ const BaseHeader = () => {
                   key={el.id}
                   className="text-[14px] mb-5 font-normal text-gray-400 hover:text-white hover:shadow-sm"
                   href={el.url}
+                  onClick={() => {
+                    setShow(false);
+                  }}
                 >
                   {el.name}
                 </Link>
