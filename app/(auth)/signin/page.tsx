@@ -10,7 +10,6 @@ import Image from "next/image";
 import { useToast } from "@/components/ui/use-toast";
 import { Spinner } from "@/app/static/Spinner";
 import { signIn } from "next-auth/react";
-
 import bg from "@/public/assets/down.png";
 import left from "@/public/assets/left.png";
 import right from "@/public/assets/right.png";
@@ -20,12 +19,12 @@ const page = () => {
   const [toggle, setToggle] = useState<boolean>(false);
 
   const formAction = async (formData: FormData) => {
-    // "use server";
+    
     setToggle(true);
     const email = formData.get("email");
     const password = formData.get("password");
 
-    signIn("credentials", { email, password });
+    signIn("credentials", { email, password })
   };
   return (
     <div className="relative w-full">

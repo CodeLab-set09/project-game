@@ -49,8 +49,8 @@ const BaseFooter = () => {
         </div>
       </section>
 
-      <div className="flex items-center justify-between border-t border-neutral-400 py-10 mt-14">
-        <section className="flex flex-col  gap-10 items-center text-neutral-500">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between border-t border-neutral-400 py-10 mt-14">
+        <section className="flex flex-col mt-10 md:mt-0 md:flex-row  md:gap-10 items-center text-neutral-500">
           <div>@2024 CodelabSet09. All right reserved</div>
           <div>Powered by CodeLab</div>
         </section>
