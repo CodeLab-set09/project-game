@@ -11,13 +11,13 @@ const page = () => {
 
   const formAction = async (formData: FormData) => {
     setToggle(true);
-    const email = formData.get("password");
+    const email = formData.get("email");
     await fetch(url, {
       method: "PATCH",
       headers: { "Content-Type": "Application/json" },
       body: JSON.stringify({ email }),
     }).then(() => {
-      redirect("/account-verify");
+      redirect("/accountverify");
     });
   };
   return (

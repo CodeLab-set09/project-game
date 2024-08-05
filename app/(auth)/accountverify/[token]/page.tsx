@@ -40,7 +40,7 @@ const page = ({ params }: any) => {
         return await res.json();
       })
       .then((res) => {
-        if (res.status === 201) {
+        if (res.status === 200) {
           return router.push("/forget-password/chnagepassword");
         } else {
           toast({
@@ -114,7 +114,7 @@ const page = ({ params }: any) => {
               }}
               disabled={toggle}
             >
-              {toggle ? <Spinner /> : "Verify My Account"}
+              {toggle ? <Spinner /> : "Send"}
             </Button>
           </div>
         </div>
