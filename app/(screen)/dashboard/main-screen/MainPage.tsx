@@ -1,6 +1,6 @@
 import React from "react";
-import Challenge from "../components/Challenge";
-import Badge from "../components/Badge";
+import Challenge from "./Challenge";
+import Badge from "./Badge";
 
 const MainPage = () => {
   return (
