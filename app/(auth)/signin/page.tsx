@@ -108,8 +108,8 @@ const page = () => {
                 />
               </div>
               <Link
-                href="/forget-password/email"
-                className="text-end text-[12px] text-[#11192C] -mt-2 font-semibold italic"
+                href="/forget-password"
+                className="text-end  text-[12px] text-[#11192C] -mt-2 font-semibold italic"
               >
                 Forget Password
               </Link>
@@ -120,7 +120,10 @@ const page = () => {
 
               <p className="text-[12px] font-light text-center my-[5px]">
                 Don't have an Account?{" "}
-                <Link className="font-bold italic text-[14px]" href={"/signup"}>
+                <Link
+                  className="font-bold italic text-[14px] cursor-pointer"
+                  href={"/signup"}
+                >
                   Sign Up
                 </Link>
               </p>
