@@ -5,8 +5,11 @@ import { LIVE_URL } from "@/utils/constant";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
+import Challenge from "../components/Challenge";
+import Badge from "../components/Badge";
+import MainPage from "./MainPage";
 
-const page = () => {
+const Page = () => {
   const session: any = useSession();
   const id = session?.data?.user?.id;
 
@@ -18,7 +21,11 @@ const page = () => {
     }
   }, [id]);
 
-  return <div>This is the very first Screen</div>;
+  return (
+    <div>
+      <MainPage />
+    </div>
+  );
 };
 
-export default page;
+export default Page;
