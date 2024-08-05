@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { dbConfig } from "@/utils/dbConfig";
+import { Poppins } from "next/font/google";
+import SideBar from "./components/SideBar";
+import MainLayout from "./components/MainLayout";
+
+const poppins = Poppins({ subsets: ["latin"], weight: "300" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,15 +15,16 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  await dbConfig();
   return (
     <html lang="en">
-      <body>
-        <main className=" min-h-[100vh] p-2 w-full flex justify-center ">
-          <div className="w-full  lg:w-[1200px] ">
-            <div className="p-2 border rounded-md h-full">{children}</div>
-          </div>
-        </main>
+      <body className={`${poppins.className} flex gap-2`}>
+        <div className="fixed">
+          {/*  */}
+          <SideBar />
+        </div>
+        <div className="w-full flex justify-end">
+          <MainLayout children={children} />
+        </div>
       </body>
     </html>
   );
