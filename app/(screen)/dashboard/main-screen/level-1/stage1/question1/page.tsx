@@ -4,7 +4,6 @@ import QuestionScreen from "@/app/(screen)/dashboard/components/QuestionScreen";
 import React from "react";
 import data from "../../../../../../../data.json";
 import { usePathname } from "next/navigation";
-import { log } from "console";
 
 const page = () => {
   const level = usePathname();
@@ -16,6 +15,8 @@ const page = () => {
   const mainIndex = Number(nn.slice(nn.indexOf("on") + 2)) - 1;
 
   const val = data[mainIndex];
+
+  console.log("let's see Value: ", val);
 
   return (
     <main className="w-full  grid grid-cols-1 lg:grid-cols-7 h-full gap-2">
