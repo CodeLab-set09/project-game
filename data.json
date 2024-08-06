@@ -1,0 +1,59 @@
+[
+  {
+    "id": 0,
+    "instruction": "In the given example above, you'd have to write a code using JavaScript string method to remove the first 5 characters of the given string",
+    "answer": ".slice",
+    "output": "jam",
+    "example": "fn('codebook') // CODELAB",
+    "question": "Write a code to change the first 5 letters of the string ('Amazing Grace') to capital letters",
+    "tag": ["Fundamental", "String"],
+    "useCase": [
+      "Extracting substrings from a larger string.",
+      "Manipulating specific sections of a string for further processing."
+    ],
+    "url": "question2"
+  },
+  {
+    "id": 1,
+    "instruction": "Following the example given above, ",
+    "answer": "let word = '  CodeLab Set09   '; let b = word.trim()",
+    "example": "fn('codebook') // CODELAB",
+    "question": "Write a code to remove all white spaces from the start and end of the given string ('  CodeLab Set09   )",
+    "tag": ["Fundamental", "String"],
+    "useCase": [
+      "Cleaning up user input before processing or storing it.",
+      "Removing unnecessary whitespace for consistent formatting."
+    ],
+    "url": "question3"
+  },
+  {
+    "id": 2,
+    "instruction": "Following the example given above Replace all 'Dogs' with 'Cats' in the string:",
+    "answer": "pets.replaceAll('Dogs','Cats')",
+    "example": "fn('codebook') // CODELAB",
+    "question": " let pets = 'The Dogs are the best Dogs' ",
+    "tag": ["Fundamental", "String"],
+    "useCase": ["changing the user input to the right info"],
+    "url": "question4"
+  },
+  {
+    "id": 3,
+    "instruction": "Following the example given above Replace all 't' with 'h' in the string: ",
+    "answer": "hey.replaceAll('t','h')",
+    "example": "fn('codebook') // CODELAB",
+    "question": " let hey = 'tello mr tenrry'",
+    "tag": ["Fundamental", "String"],
+    "useCase": ["correcting the user error"],
+    "url": "question5"
+  },
+  {
+    "id": 4,
+    "instruction": "Following the example given above check if 'h' is included in the  the string",
+    "answer": "hey.include('h')",
+    "example": "fn('codebook') // CODELAB",
+    "question": " let hey = ''Hello world!''",
+    "tag": ["Fundamental", "String"],
+    "useCase": ["correcting the user error"],
+    "url": "question5"
+  }
+]

@@ -4,7 +4,13 @@ import React from "react";
 
 import { CopyBlock, dracula } from "react-code-blocks";
 
-const QuestionScreen = () => {
+const QuestionScreen = ({
+  level,
+  args,
+  instruction,
+  example,
+  usecase,
+}: any) => {
   return (
     <main>
       <div className="flex items-center h-[30px]">
@@ -25,18 +31,13 @@ const QuestionScreen = () => {
         </div>
 
         <div className="mt-10 bg-neutral-700 text-white text-[15px] p-2 rounded-md pt-5">
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Reprehenderit a cumque voluptates, id fugiat alias eaque ex itaque
-            ducimus impedit nobis eos, minus expedita. Corporis ipsa dignissimos
-            ab maiores odit.
-          </div>
+          <div>{instruction}</div>
 
           <p className="mt-5">Example: </p>
 
           <div className="mt-5 bg-[#282A36] min-h-[100px] rounded-md shadow-lg">
             <CopyBlock
-              text={`console.log("This is CodeBook")`}
+              text={example}
               language="text"
               showLineNumbers
               theme={dracula}
@@ -49,10 +50,7 @@ const QuestionScreen = () => {
           </div>
 
           <div className="mt-8 mb-3 text-[12px] tracking-[0.18rem] font-thin">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Reprehenderit a cumque voluptates, id fugiat alias eaque ex itaque
-            ducimus impedit nobis eos, minus expedita. Corporis ipsa dignissimos
-            ab maiores odit.
+            {usecase}
           </div>
         </div>
       </section>
