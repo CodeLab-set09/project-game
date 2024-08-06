@@ -60,9 +60,11 @@ const QuestionScreen = ({
       </div>
 
       <div className="flex">
-        <p className="cursor-pointer transition-all duration-300 hover:bg-slate-100 bg-slate-50 font-bold text-[12px] py-2 px-4">
-          Get Tutorials
-        </p>
+        <a href="https://www.youtube.com/@GhettoDev01" target="_blank">
+          <p className="cursor-pointer transition-all duration-300 hover:bg-slate-100 bg-slate-50 font-bold text-[12px] py-2 px-4">
+            Get Tutorials
+          </p>
+        </a>
       </div>
     </main>
   );
