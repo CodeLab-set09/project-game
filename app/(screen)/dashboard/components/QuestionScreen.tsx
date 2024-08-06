@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import React from "react";
 
 import { CopyBlock, dracula } from "react-code-blocks";
@@ -11,13 +12,19 @@ const QuestionScreen = ({
   example,
   usecase,
 }: any) => {
+  const stateStage = usePathname();
+  const mainLevel = stateStage.split("main-screen/")[1].split("/");
   return (
     <main>
-      <div className="flex items-center h-[30px]">
-        <p className="py-1 px-4 mt-2 text-[12px] font-bold rounded-full bg-orange-500 text-white">
-          Level: 1{" "}
-        </p>
-        <p className="font-bold ml-3 mt-2">String ends with?</p>
+      <div className=" items-center h-[30px]">
+        <div className="flex items-center gap-3">
+          {mainLevel?.map((el: any) => (
+            <p className="capitalize py-1 px-4 mt-2 text-[12px] font-bold rounded-full bg-orange-500 [&:nth-child(2)]:bg-purple-600 [&:nth-child(3)]:bg-red-600 text-white">
+              {el}{" "}
+            </p>
+          ))}
+        </div>
+        <p className="font-bold mt-2">String ends with?</p>
       </div>
 
       <section className="mt-10">
@@ -60,9 +67,11 @@ const QuestionScreen = ({
       </div>
 
       <div className="flex">
-        <p className="cursor-pointer transition-all duration-300 hover:bg-slate-100 bg-slate-50 font-bold text-[12px] py-2 px-4">
-          Get Tutorials
-        </p>
+        <a href="https://www.youtube.com/@GhettoDev01" target="_blank">
+          <p className="cursor-pointer transition-all duration-300 hover:bg-slate-100 bg-slate-50 font-bold text-[12px] py-2 px-4">
+            Get Tutorials
+          </p>
+        </a>
       </div>
     </main>
   );

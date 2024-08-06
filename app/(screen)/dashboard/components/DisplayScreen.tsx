@@ -17,6 +17,7 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
     editor.focus;
   };
   const [state, setState] = useState<string>();
+
   function handleEditorChange(value?: string) {
     setState(value!);
   }

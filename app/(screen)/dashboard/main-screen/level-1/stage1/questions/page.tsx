@@ -4,13 +4,14 @@ import QuestionScreen from "@/app/(screen)/dashboard/components/QuestionScreen";
 import React from "react";
 import data from "../../../../../../../data.json";
 import { usePathname } from "next/navigation";
-
-import { useSelector } from "react-redux";
+import { log } from "console";
+import { useDispatch, useSelector } from "react-redux";
+import { addIndex } from "@/app/global/redux";
 
 const page = () => {
-  const ind = useSelector((state: any) => state.index);
+  const index = useSelector((state: any) => state.index);
 
-  const val = data[ind];
+  const val = data[index];
 
   return (
     <main className="w-full  grid grid-cols-1 lg:grid-cols-7 h-full gap-2">
