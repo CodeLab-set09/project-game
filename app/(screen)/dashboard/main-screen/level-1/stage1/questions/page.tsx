@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addIndex } from "@/app/global/redux";
 
 const page = () => {
-  const index = useSelector((state: any) => state.index);
+  const index = useSelector((state: any)=> state.index);
 
   const val = data[index];
 
