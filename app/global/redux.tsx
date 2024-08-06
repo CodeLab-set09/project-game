@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   toggle: false,
+  index: 0,
 };
 
 const redux = createSlice({
@@ -11,9 +12,12 @@ const redux = createSlice({
     onToggled: (state: { toggle: boolean }) => {
       state.toggle = !state.toggle;
     },
+    addIndex: (state) => {
+      state.index = state.index + 1;
+    },
   },
 });
 
-export const { onToggled } = redux.actions;
+export const { onToggled, addIndex } = redux.actions;
 
 export default redux.reducer;
