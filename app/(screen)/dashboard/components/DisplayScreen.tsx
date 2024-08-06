@@ -5,8 +5,11 @@ import Editor from "@monaco-editor/react";
 import axios from "axios";
 import { FaSpinner } from "react-icons/fa6";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { addIndex } from "@/app/global/redux";
 
 const DisplayScreen = ({ redirect, answer, output }: any) => {
+  const dispatch = useDispatch();
   const ref: any = useRef(null);
 
   const mounted = (editor: any) => {
@@ -25,6 +28,14 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [disable, setDisable] = useState(false);
   console.log(disable);
+  const coded = async () => {
+    try {
+      dispatch(addIndex());
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const runCode = async () => {
     try {
@@ -118,17 +129,17 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
       </div>
 
       <div className="mt-10 font-bold text-[15px] flex items-center justify-end">
-        <Link href={redirect}>
-          <button
-            className={` border px-8 py-2 ${
-              disable ? "bg-red-500" : "bg-red-300"
-            } text-white rounded-md `}
-            onClick={runCode}
-            disabled={!disable}
-          >
-            NEXT
-          </button>
-        </Link>
+        <button
+          className={` border px-8 py-2 ${
+            disable ? "bg-red-500" : "bg-red-300"
+          } text-white rounded-md `}
+          onClick={() => {
+            coded();
+          }}
+          disabled={!disable}
+        >
+          NEXT
+        </button>
       </div>
     </div>
   );

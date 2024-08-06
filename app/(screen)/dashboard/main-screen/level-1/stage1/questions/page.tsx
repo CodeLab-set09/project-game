@@ -4,19 +4,14 @@ import QuestionScreen from "@/app/(screen)/dashboard/components/QuestionScreen";
 import React from "react";
 import data from "../../../../../../../data.json";
 import { usePathname } from "next/navigation";
+import { log } from "console";
+import { useDispatch, useSelector } from "react-redux";
+import { addIndex } from "@/app/global/redux";
 
 const page = () => {
-  const level = usePathname();
+  const index = useSelector((state: any) => state.index);
 
-  const index = level.indexOf("question");
-
-  const nn = level.slice(index);
-
-  const mainIndex = Number(nn.slice(nn.indexOf("on") + 2)) - 1;
-
-  const val = data[mainIndex];
-
-  console.log("let's see Value: ", val);
+  const val = data[index];
 
   return (
     <main className="w-full  grid grid-cols-1 lg:grid-cols-7 h-full gap-2">
