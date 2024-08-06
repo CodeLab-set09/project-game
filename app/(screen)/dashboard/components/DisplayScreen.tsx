@@ -4,19 +4,16 @@ import React, { useState, useRef } from "react";
 import Editor from "@monaco-editor/react";
 import axios from "axios";
 import { FaSpinner } from "react-icons/fa6";
+import Link from "next/link";
 
-const DisplayScreen = () => {
+const DisplayScreen = ({ redirect, answer, output }: any) => {
   const ref: any = useRef(null);
 
   const mounted = (editor: any) => {
     ref.current = editor;
     editor.focus;
   };
-  const [state, setState] = useState<string>(`const check = (a, b) => {
-        return a * b
-  }
-
-  check(5,8)`);
+  const [state, setState] = useState<string>();
   function handleEditorChange(value?: string) {
     setState(value!);
   }
@@ -25,6 +22,8 @@ const DisplayScreen = () => {
 
   const [code, setCode] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [disable, setDisable] = useState(false);
+  console.log(disable);
 
   const runCode = async () => {
     try {
@@ -48,6 +47,13 @@ const DisplayScreen = () => {
         })
         .then((res: any) => {
           setCode(res?.data?.run?.output?.split("\n")[0]);
+
+          if (
+            res?.data?.run?.output?.split("\n")[0] == output &&
+            state?.includes(answer)
+          ) {
+            setDisable(true);
+          }
           return res?.data?.run?.output?.split("\n");
         })
         .finally(() => {
@@ -111,15 +117,17 @@ const DisplayScreen = () => {
       </div>
 
       <div className="mt-10 font-bold text-[15px] flex items-center justify-end">
-        <button
-          className={` border px-8 py-2 ${
-            true ? "bg-red-500" : "bg-red-300"
-          } text-white rounded-md `}
-          onClick={runCode}
-          disabled={loading}
-        >
-          NEXT
-        </button>
+        <Link href={redirect}>
+          <button
+            className={` border px-8 py-2 ${
+              disable ? "bg-red-500" : "bg-red-300"
+            } text-white rounded-md `}
+            onClick={runCode}
+            disabled={!disable}
+          >
+            NEXT
+          </button>
+        </Link>
       </div>
     </div>
   );
