@@ -1,0 +1,30 @@
+[
+{
+        "id": 4,
+        "instruction": "In the given example below, you'd have to write a code using JavaScript string method to  remove the white space at the end of the string ",
+        "answer": ".trimEnd()",
+        "example": [
+          { "input": "farmer ", "output": "farmer" }
+        ],
+        "question":" let word = 'Hello world!  " ,
+        "tag": ["Fundamental", "String"],
+        "useCase": [
+            "Manipulating specific sections of a string for further processing.",
+            "Extracting substrings from a larger string."
+        ]
+},
+{
+        "id": 5,
+        "instruction": "In the given example below, you'd have to write a code using JavaScript string method to  remove the white space at the end of the string",
+        "answer": ".trimStart()",
+        "example": [
+          { "input": " teacher", "output": "teacher" }
+        ],
+        "question":"let word = ' Hello class!'",
+        "tag": ["Fundamental", "String"],
+        "useCase": [
+          "Extracting substrings from a larger string.",
+          "Manipulating specific sections of a string for further processing."
+        ]
+}
+]
