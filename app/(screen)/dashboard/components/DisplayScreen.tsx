@@ -16,7 +16,8 @@ const DisplayScreen = () => {
         return a * b
   }
 
-  check(5,8)`);
+  console.log(check(5,8))
+  `);
   function handleEditorChange(value?: string) {
     setState(value!);
   }
