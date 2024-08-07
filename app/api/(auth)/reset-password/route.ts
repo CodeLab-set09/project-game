@@ -21,7 +21,7 @@ export const PATCH = async (req: NextRequest) => {
         { new: true }
       );
 
-      resetPasswordEmail(forgetPassword);
+      await resetPasswordEmail(forgetPassword);
 
       return NextResponse.json({
         message: "password changed",
@@ -34,10 +34,10 @@ export const PATCH = async (req: NextRequest) => {
         status: 404,
       });
     }
-  } catch (error) {
+  } catch (error: any) {
     return NextResponse.json({
       message: "Error",
-      error: error,
+      error: error.message,
       status: 404,
     });
   }

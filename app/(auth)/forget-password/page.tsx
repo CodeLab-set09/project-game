@@ -1,34 +1,43 @@
-import React from "react";
-import Link from "next/link";
+"use client";
+import { Spinner } from "@/app/static/Spinner";
+import { Button } from "@/components/ui/button";
+import { redirect } from "next/navigation";
+import React, { useState } from "react";
+import { MdEmail } from "react-icons/md";
 
-const Page = () => {
+const page = () => {
+  const [toggle, setToggle] = useState<boolean>(false);
+  const url = "http://localhost:3000/api/reset-password";
+
+  const formAction = async (formData: FormData) => {
+    setToggle(true);
+    const email = formData.get("email");
+    await fetch(url, {
+      method: "PATCH",
+      headers: { "Content-Type": "Application/json" },
+      body: JSON.stringify({ email }),
+    }).then(() => {
+      redirect("/accountverify");
+    });
+  };
   return (
-    <main className="flex justify-center items-center h-[90vh]">
-      <div className="w-full h[calc(100vh-40px)] flex justify-center items-center">
-        <section className="w-[70%] md:w-[80%] lg:w-[500px] p-2 rounded-md min-h-[300px] border">
-          <p className="font-semibold uppercase text-center mt-10 pb-5 border-b">
-            Password recovery
-          </p>
-          <form>
-            <div className="flex flex-col mt-5">
-              <label className="font-semibold text-[12px] mb-1">Password</label>
-              <input
-                placeholder="Enter new password"
-                className="border rounded-md outline-none h-[45px] pl-2"
-                type="text"
-              />
-            </div>
-
-            <div className="text-center text-[12px] mt-3">
-              <Link href={"/signin"} className="italic font-semibold">
-                Sign in here
-              </Link>
-            </div>
-          </form>
-        </section>
-      </div>
+    <main>
+      <form action={formAction}>
+        <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md h-[45px]">
+          <MdEmail className="text-[20px] text-slate-600" />
+          <input
+            className="outline-none bg-inherit placeholder:text-[14px] w-full "
+            type="text"
+            placeholder="Email"
+            name="email"
+          />
+        </div>
+        <Button disabled={toggle} type="submit" className="mt-5 py-6 ">
+          {toggle ? <Spinner /> : " Submit"}
+        </Button>
+      </form>
     </main>
   );
 };
 
-export default Page;
+export default page;
