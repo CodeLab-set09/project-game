@@ -15,6 +15,7 @@ export default function Home() {
   const base = process.env.BASE as string;
   const formAction = async (formData: FormData) => {
     const question = formData.get("question");
+    const dQ = `<p>${question}</p>`;
     const answer = formData.get("answer");
     const output = formData.get("output");
     const example = formData.get("example");
@@ -28,7 +29,7 @@ export default function Home() {
     await fetch(`/api/add`, {
       method: "POST",
       body: JSON.stringify({
-        question,
+        question: dQ,
         answer,
         output,
         example,
