@@ -20,6 +20,7 @@ interface iData {
   output: string;
   example: string;
   question: string;
+  defaultcode: string;
   url: string;
   tag: string[];
   usecase: string[];
