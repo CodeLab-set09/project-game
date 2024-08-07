@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import { dbConfig, dbConfigII } from "@/utils/dbConfig";
+import { dbConfig } from "@/utils/dbConfig";
 import Provider from "./static/Provider";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "./static/ThemeProvider";

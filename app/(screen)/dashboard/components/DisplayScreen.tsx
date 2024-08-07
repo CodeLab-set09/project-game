@@ -1,6 +1,6 @@
 "use client";
 import { FaFileCode } from "react-icons/fa6";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Editor from "@monaco-editor/react";
 import axios from "axios";
 import { FaSpinner } from "react-icons/fa6";
@@ -27,7 +27,7 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
   const [code, setCode] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [disable, setDisable] = useState(false);
-  console.log(disable);
+
   const coded = async () => {
     try {
       dispatch(addIndex());
@@ -75,6 +75,39 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
       console.log("error");
     }
   };
+
+  let userInputValue: string;
+
+  const resultCheck = (a: string) => {
+    return a?.split(".")[1]?.split("(")[0];
+  };
+
+  const checkResult = (mainInput: Array<string>, userInputValue: string) => {
+    return mainInput?.some((el) => {
+      return el === userInputValue;
+    });
+  };
+
+  userInputValue = resultCheck(state!)!;
+
+  useEffect(() => {
+    resultCheck(state!);
+  }, [userInputValue!]);
+
+  checkResult(answer, `.${userInputValue}`);
+
+  const testFn = (a: string, b: string) => {
+    let c = a.split("").sort().join("");
+    let d = b.split("").sort().join("");
+
+    if (c === d) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  console.log(testFn("XYZ", "YZW"));
 
   return (
     <div>
