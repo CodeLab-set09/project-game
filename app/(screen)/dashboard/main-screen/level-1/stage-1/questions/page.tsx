@@ -1,28 +1,15 @@
 "use client";
 import DisplayScreen from "@/app/(screen)/dashboard/components/DisplayScreen";
 import QuestionScreen from "@/app/(screen)/dashboard/components/QuestionScreen";
-import React, { useEffect } from "react";
+import React from "react";
 import data from "../../../../../../../data.json";
 import { usePathname } from "next/navigation";
 import { log } from "console";
 import { useDispatch, useSelector } from "react-redux";
 import { addIndex } from "@/app/global/redux";
-// import { fet } from "../fetch";
 
 const page = () => {
   const index = useSelector((state: any) => state.index);
-  const getData = async () => {
-    const url = "https://js-add.vercel.app/api/add";
-    const res = await fetch(url, {
-      headers: { "Access-Control-Allow-Origin": "*" },
-      cache: "no-cache",
-      mode: "no-cors",
-    });
-    console.log(res);
-  };
-  useEffect(() => {
-    getData();
-  }, []);
 
   const val = data[index];
 
