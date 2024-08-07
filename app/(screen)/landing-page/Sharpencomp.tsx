@@ -16,15 +16,12 @@ const Sharpencomp = () => {
               className="w-40  object-contain"
             />
             <div className="mt-8 px-1">
-              <p className=" font-bold text-[30px]">
-                Sharpen Your Coding Skills
-              </p>
+              <p className=" font-bold text-[30px]">Coding challenges</p>
               <p className="font-extralight text-[13px] mt-3 leading-6">
-                Challenge yourself on small coding exercises called "kata".{" "}
-                <br />
-                Each kata is crafted by the community to help you strengthen{" "}
-                <br />
-                different coding techniques.
+                A graphic illustration of a coding battlefield, with code
+                snippets and <br />
+                programming language represented as weapons and armor. <br />
+                Complete coding tasks and exercise to improve your coding skill.
               </p>
             </div>
             <div className="mb-8 mt-5 md:mt-12 px-1">
