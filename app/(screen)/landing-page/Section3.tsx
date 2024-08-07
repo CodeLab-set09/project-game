@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import { FaLaptopCode, FaThumbsUp } from "react-icons/fa6";
 import codeimage from "../../../public/codeimage.jpeg";
-import badge from "../../../public/badge.jpeg";
 
 const Section3 = () => {
   const data = [
@@ -18,7 +17,7 @@ const Section3 = () => {
       icon: <FaLaptopCode className="text-[20px] md:text-[40px]" />,
       title: "EARN YOR BADGE",
       desc: "Get badge by showcasing your coding skills and have a fun and competitive coding environment all in one place.",
-      image: badge,
+      image: codeimage,
     },
   ];
   return (
