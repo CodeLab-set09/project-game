@@ -19,6 +19,7 @@ export default function Home() {
     const output = formData.get("output");
     const example = formData.get("example");
     const instruction = formData.get("instruction");
+    const defaultcode = formData.get("default");
     const url = formData.get("url");
     const tag = formData.get("tag");
     const rTag = tag?.toString().split(",");
@@ -32,7 +33,7 @@ export default function Home() {
         output,
         example,
         instruction,
-
+        defaultcode,
         tag: rTag,
         usecase: rUseCase,
       }),
@@ -91,6 +92,15 @@ export default function Home() {
               className="outline-none border p-1 rounded-sm min-h-[100px]"
               placeholder="Enter the Example here"
               name="instruction"
+            ></textarea>
+          </div>
+          <div className="flex flex-col gap-1">
+            <label className="text-[12px] font-semibold">Default Value</label>
+            <textarea
+              required
+              className="outline-none border p-1 rounded-sm min-h-[100px]"
+              placeholder="Enter the Defaut Value here"
+              name="default"
             ></textarea>
           </div>
 
