@@ -1,20 +1,21 @@
 "use client";
 import DisplayScreen from "@/app/(screen)/dashboard/components/DisplayScreen";
 import QuestionScreen from "@/app/(screen)/dashboard/components/QuestionScreen";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import data from "../../../../../../../data.json";
-import { useSelector } from "react-redux";
+import { usePathname } from "next/navigation";
+import { log } from "console";
+import { useDispatch, useSelector } from "react-redux";
+import { addIndex } from "@/app/global/redux";
 
 const page = () => {
-  const index = useSelector((state: any) => state.index);
-  const [state, setState] = useState<Array<{}>>([]);
+  const index = useSelector((state: any)=> state.index);
 
   const val = data[index];
   return (
     <main className="w-full  grid grid-cols-1 lg:grid-cols-7 h-full gap-2">
       <section className="order-2 lg:order-1 col-span-1 lg:col-span-3 border rounded-md p-2 ">
         <QuestionScreen
-          tags={val?.tag}
           instruction={val?.instruction}
           example={val?.example}
           usecase={val?.useCase}
