@@ -26,7 +26,8 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
 
   const [code, setCode] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const [disable, setDisable] = useState(false);
+  const [confirmResult, setConfirmResult] = useState(false);
+  const [confirmResultLoader, setConfirmResultLoader] = useState(false);
 
   const coded = async () => {
     try {
@@ -36,6 +37,26 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
       console.log(error);
     }
   };
+
+  let userInputValue: string;
+
+  const resultCheck = (a: string) => {
+    return a?.split(".")[1]?.split("(")[0];
+  };
+
+  const checkResult = (mainInput: Array<string>, userInputValue: string) => {
+    return mainInput?.some((el) => {
+      return el === userInputValue;
+    });
+  };
+
+  userInputValue = resultCheck(state!)!;
+
+  useEffect(() => {
+    resultCheck(state!);
+  }, [userInputValue!]);
+
+  checkResult(answer, `.${userInputValue}`);
 
   const runCode = async () => {
     try {
@@ -64,7 +85,9 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
             res?.data?.run?.output?.split("\n")[0] == output &&
             state?.includes(answer)
           ) {
-            setDisable(true);
+            setConfirmResult(true);
+            checkResult(answer, `.${userInputValue}`);
+            console.log("show: ", checkResult(answer, `.${userInputValue}`));
           }
           return res?.data?.run?.output?.split("\n");
         })
@@ -75,26 +98,6 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
       console.log("error");
     }
   };
-
-  let userInputValue: string;
-
-  const resultCheck = (a: string) => {
-    return a?.split(".")[1]?.split("(")[0];
-  };
-
-  const checkResult = (mainInput: Array<string>, userInputValue: string) => {
-    return mainInput?.some((el) => {
-      return el === userInputValue;
-    });
-  };
-
-  userInputValue = resultCheck(state!)!;
-
-  useEffect(() => {
-    resultCheck(state!);
-  }, [userInputValue!]);
-
-  checkResult(answer, `.${userInputValue}`);
 
   const testFn = (a: string, b: string) => {
     let c = a.split("").sort().join("");
@@ -107,7 +110,8 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
     }
   };
 
-  console.log(testFn("XYZ", "YZW"));
+  // console.log(testFn("XYZ", "YZW"));
+  // console.log(checkResult(answer, `.${userInputValue}`));
 
   return (
     <div>
@@ -164,12 +168,12 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
       <div className="mt-10 font-bold text-[15px] flex items-center justify-end">
         <button
           className={` border px-8 py-2 ${
-            disable ? "bg-red-500" : "bg-red-300"
+            confirmResult ? "bg-red-500" : "bg-red-300"
           } text-white rounded-md `}
           onClick={() => {
             coded();
           }}
-          disabled={!disable}
+          disabled={!confirmResult}
         >
           NEXT
         </button>
