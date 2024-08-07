@@ -47,7 +47,7 @@ export default function Home() {
       <div className="flex justify-center items-center  p-4 ">
         <form
           action={formAction}
-          className="border p-4 rounded-md flex flex-col gap-4 w-[500px] mt-5 "
+          className="border p-4 rounded-md flex flex-col gap-4 w-[600px] mt-5 "
         >
           <div className="flex flex-col gap-1">
             <label className="text-[12px] font-semibold">Question</label>
