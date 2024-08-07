@@ -2,7 +2,7 @@
   {
     "id": 0,
     "instruction": "In the given example above, you'd have to write a code using JavaScript string method to remove the first 5 characters of the given string",
-    "answer": ".toUpperCase()",
+    "answer": [".toUpperCase", ".toLowerCase"],
     "output": "JAMES",
     "example": "fn('codebook') // CODELAB",
     "question": "Write a code to change the first 5 letters of the string ('Amazing Grace') to capital letters",
@@ -16,7 +16,7 @@
   {
     "id": 1,
     "instruction": "Following the example given above, ",
-    "answer": ".toUpperCase()",
+    "answer": [".toUpperCase()"],
     "output": "JAMES",
     "example": "fn('codebook') // CODELAB",
     "question": "Write a code to remove all white spaces from the start and end of the given string ('  CodeLab Set09   )",
@@ -30,7 +30,7 @@
   {
     "id": 2,
     "instruction": "Following the example given above Replace all 'Dogs' with 'Cats' in the string:",
-    "answer": ".toUpperCase()",
+    "answer": [".toUpperCase()"],
     "output": "JAMES",
     "example": "fn('codebook') // CODELAB",
     "question": " let pets = 'The Dogs are the best Dogs' ",
@@ -41,7 +41,7 @@
   {
     "id": 3,
     "instruction": "Following the example given above Replace all 't' with 'h' in the string: ",
-    "answer": ".toUpperCase()",
+    "answer": [".toUpperCase()"],
     "output": "JAMES",
     "example": "fn('codebook') // CODELAB",
     "question": " let hey = 'tello mr tenrry'",
@@ -52,7 +52,7 @@
   {
     "id": 4,
     "instruction": "Following the example given above check if 'h' is included in the  the string",
-    "answer": ".toUpperCase()",
+    "answer": [".toUpperCase()"],
     "output": "JAMES",
     "example": "fn('codebook') // CODELAB",
     "question": " let hey = ''Hello world!''",

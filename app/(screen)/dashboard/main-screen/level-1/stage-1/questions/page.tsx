@@ -10,11 +10,11 @@ const page = () => {
   const [state, setState] = useState<Array<{}>>([]);
 
   const val = data[index];
-
   return (
     <main className="w-full  grid grid-cols-1 lg:grid-cols-7 h-full gap-2">
       <section className="order-2 lg:order-1 col-span-1 lg:col-span-3 border rounded-md p-2 ">
         <QuestionScreen
+          tags={val?.tag}
           instruction={val?.instruction}
           example={val?.example}
           usecase={val?.useCase}

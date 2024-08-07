@@ -2,18 +2,21 @@
 
 import { usePathname } from "next/navigation";
 import React from "react";
-
 import { CopyBlock, dracula } from "react-code-blocks";
 
 const QuestionScreen = ({
   level,
   args,
+  tags,
   instruction,
   example,
   usecase,
 }: any) => {
   const stateStage = usePathname();
   const mainLevel = stateStage.split("main-screen/")[1].split("/");
+
+  console.log("tags", tags);
+
   return (
     <main>
       <div className=" items-center h-[30px]">
@@ -50,6 +53,19 @@ const QuestionScreen = ({
               theme={dracula}
               //   codeBlock
             />
+          </div>
+
+          <div className="flex">
+            <p className="gap-2 flex flex-wrap text-[12px] mt-2  ">
+              {tags?.map((el: string, i: number) => (
+                <div
+                  key={i}
+                  className="px-4 py-1 bg-neutral-600 rounded-[2px] opacity-50"
+                >
+                  {el.trim()}
+                </div>
+              ))}
+            </p>
           </div>
 
           <div className="flex">
