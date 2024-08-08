@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, CSSProperties } from "react";
+import { useState, CSSProperties, useRef } from "react";
 import BeatLoader from "react-spinners/BeatLoader";
 
 const override: CSSProperties = {
@@ -10,6 +10,7 @@ const override: CSSProperties = {
 };
 
 export default function Home() {
+  const ref: any = useRef(null);
   const [loading, setLoading] = useState(false);
   const base = process.env.BASE as string;
 
@@ -46,15 +47,22 @@ export default function Home() {
         // window.location.reload();
       })
       .then((res) => {
+        ref.current.reset();
         console.log(res);
         setLoading(false);
       });
   };
 
   return (
-    <main className="p-5">
+    <main className="p-5 flex w-full flex-col items-center">
+      <h1 className="mt-[60px] max-w-[600px] text-center px-2 font-semibold text-[14px] tracking-wider uppercase">
+        You are about to enter a new Question to the JS entry Data... <br />
+        please make sure that your entry has been closely observed and corrected
+        should in case of any error!
+      </h1>
       <div className="flex justify-center items-center  p-4 ">
         <form
+          ref={ref}
           action={formAction}
           className="border p-4 rounded-md flex flex-col gap-4 w-[600px] mt-5 "
         >
@@ -62,7 +70,7 @@ export default function Home() {
             <label className="text-[12px] font-semibold">Question</label>
             <textarea
               required
-              className="outline-none border p-1 rounded-sm min-h-[100px]"
+              className="outline-none resize-none border p-1 rounded-sm min-h-[100px]"
               placeholder="Enter the Example here"
               name="question"
             ></textarea>
@@ -71,7 +79,7 @@ export default function Home() {
             <label className="text-[12px] font-semibold">Answer</label>
             <textarea
               required
-              className="outline-none border p-1 rounded-sm min-h-[100px]"
+              className="outline-none resize-none border p-1 rounded-sm min-h-[100px]"
               placeholder="Enter the Example here"
               name="answer"
             ></textarea>
@@ -80,7 +88,7 @@ export default function Home() {
             <label className="text-[12px] font-semibold">Example</label>
             <textarea
               required
-              className="outline-none border p-1 rounded-sm min-h-[100px]"
+              className="outline-none resize-none border p-1 rounded-sm min-h-[100px]"
               placeholder="Enter the Example here"
               name="example"
             ></textarea>
@@ -89,7 +97,7 @@ export default function Home() {
             <label className="text-[12px] font-semibold">Output</label>
             <textarea
               required
-              className="outline-none border p-1 rounded-sm min-h-[100px]"
+              className="outline-none resize-none border p-1 rounded-sm min-h-[100px]"
               placeholder="Enter the Example here"
               name="output"
             ></textarea>
@@ -98,7 +106,7 @@ export default function Home() {
             <label className="text-[12px] font-semibold">Instruction</label>
             <textarea
               required
-              className="outline-none border p-1 rounded-sm min-h-[100px]"
+              className="outline-none resize-none border p-1 rounded-sm min-h-[100px]"
               placeholder="Enter the Example here"
               name="instruction"
             ></textarea>
@@ -107,7 +115,7 @@ export default function Home() {
             <label className="text-[12px] font-semibold">Default Value</label>
             <textarea
               required
-              className="outline-none border p-1 rounded-sm min-h-[100px]"
+              className="outline-none resize-none border p-1 rounded-sm min-h-[100px]"
               placeholder="Enter the Defaut Value here"
               name="default"
             ></textarea>
@@ -119,7 +127,7 @@ export default function Home() {
             </label>
             <input
               required
-              className="outline-none border p-1 rounded-sm"
+              className="outline-none h-[45px] border p-1 rounded-sm"
               placeholder="Enter the Tags here"
               type="text"
               name="tag"
@@ -131,7 +139,7 @@ export default function Home() {
             </label>
             <input
               required
-              className="outline-none border p-1 rounded-sm"
+              className="outline-none h-[45px] border p-1 rounded-sm"
               placeholder="Enter the UseCase here"
               type="text"
               name="usecase"
@@ -141,7 +149,7 @@ export default function Home() {
           <button
             type="submit"
             onClick={() => setLoading(true)}
-            className="p-1 bg-green-900 text-white rounded-md mt-4 "
+            className="p-1 bg-blue-950 py-3 text-white rounded-md font-bold mt-4 "
           >
             {loading ? (
               <BeatLoader
@@ -153,7 +161,7 @@ export default function Home() {
                 data-testid="loader"
               />
             ) : (
-              " Submit"
+              " Add Entry"
             )}{" "}
           </button>
         </form>
