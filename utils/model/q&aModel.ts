@@ -8,6 +8,7 @@ const questionModel = new Schema<iDataData>(
     output: { type: String, required: true },
     example: { type: String, required: true },
     question: { type: String, required: true },
+    defaultcode: { type: String, required: true },
     tag: { type: [], required: true },
     usecase: { type: [], required: true },
   },
