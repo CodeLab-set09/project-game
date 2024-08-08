@@ -41,7 +41,7 @@ const page = ({ params }: any) => {
       })
       .then((res) => {
         if (res.status === 200) {
-          return router.push("/forget-password/chnagepassword");
+          return router.push("/forget-password/reset-password");
         } else {
           toast({
             title: "Error with Verification Token",

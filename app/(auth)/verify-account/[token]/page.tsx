@@ -83,13 +83,14 @@ const page = ({ params }: any) => {
       </div>{" "}
       <main className="w-full h-screen flex justify-center items-center ">
         <div className="min-h-[230px] w-[300px] md:w-[400px] flex flex-col rounded-md border items-center gap-5 p-4 ">
-          <p className="font-semibold text-[30px]">Verify Token</p>
+          <p className="font-bold text-[30px] uppercase ">Verify Token</p>
           <div className="w-full p-3 flex flex-col  gap-2 justify-center">
-            <p className="font-semibold text-[16px]">Input token</p>
+            <p className="font-semibold text-[16px] ">Input token</p>
             <InputOTP
               maxLength={6}
               value={state}
               onChange={(value: any) => setState(value)}
+              className="w-full"
             >
               <InputOTPGroup className="w-[50px] md:w-[100px]">
                 <InputOTPSlot index={0} />
@@ -108,7 +109,7 @@ const page = ({ params }: any) => {
             </InputOTP>
 
             <Button
-              className="w-[200px] font-semibold h-[50px] rounded-md text-white mt-4 "
+              className="w-full font-semibold h-[50px] rounded-md text-white mt-4 "
               onClick={() => {
                 verifyAccount();
               }}
