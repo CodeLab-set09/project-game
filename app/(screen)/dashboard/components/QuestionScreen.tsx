@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
 
 const QuestionScreen = ({
@@ -15,8 +15,16 @@ const QuestionScreen = ({
   const stateStage = usePathname();
   const mainLevel = stateStage.split("main-screen/")[1].split("/");
 
-  console.log("tags", tags);
+  const [loading, setLoading] = useState<boolean>(true);
 
+  useEffect(() => {
+    if (tags?.length === 0) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [loading]);
+  const choose = Math.floor(Math.random() * usecase?.length);
   return (
     <main>
       <div className=" items-center h-[30px]">
@@ -41,10 +49,17 @@ const QuestionScreen = ({
         </div>
 
         <div className="mt-10 bg-neutral-700 text-white text-[15px] p-2 rounded-md pt-5">
-          <div>{instruction}</div>
-
+          <div>
+            {loading ? (
+              <div>
+                <div className="w-[100%] h-[10px] bg-slate-400 animate-pulse mt-1 mb-2" />
+                <div className="w-[60%] h-[10px] bg-slate-400 animate-pulse" />
+              </div>
+            ) : (
+              <div dangerouslySetInnerHTML={{ __html: instruction }} />
+            )}
+          </div>
           <p className="mt-5">Example: </p>
-
           <div className="mt-5 bg-[#282A36] min-h-[100px] rounded-md shadow-lg">
             <CopyBlock
               text={example}
@@ -67,13 +82,11 @@ const QuestionScreen = ({
               ))}
             </p>
           </div>
-
           <div className="flex">
             <p className="mt-6 border-b pb-1">Use Cases:</p>
           </div>
-
           <div className="mt-8 mb-3 text-[12px] tracking-[0.18rem] font-thin">
-            {usecase}
+            {usecase && usecase[choose ? choose : 0]}
           </div>
         </div>
       </section>
