@@ -4,6 +4,7 @@ const initialState = {
   toggle: true,
   userID: "" || null,
   index: 0,
+  question: [],
 };
 
 const redux = createSlice({
@@ -16,6 +17,17 @@ const redux = createSlice({
     addIndex: (state) => {
       state.index = state.index + 1;
     },
+    questionData: (
+      state: {
+        toggle: boolean;
+        userID: null;
+        index: number;
+        question: never[];
+      },
+      { payload }
+    ) => {
+      state.question = payload;
+    },
     userData: (state, { payload }) => {
       state.userID = payload;
     },
@@ -25,6 +37,7 @@ const redux = createSlice({
   },
 });
 
-export const { onToggled, addIndex, userDataOff, userData } = redux.actions;
+export const { questionData, onToggled, addIndex, userDataOff, userData } =
+  redux.actions;
 
 export default redux.reducer;

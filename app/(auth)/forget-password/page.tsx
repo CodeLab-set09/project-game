@@ -46,7 +46,7 @@ const page = () => {
     //   clearTimeout(timer);
     // }, 5000);
 
-    // console.log(toggle);
+    console.log(toggle);
   };
 
   return (
@@ -119,12 +119,12 @@ const page = () => {
               >
                 I think i now Remember!
               </Link>
-
-              <Button disabled={toggle} type="submit" className="mt-5 py-6 ">
-                {toggle ? <Spinner /> : "Restrive Password"}
-              </Button>
             </div>
           </div>
+
+          <Button disabled={toggle} type="submit" className="w-full mt-5 py-6 ">
+            {toggle ? <Spinner /> : "Restrive Password"}
+          </Button>
         </form>
       </div>
     </div>

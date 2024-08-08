@@ -45,7 +45,7 @@ const page = () => {
     if (userData?.data?.firstTimer) {
       return router.push("/dashboard/first-screen");
     } else {
-      return router.push("/dashboard/main-screen");
+      return router.push("/dashboard/javascript");
     }
   }
 };

@@ -28,22 +28,12 @@ export const confirmResultFn = (a: Array<string>, b: Array<string>) => {
   return d?.every((el) => c?.includes(el));
 };
 
-// let userInputValue: string;
+export const checkQuestionAnswer = (a: string, b: Array<string>): boolean => {
+  let c = b.map((el) => {
+    return a.includes(el);
+  });
 
-// const resultCheck = (a: string) => {
-//   return a?.split(".")[1]?.split("(")[0];
-// };
+  console.log(c);
 
-// const checkResult = (mainInput: Array<string>, userInputValue: string) => {
-//   return mainInput?.some((el) => {
-//     return el === userInputValue;
-//   });
-// };
-
-//   userInputValue = resultCheck(state!)!;
-
-//   useEffect(() => {
-//     resultCheck(state!);
-//   }, [userInputValue!]);
-
-//   checkResult(answer, `.${userInputValue}`);
+  return c.includes(true);
+};
