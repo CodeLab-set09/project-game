@@ -19,7 +19,7 @@ export const POST = async (req: NextRequest) => {
     } = await req.json();
     const getD = await myQModel.create({
       instruction,
-      mainAnswer,
+      result: mainAnswer.split(","),
       output,
       example,
       question,

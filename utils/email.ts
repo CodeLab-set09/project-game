@@ -201,7 +201,7 @@ export const resetPasswordEmail = async (user: any) => {
 
     const token = jwt.sign({ id: user?._id }, JSON_SECRET, { expiresIn: "2d" });
 
-    const url = `${LIVE_URL}/verify-account/${token}`;
+    const url = `${LIVE_URL}/account-reset-verify/${token}`;
 
     const mailOptions = {
       from: "Gamer🔥🎮🔥 <ghettodeveloper@gmail.com>",

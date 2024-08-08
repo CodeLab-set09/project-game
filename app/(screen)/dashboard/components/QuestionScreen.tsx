@@ -4,16 +4,9 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
 
-const QuestionScreen = ({
-  level,
-  args,
-  tags,
-  instruction,
-  example,
-  usecase,
-}: any) => {
+const QuestionScreen = ({ tags, instruction, example, usecase }: any) => {
   const stateStage = usePathname();
-  const mainLevel = stateStage.split("main-screen/")[1].split("/");
+  const mainLevel = stateStage?.split("main-screen/")[1]?.split("/");
 
   const [loading, setLoading] = useState<boolean>(true);
 

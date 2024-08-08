@@ -4,6 +4,7 @@ import { changeUserTimer } from "@/app/apiCalls/apiCall";
 import { Button } from "@/components/ui/button";
 import { LIVE_URL } from "@/utils/constant";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { FaCss3Alt, FaHtml5 } from "react-icons/fa6";
@@ -15,9 +16,7 @@ const page = () => {
 
   useEffect(() => {
     if (id) {
-      changeUserTimer(id).then((res) => {
-        console.log("res: ", res);
-      });
+      changeUserTimer(id).then((res) => {});
     }
   }, [id]);
 
@@ -26,16 +25,19 @@ const page = () => {
       id: 1,
       icon: <FaHtml5 />,
       text: "HTML",
+      url: "/dashboard/main-screen/level-1/stage-1/questions",
     },
     {
       id: 2,
       icon: <FaCss3Alt />,
       text: "CSS",
+      url: "/dashboard/main-screen/level-1/stage-1/questions",
     },
     {
       id: 3,
       icon: <SiJavascript />,
       text: "JAVASCRIPT",
+      url: "/dashboard/main-screen/level-1/stage-1/questions",
     },
   ];
 
@@ -75,17 +77,16 @@ const page = () => {
         </p>
         <div className="flex gap-5">
           {data.map((el) => (
-            <div
-              key={el.id}
-              className="flex justify-center items-center flex-col gap-2 md:w-[120px] w-[100px] h-[90px] md:h-[110px] bg-slate-900"
-            >
-              <div className="text-[30px] md:text-[50px] text-white">
-                {el.icon}
+            <Link key={el.id} href={`${el.url}`}>
+              <div className="flex justify-center items-center flex-col gap-2 md:w-[120px] w-[100px] h-[90px] md:h-[110px] bg-slate-900">
+                <div className="text-[30px] md:text-[50px] text-white">
+                  {el.icon}
+                </div>
+                <p className="text-white text-[12px] md:text-[16px] ">
+                  {el.text}
+                </p>
               </div>
-              <p className="text-white text-[12px] md:text-[16px] ">
-                {el.text}
-              </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

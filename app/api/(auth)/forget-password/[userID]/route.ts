@@ -1,6 +1,7 @@
 import { dbConfig } from "@/utils/dbConfig";
 import userModel from "@/utils/model/userModel";
 import { NextRequest, NextResponse } from "next/server";
+import bcrypt from "bcrypt";
 
 export const PATCH = async (req: NextRequest, { params }: any) => {
   try {
@@ -8,20 +9,26 @@ export const PATCH = async (req: NextRequest, { params }: any) => {
 
     const { userID } = params;
 
-    const { verifyToken } = await req.json();
+    const { password } = await req.json();
 
     const user = await userModel.findById(userID);
 
     if (user) {
-      if (verifyToken === user.verifyToken) {
-        user.verify = true;
-        user.verifyToken = null;
+      if (user?.verifyToken !== null && user.verify) {
+        const salt = await bcrypt.genSalt(10);
+        const hashed = await bcrypt.hash(password, salt);
 
-        await user.save();
+        const changePassword = await userModel.findByIdAndUpdate(
+          userID,
+          {
+            password: hashed,
+          },
+          { new: true }
+        );
         return NextResponse.json({
           status: 201,
-          message: "Account verified successfully",
-          data: user,
+          message: "Account password changed successfully",
+          data: changePassword,
         });
       } else {
         return NextResponse.json({

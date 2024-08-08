@@ -2,17 +2,22 @@
 import DisplayScreen from "@/app/(screen)/dashboard/components/DisplayScreen";
 import QuestionScreen from "@/app/(screen)/dashboard/components/QuestionScreen";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getJSQuestions } from "@/app/apiCalls/apiCall";
+import { questionData } from "@/app/global/redux";
+import { usePathname } from "next/navigation";
 
 const page = () => {
+  const pathName = usePathname();
+
   const index = useSelector((state: any) => state.index);
-  const [data, setData] = useState<any>([]);
+  const data = useSelector((state: any) => state.question);
+  const dispatch = useDispatch();
   const val = data[index];
 
   useEffect(() => {
     getJSQuestions().then((res) => {
-      setData(res);
+      dispatch(questionData(res));
     });
   }, []);
 
@@ -31,7 +36,7 @@ const page = () => {
       <section className="order-1 lg:order-2 col-span-1 lg:col-span-4 border p-2 rounded-md">
         <DisplayScreen
           redirect={val?.url}
-          answer={val?.mainAnswer}
+          result={val?.result}
           output={val?.output}
           defaultcode={val?.defaultcode}
           val={val}

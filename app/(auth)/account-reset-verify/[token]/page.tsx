@@ -41,7 +41,7 @@ const page = ({ params }: any) => {
       })
       .then((res) => {
         if (res.status === 200) {
-          return router.push("/forget-password/chnagepassword");
+          return router.push("/forget-password/reset-password");
         } else {
           toast({
             title: "Error with Verification Token",
@@ -81,15 +81,18 @@ const page = ({ params }: any) => {
           className="h-[280px] object-contain absolute right-0 -bottom-30 "
         />
       </div>{" "}
-      <main className="w-full h-[500px] flex justify-center items-center ">
+      <main className="w-full h-screen flex justify-center items-center ">
         <div className="min-h-[230px] w-[300px] md:w-[400px] flex flex-col rounded-md border items-center gap-5 p-4 ">
-          <p className="font-semibold text-[30px]">Verify Token</p>
-          <div className="w-full p-3 flex flex-col  gap-2 justify-center">
-            <p className="font-semibold text-[16px]">Input token</p>
+          <p className="font-extrabold text-[25px] text-center uppercase ">
+            Verify Token for Password Reset
+          </p>
+          <div className="w-full -mt-2 p-3 flex flex-col gap-2 justify-center">
+            <p className="font-semibold text-[16px] ">Input token</p>
             <InputOTP
               maxLength={6}
               value={state}
               onChange={(value: any) => setState(value)}
+              className="w-full"
             >
               <InputOTPGroup className="w-[50px] md:w-[100px]">
                 <InputOTPSlot index={0} />
@@ -108,13 +111,13 @@ const page = ({ params }: any) => {
             </InputOTP>
 
             <Button
-              className="w-[200px] font-semibold h-[50px] rounded-md text-white mt-4 "
+              className="w-full font-semibold h-[50px] rounded-md text-white mt-4 "
               onClick={() => {
                 verifyAccount();
               }}
               disabled={toggle}
             >
-              {toggle ? <Spinner /> : "Send"}
+              {toggle ? <Spinner /> : "Confirm for Password Reset"}
             </Button>
           </div>
         </div>

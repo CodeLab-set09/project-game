@@ -4,7 +4,7 @@ import { iDataData } from "../interfaces";
 const questionModel = new Schema<iDataData>(
   {
     instruction: { type: String, required: true },
-    mainAnswer: { type: String, required: true },
+    result: { type: [], required: true },
     output: { type: String, required: true },
     example: { type: String, required: true },
     question: { type: String, required: true },
