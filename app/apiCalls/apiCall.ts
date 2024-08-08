@@ -15,6 +15,22 @@ export const getSingleUser = async (ID: string) => {
   }
 };
 
+export const getJSQuestions = async () => {
+  try {
+    return await fetch(`/api/add`, {
+      cache: "no-cache",
+    })
+      .then(async (res) => {
+        return await res.json();
+      })
+      .then((res) => {
+        return res.data;
+      });
+  } catch (error) {
+    console.error("error", error);
+  }
+};
+
 export const changeUserTimer = async (ID: string) => {
   try {
     return await fetch(`/api/timer/${ID!}`, {

@@ -1,8 +1,7 @@
 "use client";
-import Image from "next/image";
+
 import { useState, CSSProperties } from "react";
 import BeatLoader from "react-spinners/BeatLoader";
-import ClipLoader from "react-spinners/BeatLoader";
 
 const override: CSSProperties = {
   display: "block",
@@ -13,10 +12,11 @@ const override: CSSProperties = {
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const base = process.env.BASE as string;
+
   const formAction = async (formData: FormData) => {
     const question = formData.get("question");
     const dQ = `<p>${question}</p>`;
-    const answer = formData.get("answer");
+    const mainAnswer = formData.get("answer");
     const output = formData.get("output");
     const example = formData.get("example");
     const instruction = formData.get("instruction");
@@ -26,23 +26,31 @@ export default function Home() {
     const rTag = tag?.toString().split(",");
     const usecase = formData.get("usecase");
     const rUseCase = usecase?.toString().split(",");
+
     await fetch(`/api/add`, {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         question: dQ,
-        answer,
+        mainAnswer,
         output,
         example,
-        instruction,
+        instruction: `<p>${instruction}</p>`,
         defaultcode,
         tag: rTag,
         usecase: rUseCase,
       }),
-    }).then(() => {
-      setLoading(false);
-      window.location.reload();
-    });
+    })
+      .then(async (res) => {
+        return await res.json();
+        // window.location.reload();
+      })
+      .then((res) => {
+        console.log(res);
+        setLoading(false);
+      });
   };
+
   return (
     <main className="p-5">
       <div className="flex justify-center items-center  p-4 ">
