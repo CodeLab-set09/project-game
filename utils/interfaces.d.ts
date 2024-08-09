@@ -16,7 +16,7 @@ export interface iUserData extends iUser, Document {}
 
 interface iData {
   instruction: string;
-  mainAnswer: string;
+  result: Array<string>;
   output: string;
   example: string;
   question: string;

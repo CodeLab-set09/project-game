@@ -149,7 +149,11 @@ const Page = () => {
                 </div>
               )}
 
-              <Button disabled={toggle} type="submit" className="mt-5 py-6 ">
+              <Button
+                disabled={toggle}
+                type="submit"
+                className="w-full mt-5 py-6 "
+              >
                 {toggle ? <Spinner /> : "Change Password"}
               </Button>
             </div>

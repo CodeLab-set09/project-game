@@ -6,9 +6,15 @@ import axios from "axios";
 import { FaSpinner } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { addIndex } from "@/app/global/redux";
-import { confirmResultFn, mainFn } from "@/utils/helper";
+import {
+  confirmResultFn,
+  mainFn,
+  checkQuestionAnswer,
+  confirmMainResultFn,
+} from "@/utils/helper";
+import { toast } from "@/components/ui/use-toast";
 
-const DisplayScreen = ({ val, answer, output, defaultcode }: any) => {
+const DisplayScreen = ({ val, result, output, defaultcode }: any) => {
   const dispatch = useDispatch();
   const ref: any = useRef(null);
 
@@ -23,7 +29,7 @@ const DisplayScreen = ({ val, answer, output, defaultcode }: any) => {
 
   const url: string = "https://emkc.org/api/v2/piston/execute";
 
-  const [state, setState] = useState<string>(val?.defaultcode);
+  const [state, setState] = useState<string>(``);
   const [code, setCode] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [confirmResult, setConfirmResult] = useState(false);
@@ -62,11 +68,16 @@ const DisplayScreen = ({ val, answer, output, defaultcode }: any) => {
           setCode(res?.data?.run?.output?.split("\n")[0]);
 
           if (
-            res?.data?.run?.output?.split("\n")[0] == output &&
-            state?.includes(answer)
+            res?.data?.run?.output?.split("\n")[0] === output &&
+            checkQuestionAnswer(state!, result)
           ) {
-            setConfirmResult(true);
-            confirmResultFn(answer!, mainFn(state!)!);
+            setConfirmResult(confirmMainResultFn(state, result));
+            // setConfirmResult(confirmResultFn(result, mainFn(state!)));
+          } else {
+            toast({
+              title: "Error in output",
+              description: "Please check the method used and try again",
+            });
           }
           return res?.data?.run?.output?.split("\n");
         })
@@ -78,9 +89,9 @@ const DisplayScreen = ({ val, answer, output, defaultcode }: any) => {
     }
   };
 
-  // console.log(mainFn(state!)!);
-  console.log(answer!);
-  console.log(confirmResultFn(answer!, mainFn(state!)!));
+  useEffect(() => {
+    setState(val?.defaultcode);
+  }, [val]);
 
   return (
     <div>
