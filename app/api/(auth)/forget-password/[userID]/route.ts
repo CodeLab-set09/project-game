@@ -21,6 +21,7 @@ export const PATCH = async (req: NextRequest, { params }: any) => {
         const changePassword = await userModel.findByIdAndUpdate(
           userID,
           {
+            verifyToken: null,
             password: hashed,
           },
           { new: true }
@@ -46,6 +47,26 @@ export const PATCH = async (req: NextRequest, { params }: any) => {
     return NextResponse.json({
       status: 404,
       error: "unable to verify account",
+    });
+  }
+};
+
+export const GET = async (req: NextRequest, { params }: any) => {
+  try {
+    await dbConfig();
+    const { userID } = params;
+    const user = await userModel.findById(userID);
+
+    return NextResponse.json({
+      message: "viewing User's data",
+      data: user,
+      status: 200,
+    });
+  } catch (error: any) {
+    return NextResponse.json({
+      message: "Error Occured",
+      status: 400,
+      error: error.message,
     });
   }
 };

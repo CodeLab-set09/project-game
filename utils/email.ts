@@ -201,7 +201,7 @@ export const resetPasswordEmail = async (user: any) => {
 
     const token = jwt.sign({ id: user?._id }, JSON_SECRET, { expiresIn: "2d" });
 
-    const url = `${LIVE_URL}/account-reset-verify/${token}`;
+    const url = `${LIVE_URL}/forget-password/reset-password/${token}`;
 
     const mailOptions = {
       from: "Gamer🔥🎮🔥 <ghettodeveloper@gmail.com>",
@@ -305,8 +305,8 @@ export const resetPasswordEmail = async (user: any) => {
                                 <td style="text-align:center;padding: 0 30px 20px ">
                                     <p style="color:#080808;">If the button above does not work, paste this link
                                         into your web browser:</p>
-                                    <a href="${LIVE_URL}/verify-account/${token}"
-                                        style="color: #6576ff; text-decoration:none;word-break: break-all;">${LIVE_URL}/verify-account/${token}</a>
+                                    <a href="${LIVE_URL}/forget-password/reset-password/${token}"
+                                        style="color: #6576ff; text-decoration:none;word-break: break-all;">${LIVE_URL}/forget-password/reset-password/${token}</a>
                                 </td>
                             <tr>
                                 <td style="text-align:center;padding: 20px 30px 40px">
