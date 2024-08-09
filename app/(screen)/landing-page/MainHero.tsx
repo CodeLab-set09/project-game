@@ -12,8 +12,8 @@ import { Button } from "@/components/ui/button";
 export const MainHero = () => {
   return (
     <>
-      <main className="relative h-[500px] flex flex-col justify-center bg-slate-900 overflow-hidden w-full ">
-        <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-24">
+      <main className="relative flex flex-col justify-center bg-black overflow-hidden w-full h-full shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
+        <div className="w-full max-w-6xl mx-auto  md:px-6 py-24">
           <div className="text-center">
             {/* Illustration #1 */}
             <div
@@ -51,9 +51,7 @@ export const MainHero = () => {
 
             <div className="relative flex flex-col justify-center items-center ">
               <h1 className="text-white text-center text-[40px] md:text-[70px] font-semibold ">
-                {""}
-              Your ultimate
-              <br /> coding companion.
+              Your ultimate coding companion.
               </h1>
               <div className="max-w-3xl mx-auto mb-8">
                 <p className="text-center text-[12px] md:text-[16px] w-[500px]  gap-3 md:w-[600px] text-white">
