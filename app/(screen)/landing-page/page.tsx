@@ -11,9 +11,9 @@ import { MainHero } from "./MainHero";
 
 const page = () => {
   return (
-    <main className="w-full h-full flex justify-center items-center">
-         <div className="max-w-[1440px] min-h-screen flex justify-center items-center flex-col">
+    <main className="w-full h-full">
       <MainHero />
+       <div className="max-w-[1440px] m-auto">
       <Sharpencomp />
       <Section3 />
 

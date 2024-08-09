@@ -13,40 +13,44 @@ import { signIn } from "next-auth/react";
 import bg from "@/public/assets/down.png";
 import left from "@/public/assets/left.png";
 import right from "@/public/assets/right.png";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const page = () => {
   const { toast } = useToast();
   const [toggle, setToggle] = useState<boolean>(false);
+  const [text, setText] = useState<string>("");
+  const router = useRouter();
 
   const url = "http://localhost:3000/api/reset-password";
 
-  const formAction = async (formData: FormData) => {
+  const formAction = async () => {
     setToggle(true);
 
-    const email = formData.get("email");
     await fetch(url, {
       method: "PATCH",
       headers: { "Content-Type": "Application/json" },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email: text }),
     })
-      .then(() => {
-        redirect("/account-reset-verify");
+      .then(async (res) => {
+        return await res.json();
+      })
+      .then((res) => {
+        if (res.status === 201) {
+          toast({
+            description: "Email sent successfully, please check your inbox.",
+          });
+          router.push("/account-reset-verify");
+        } else {
+          toast({ description: "Failed to send email, please try again." });
+        }
       })
       .finally(() => {
         setToggle(false);
-      })
-      .catch((errors) => {
-        toast({ description: "Failed to send email, please try again." });
-        console.error(errors);
       });
-
-    // const timer = setTimeout(() => {
-    //   setToggle(false);
-    //   clearTimeout(timer);
-    // }, 5000);
-
-    console.log(toggle);
+    // .catch((errors) => {
+    //   toast({ description: "Failed to send email, please try again." });
+    //   console.error(errors);
+    // });
   };
 
   return (
@@ -77,10 +81,7 @@ const page = () => {
         />
       </div>
       <div className="z-50 flex justify-center items-center h-[100vh] w-full">
-        <form
-          action={formAction}
-          className="w-[85%] md:w-[450px] shadow-sm items-center border p-3 rounded-md mt-5"
-        >
+        <div className="w-[85%] md:w-[450px] shadow-sm items-center border p-3 rounded-md mt-5">
           <div className="flex justify-center items-center w-full ">
             <div className="w-full">
               <div className="flex items-center w-full justify-center mt-3 mb-8">
@@ -109,6 +110,10 @@ const page = () => {
                   type="text"
                   placeholder="Email"
                   name="email"
+                  value={text}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                    setText(e.target.value);
+                  }}
                 />
                 <MdPassword className="text-[20px] text-slate-600" />
               </div>
@@ -122,10 +127,15 @@ const page = () => {
             </div>
           </div>
 
-          <Button disabled={toggle} type="submit" className="w-full mt-5 py-6 ">
+          <Button
+            onClick={formAction}
+            disabled={toggle}
+            type="submit"
+            className="w-full mt-5 py-6 "
+          >
             {toggle ? <Spinner /> : "Restrive Password"}
           </Button>
-        </form>
+        </div>
       </div>
     </div>
   );
