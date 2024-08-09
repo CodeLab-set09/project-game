@@ -4,7 +4,11 @@ const initialState = {
   toggle: true,
   userID: "" || null,
   index: 0,
+  counter: 1,
+  level: 1,
   question: [],
+  stage: [],
+  paths: "",
 };
 
 const redux = createSlice({
@@ -34,10 +38,31 @@ const redux = createSlice({
     userDataOff: (state) => {
       state.userID = null;
     },
+    setStage: (state, { payload }) => {
+      state.userID = payload;
+    },
+    setPaths: (state, { payload }) => {
+      state.paths = payload;
+    },
+    setCounter: (state, { payload }) => {
+      state.counter = payload;
+    },
+    setLevel: (state, { payload }) => {
+      state.level = payload;
+    },
   },
 });
 
-export const { questionData, onToggled, addIndex, userDataOff, userData } =
-  redux.actions;
+export const {
+  questionData,
+  onToggled,
+  addIndex,
+  userDataOff,
+  userData,
+  setStage,
+  setPaths,
+  setCounter,
+  setLevel,
+} = redux.actions;
 
 export default redux.reducer;

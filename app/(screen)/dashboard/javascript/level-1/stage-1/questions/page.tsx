@@ -5,7 +5,7 @@ import QuestionScreen from "@/app/(screen)/dashboard/components/QuestionScreen";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getJSQuestions } from "@/app/apiCalls/apiCall";
-import { questionData } from "@/app/global/redux";
+import { questionData, setPaths } from "@/app/global/redux";
 import { usePathname } from "next/navigation";
 
 const page = () => {
@@ -14,13 +14,14 @@ const page = () => {
   const index = useSelector((state: any) => state.index);
   const data = useSelector((state: any) => state.question);
   const dispatch = useDispatch();
-  const val = data[4];
+  const val = data[index];
 
   useEffect(() => {
     getJSQuestions().then((res) => {
       dispatch(questionData(res));
     });
   }, []);
+  dispatch(setPaths(pathName));
 
   return (
     <main className="w-full  grid grid-cols-1 lg:grid-cols-7 h-full gap-2">
