@@ -4,7 +4,7 @@ import React from "react";
 
 const Sharpencomp = () => {
   return (
-    <main className="px-5 w-[100%] min-h-[500px] md:w-full md:h-[calc(100vh-170px)]  md:flex md:justify-center md:items-center mt-5 md:px-0">
+    <main className="px-5 w-[100%] min-h-[500px] mt-20 md:w-full md:flex md:justify-center md:items-center md:px-0">
       <section className=" grid grid-cols-1 h-[630px] w-full md:grid md:grid-cols-4 md:w-[92%] md:h-full rounded-[50px] border ">
         <div className="px-5 mt-10 md:col-span-2  md:px-14 md:my-24">
           <div className="">

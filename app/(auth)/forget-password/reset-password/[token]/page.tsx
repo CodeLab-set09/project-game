@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
 import bg from "@/public/assets/down.png";
@@ -8,6 +8,7 @@ import right from "@/public/assets/right.png";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import { jwtDecode } from "jwt-decode";
 import {
   MdEmail,
   MdPassword,
@@ -16,24 +17,49 @@ import {
 } from "react-icons/md";
 import { Spinner } from "@/app/static/Spinner";
 import { toast } from "@/components/ui/use-toast";
+import { getUpdatePassword } from "../../../../apiCalls/apiCall";
 
-const Page = () => {
+const Page = ({ params }: any) => {
+  const { token } = params;
   const [toggle, setToggle] = useState<boolean>(false);
   const [toggleOn, setToggleOn] = useState<boolean>(false);
 
+  const decoded: any = jwtDecode(token);
+
   const url = "http://localhost:3000/api/forget-password";
+
   const formAction = async (formData: FormData) => {
-    const newPassword = formData.get("password");
+    setToggle(true);
+    const newPassword = formData.get("password") as string;
     const confirmPassword = formData.get("confirmPassword");
 
     if (newPassword === confirmPassword) {
-      await fetch(url, {
+      // await getUpdatePassword(newPassword, decoded?.id)
+      await fetch(`/api/forget-password/${decoded?.id}`, {
+        cache: "no-cache",
         method: "PATCH",
-        headers: { "Content-Type": "Application/json" },
+        headers: {
+          "content-type": "application/json",
+        },
         body: JSON.stringify({ password: newPassword }),
-      }).then(() => {
-        redirect("/signin");
-      });
+      })
+        .then(async (res) => {
+          return await res.json();
+        })
+        .then((res) => {
+          if (res.status == 201) {
+            toast({
+              title: "Success",
+              description: "Password updated successfully",
+            });
+            redirect("/signin");
+          } else {
+            toast({
+              title: "error with Password",
+              description: "Error updating password",
+            });
+          }
+        });
     } else {
       toast({
         title: "error",
@@ -41,6 +67,9 @@ const Page = () => {
       });
     }
   };
+
+  useEffect(() => {}, []);
+
   return (
     <div className="relative w-full">
       <Image
