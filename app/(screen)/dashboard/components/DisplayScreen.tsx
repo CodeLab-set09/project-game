@@ -6,7 +6,12 @@ import axios from "axios";
 import { FaSpinner } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { addIndex } from "@/app/global/redux";
-import { confirmResultFn, mainFn, checkQuestionAnswer } from "@/utils/helper";
+import {
+  confirmResultFn,
+  mainFn,
+  checkQuestionAnswer,
+  confirmMainResultFn,
+} from "@/utils/helper";
 import { toast } from "@/components/ui/use-toast";
 
 const DisplayScreen = ({ val, result, output, defaultcode }: any) => {
@@ -66,7 +71,8 @@ const DisplayScreen = ({ val, result, output, defaultcode }: any) => {
             res?.data?.run?.output?.split("\n")[0] === output &&
             checkQuestionAnswer(state!, result)
           ) {
-            setConfirmResult(confirmResultFn(result!, mainFn(state!)!));
+            setConfirmResult(confirmMainResultFn(state, result));
+            // setConfirmResult(confirmResultFn(result, mainFn(state!)));
           } else {
             toast({
               title: "Error in output",

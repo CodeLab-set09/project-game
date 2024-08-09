@@ -1,4 +1,5 @@
 "use client";
+
 import DisplayScreen from "@/app/(screen)/dashboard/components/DisplayScreen";
 import QuestionScreen from "@/app/(screen)/dashboard/components/QuestionScreen";
 import React, { useEffect, useState } from "react";
@@ -13,7 +14,7 @@ const page = () => {
   const index = useSelector((state: any) => state.index);
   const data = useSelector((state: any) => state.question);
   const dispatch = useDispatch();
-  const val = data[index];
+  const val = data[4];
 
   useEffect(() => {
     getJSQuestions().then((res) => {
