@@ -11,9 +11,9 @@ import { MainHero } from "./MainHero";
 
 const page = () => {
   return (
-    <div>
+    <main className="w-full h-full">
       <MainHero />
-      <Hero />
+       <div className="max-w-[1440px] m-auto">
       <Sharpencomp />
       <Section3 />
 
@@ -21,6 +21,7 @@ const page = () => {
 
       <Section4 />
     </div>
+    </main>
   );
 };
 

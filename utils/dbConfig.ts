@@ -1,5 +1,5 @@
 import { connect } from "mongoose";
-import { DB_URL, DB_URLII } from "./constant";
+import { DB_URL } from "./constant";
 
 export const dbConfig = async () => {
   try {

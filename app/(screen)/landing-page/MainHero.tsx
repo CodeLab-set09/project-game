@@ -5,13 +5,15 @@ export const metadata = {
 
 import Image from "next/image";
 import Particles from "./lib/Particles";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 // import Shape from "@/assets/images/svg/shape.svg";
 
 export const MainHero = () => {
   return (
     <>
-      <main className="relative h-[500px] flex flex-col justify-center bg-slate-900 overflow-hidden">
-        <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-24">
+      <main className="relative flex flex-col justify-center bg-black overflow-hidden w-full h-full shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
+        <div className="w-full max-w-6xl mx-auto  md:px-6 py-24">
           <div className="text-center">
             {/* Illustration #1 */}
             <div
@@ -47,16 +49,21 @@ export const MainHero = () => {
               className="absolute inset-0 pointer-events-none"
             />
 
-            <div className="relative">
-              <h1 className="inline-flex font-extrabold text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">
-                Interactive Particle Animation
+            <div className="relative flex flex-col justify-center items-center ">
+              <h1 className="text-white text-center text-[40px] md:text-[70px] font-semibold ">
+              Your ultimate coding companion.
               </h1>
               <div className="max-w-3xl mx-auto mb-8">
-                <p className="text-lg text-slate-400">
-                  Our landing page template works on all devices, so you only
-                  have to set it up once, and get beautiful results forever.
+                <p className="text-center text-[12px] md:text-[16px] w-[500px]  gap-3 md:w-[600px] text-white">
+                Test your skill in coding,learn new language and achieve mastery by
+                answering different questions on different programming language.
                 </p>
               </div>
+              <Link href={"/signup"}>
+          <Button className="h-[50px]  md:h-[60px] w-[130px] text-[14px] border bg-inherit hover:bg-slate-600 duration-300 transition-all">
+            Get Started
+          </Button>
+        </Link>
             </div>
           </div>
         </div>

@@ -19,7 +19,7 @@ const Section5 = () => {
     },
   ];
   return (
-    <div className="w-full h-[100vh] flex justify-center items-center px-4">
+    <div className="w-full mt-20 flex justify-center items-center px-4">
       <div className="flex items-center justify-center">
         <div className="">
           <div className="flex items-center  justify-center">
@@ -34,7 +34,7 @@ const Section5 = () => {
             <br />
             ecosystem where coders can grow, learn and thrive together.
           </p>
-          <div className="mx-5 bg-black text-white rounded-md p-15 flex items-center flex-col md:flex-row justify-between">
+          <div className="mx-5 bg-[#F24E1E] text-black rounded-md p-15 flex items-center flex-col md:flex-row justify-between">
             {items?.map((el: any) => (
               <div key={el.id} className="flex flex-col items-center md:p-4">
                 <h1 className="font-normal md:font-bold text-[70px] md:text-[70px]">
