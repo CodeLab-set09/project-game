@@ -21,7 +21,7 @@ const Section3 = () => {
     },
   ];
   return (
-    <main className="w-full min-h-[calc(180vh-350px)] md:h-[calc(70vh-70px)] flex justify-center md:justify-center md:gap-10 gap-5 items-center px-16 flex-col md:flex-row py-4 md:py-0">
+    <main className="w-full mt-20 flex justify-center md:justify-center md:gap-10 gap-5 items-center px-16 flex-col md:flex-row py-4 md:py-0">
       {data.map((el) => (
         <div
           key={el.id}
