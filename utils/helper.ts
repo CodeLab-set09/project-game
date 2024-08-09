@@ -18,22 +18,32 @@ export const mainFn = (state: string) => {
 };
 
 export const confirmResultFn = (a: Array<string>, b: Array<string>) => {
-  let c = a?.sort();
-  let d = b?.sort();
+  // let c = a?.sort();
+  // let d = b?.sort();
 
-  if (d?.length <= 0) {
+  if (b?.length <= 0) {
+    return false;
+  }
+  return b?.every((el) => a?.includes(el));
+};
+
+export const confirmMainResultFn = (a: string, b: Array<string>) => {
+  // let c = a?.sort();
+  // let d = b?.sort();
+
+  if (a?.length <= 0) {
     return false;
   }
 
-  return d?.every((el) => c?.includes(el));
+  return b?.some((el) => a?.includes(el));
 };
 
 export const checkQuestionAnswer = (a: string, b: Array<string>): boolean => {
   let c = b.map((el) => {
-    return a.includes(el);
+    return a?.includes(el);
   });
 
   console.log(c);
 
-  return c.includes(true);
+  return c?.includes(true);
 };
