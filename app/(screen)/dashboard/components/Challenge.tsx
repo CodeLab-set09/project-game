@@ -13,7 +13,7 @@ const Challenge = () => {
         </div>
 
         <div className="flex flex-col gap-3">
-          <select className="text-[#cecbcb]  font-medium text-[13px] bg-[#49414922] w-full outline-none h-[30px] rounded-sm px-2">
+          <select className="text-[#d5d3d3]  font-medium text-[13px] bg-[#49414922] w-full outline-none h-[30px] rounded-sm px-2">
             <option>JavaScript</option>
             <option>JavaScript</option>
             <option>JavaScript</option>
