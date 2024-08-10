@@ -21,7 +21,10 @@ const Page = ({ params }: any) => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [toggleOn, setToggleOn] = useState<boolean>(false);
 
-  const decoded: any = jwtDecode(token);
+  let decoded: any = "";
+  if (token) {
+    decoded = jwtDecode(token);
+  }
 
   const url = "http://localhost:3000/api/forget-password";
 
@@ -112,7 +115,7 @@ const Page = ({ params }: any) => {
                 <div className="flex flex-col items-center ">
                   <Image
                     src={
-                      "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/right_jt1tub.png"
+                      "https://res.cloudinary.com/duewdl1ua/image/upload/v1722432802/codebook_white_l0et44.png"
                     }
                     alt="#"
                     width={160}

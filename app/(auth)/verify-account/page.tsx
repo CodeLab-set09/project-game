@@ -26,7 +26,7 @@ const Page = () => {
           className="h-[200px] object-contain w-full absolute  left-0 -bottom-10 "
         />
       </div>
-      <div className="absolute  w-[50%] overflow-hidden h-[200px] right-0 bottom-0">
+      <div className="absolute w-[50%] overflow-hidden h-[200px] right-0 bottom-0">
         <Image
           width={1000}
           height={1000}

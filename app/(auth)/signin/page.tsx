@@ -67,7 +67,7 @@ const page = () => {
                 <div>
                   <Image
                     src={
-                      "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/right_jt1tub.png"
+                      "https://res.cloudinary.com/duewdl1ua/image/upload/v1722432802/codebook_white_l0et44.png"
                     }
                     alt="#"
                     width={160}
@@ -120,7 +120,7 @@ const page = () => {
               </div>
               <Link
                 href="/forget-password"
-                className="text-end  text-[12px] text-[#11192C] -mt-2 font-semibold italic"
+                className="text-end text-white text-[12px] text-[#11192C] -mt-2 font-semibold italic"
               >
                 Forget Password
               </Link>
