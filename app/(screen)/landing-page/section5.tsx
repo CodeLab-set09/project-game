@@ -19,8 +19,8 @@ const Section5 = () => {
     },
   ];
   return (
-    <div className="w-full mt-20 flex justify-center items-center px-4">
-    <div className="w-full mt-[100px]  h-[100vh] flex justify-center items-center">
+    <div  className="w-full mt-20 flex justify-center items-center px-4">
+    <div  className="w-full mt-[100px]  h-[100vh] flex justify-center items-center">
       <div className="flex items-center justify-center">
         <div className="w-[90vw]">
           <div className="flex items-center  justify-center">
@@ -51,6 +51,8 @@ const Section5 = () => {
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   );
 };
