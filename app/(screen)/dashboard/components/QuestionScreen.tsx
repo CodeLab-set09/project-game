@@ -1,33 +1,51 @@
 "use client";
 
+import { setCounter, setStage } from "@/app/global/redux";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { useDispatch, useSelector } from "react-redux";
+const num = 1;
 
-const QuestionScreen = ({
-  level,
-  args,
-  tags,
-  instruction,
-  example,
-  usecase,
-}: any) => {
+const QuestionScreen = ({ tags, instruction, example, usecase }: any) => {
+  const level = useSelector((state: any) => state.level);
+
   const stateStage = usePathname();
-  const mainLevel = stateStage.split("main-screen/")[1].split("/");
 
-  console.log("tags", tags);
+  const dispatch = useDispatch();
+  const mainLevel = stateStage?.split("javascript/")[1]?.split("/");
 
+  mainLevel?.pop();
+  dispatch(setStage(mainLevel));
+  const index = useSelector((state: any) => state.index);
+  const counter = useSelector((state: any) => state.counter);
+  if (counter > 3) {
+    dispatch(setCounter(1));
+  }
+
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (tags?.length === 0) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [loading]);
+  const choose = Math.floor(Math.random() * usecase?.length);
   return (
     <main>
       <div className=" items-center h-[30px]">
         <div className="flex items-center gap-3">
           {mainLevel?.map((el: any) => (
             <p className="capitalize py-1 px-4 mt-2 text-[12px] font-bold rounded-full bg-orange-500 [&:nth-child(2)]:bg-purple-600 [&:nth-child(3)]:bg-red-600 text-white">
-              {el}{" "}
+              {el.split("-").join(" ")}
             </p>
           ))}
+          <p className="capitalize py-1 px-4 mt-2 text-[12px] font-bold rounded-full bg-orange-500 [&:nth-child(2)]:bg-purple-600 [&:nth-child(3)]:bg-red-600 text-white">
+            Question {counter}
+          </p>
         </div>
-        <p className="font-bold mt-2">String ends with?</p>
       </div>
 
       <section className="mt-10">
@@ -41,10 +59,17 @@ const QuestionScreen = ({
         </div>
 
         <div className="mt-10 bg-neutral-700 text-white text-[15px] p-2 rounded-md pt-5">
-          <div>{instruction}</div>
-
+          <div>
+            {loading ? (
+              <div>
+                <div className="w-[100%] h-[10px] bg-slate-400 animate-pulse mt-1 mb-2" />
+                <div className="w-[60%] h-[10px] bg-slate-400 animate-pulse" />
+              </div>
+            ) : (
+              <div dangerouslySetInnerHTML={{ __html: instruction }} />
+            )}
+          </div>
           <p className="mt-5">Example: </p>
-
           <div className="mt-5 bg-[#282A36] min-h-[100px] rounded-md shadow-lg">
             <CopyBlock
               text={example}
@@ -67,13 +92,11 @@ const QuestionScreen = ({
               ))}
             </p>
           </div>
-
           <div className="flex">
             <p className="mt-6 border-b pb-1">Use Cases:</p>
           </div>
-
           <div className="mt-8 mb-3 text-[12px] tracking-[0.18rem] font-thin">
-            {usecase}
+            {usecase && usecase[choose ? choose : 0]}
           </div>
         </div>
       </section>

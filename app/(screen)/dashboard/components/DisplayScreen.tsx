@@ -4,19 +4,25 @@ import React, { useState, useRef, useEffect } from "react";
 import Editor from "@monaco-editor/react";
 import axios from "axios";
 import { FaSpinner } from "react-icons/fa6";
-import Link from "next/link";
-import { useDispatch } from "react-redux";
-import { addIndex } from "@/app/global/redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addIndex, setCounter } from "@/app/global/redux";
+import {
+  confirmResultFn,
+  mainFn,
+  checkQuestionAnswer,
+  confirmMainResultFn,
+} from "@/utils/helper";
+import { toast } from "@/components/ui/use-toast";
 
-const DisplayScreen = ({ redirect, answer, output }: any) => {
+const DisplayScreen = ({ val, result, output, defaultcode }: any) => {
   const dispatch = useDispatch();
   const ref: any = useRef(null);
+  const counter = useSelector((state: any) => state.counter);
 
   const mounted = (editor: any) => {
     ref.current = editor;
     editor.focus;
   };
-  const [state, setState] = useState<string>();
 
   function handleEditorChange(value?: string) {
     setState(value!);
@@ -24,6 +30,7 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
 
   const url: string = "https://emkc.org/api/v2/piston/execute";
 
+  const [state, setState] = useState<string>(``);
   const [code, setCode] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [confirmResult, setConfirmResult] = useState(false);
@@ -32,31 +39,12 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
   const coded = async () => {
     try {
       dispatch(addIndex());
+      dispatch(setCounter(counter + 1));
       window.location.reload();
     } catch (error) {
       console.log(error);
     }
   };
-
-  let userInputValue: string;
-
-  const resultCheck = (a: string) => {
-    return a?.split(".")[1]?.split("(")[0];
-  };
-
-  const checkResult = (mainInput: Array<string>, userInputValue: string) => {
-    return mainInput?.some((el) => {
-      return el === userInputValue;
-    });
-  };
-
-  userInputValue = resultCheck(state!)!;
-
-  useEffect(() => {
-    resultCheck(state!);
-  }, [userInputValue!]);
-
-  checkResult(answer, `.${userInputValue}`);
 
   const runCode = async () => {
     try {
@@ -82,12 +70,16 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
           setCode(res?.data?.run?.output?.split("\n")[0]);
 
           if (
-            res?.data?.run?.output?.split("\n")[0] == output &&
-            state?.includes(answer)
+            res?.data?.run?.output?.split("\n")[0] === output &&
+            checkQuestionAnswer(state!, result)
           ) {
-            setConfirmResult(true);
-            checkResult(answer, `.${userInputValue}`);
-            console.log("show: ", checkResult(answer, `.${userInputValue}`));
+            setConfirmResult(confirmMainResultFn(state, result));
+            // setConfirmResult(confirmResultFn(result, mainFn(state!)));
+          } else {
+            toast({
+              title: "Error in output",
+              description: "Please check the method used and try again",
+            });
           }
           return res?.data?.run?.output?.split("\n");
         })
@@ -99,19 +91,9 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
     }
   };
 
-  const testFn = (a: string, b: string) => {
-    let c = a.split("").sort().join("");
-    let d = b.split("").sort().join("");
-
-    if (c === d) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  // console.log(testFn("XYZ", "YZW"));
-  // console.log(checkResult(answer, `.${userInputValue}`));
+  useEffect(() => {
+    setState(val?.defaultcode);
+  }, [val]);
 
   return (
     <div>
@@ -169,13 +151,11 @@ const DisplayScreen = ({ redirect, answer, output }: any) => {
         <button
           className={` border px-8 py-2 ${
             confirmResult ? "bg-red-500" : "bg-red-300"
-          } text-white rounded-md `}
-          onClick={() => {
-            coded();
-          }}
+          } text-white rounded-md tracking-widest`}
+          onClick={coded}
           disabled={!confirmResult}
         >
-          NEXT
+          {confirmResult ? "Next" : "Thinking?"}
         </button>
       </div>
     </div>

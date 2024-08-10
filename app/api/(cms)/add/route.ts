@@ -8,20 +8,22 @@ export const POST = async (req: NextRequest) => {
     await dbConfig();
     const {
       instruction,
-      answer,
+      mainAnswer,
       output,
       example,
       question,
+      defaultcode,
       url,
       tag,
       usecase,
     } = await req.json();
     const getD = await myQModel.create({
       instruction,
-      answer,
+      result: mainAnswer.split(","),
       output,
       example,
       question,
+      defaultcode,
       url,
       tag,
       usecase,

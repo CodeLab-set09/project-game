@@ -16,10 +16,11 @@ export interface iUserData extends iUser, Document {}
 
 interface iData {
   instruction: string;
-  answer: string;
+  result: Array<string>;
   output: string;
   example: string;
   question: string;
+  defaultcode: string;
   url: string;
   tag: string[];
   usecase: string[];

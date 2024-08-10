@@ -21,9 +21,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <BaseHeader />
+        {/* <BaseHeader /> */}
         {children}
-        <BaseFooter />
+        {/* <BaseFooter /> */}
       </body>
     </html>
   );

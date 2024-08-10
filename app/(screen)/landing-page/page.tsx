@@ -1,18 +1,32 @@
-import React from "react";
-import Hero from "./Hero";
-import Sharpencomp from "./Sharpencomp";
-import Section3 from "./Section3";
-import Section4 from "./Section4";
+import { Banner } from "../(display)/components/Banner";
+import { CallToAction } from "../(display)/components/CallToAction";
+import { FAQs } from "../(display)/components/FAQs";
+import { Features } from "../(display)/components/Features";
+import { Footer } from "../(display)/components/Footer";
+import { Hero } from "../(display)/components/Hero";
+import { LogoTicker } from "../(display)/components/LogoTicker";
+import { Navbar } from "../(display)/components/Navbar";
+import { Pricing } from "../(display)/components/Pricingdemo";
+import { ProductShowcase } from "../(display)/components/ProductShowcase";
 
-const page = () => {
+export default function Home() {
   return (
-    <div>
-      <Hero />
-      <Sharpencomp />
-      <Section3/>
-      <Section4/>
-    </div>
-  );
-};
+    <>
+      <div className="overflow-x-hidden">
+        <Banner />
+        <Navbar />
+        <Hero />
+        <LogoTicker />
 
-export default page;
+        <Features />
+
+        <ProductShowcase />
+        <FAQs />
+        <Pricing />
+
+        <CallToAction />
+      </div>
+      <Footer />
+    </>
+  );
+}
