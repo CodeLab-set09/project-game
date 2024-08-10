@@ -1,10 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-
-import bg from "@/public/assets/down.png";
-import left from "@/public/assets/left.png";
-import right from "@/public/assets/right.png";
 
 const Page = () => {
   return (
@@ -12,16 +7,19 @@ const Page = () => {
       <Image
         width={1000}
         height={1000}
-        src={bg}
+        src={
+          "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/down_ncbrxq.png"
+        }
         alt="bg"
         className="w-full absolute bottom-0 h-[150px] -z-10"
       />
-
       <div className="absolute overflow-hidden w-[50%]  h-[200px] left-0 bottom-0">
         <Image
           width={1000}
           height={1000}
-          src={left}
+          src={
+            "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/left_v68oln.png"
+          }
           alt="bg"
           className="h-[200px] object-contain w-full absolute  left-0 -bottom-10 "
         />
@@ -30,12 +28,13 @@ const Page = () => {
         <Image
           width={1000}
           height={1000}
-          src={right}
+          src={
+            "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/right_jt1tub.png"
+          }
           alt="bg"
           className="h-[280px] object-contain absolute right-0 -bottom-30 "
         />
-      </div>
-
+      </div>{" "}
       <main className="w-full h-full flex justify-center items-center ">
         <div className="min-h-[250px] max-w-[500px] flex flex-col rounded-md border justify-center items-center gap-5 p-4 ">
           <div className="flex justify-center items-center w-full ">

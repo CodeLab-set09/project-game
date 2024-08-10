@@ -10,9 +10,6 @@ import Image from "next/image";
 import { useToast } from "@/components/ui/use-toast";
 import { Spinner } from "@/app/static/Spinner";
 import { useRouter } from "next/navigation";
-import bg from "@/public/assets/down.png";
-import left from "@/public/assets/left.png";
-import right from "@/public/assets/right.png";
 
 const page = () => {
   const { toast } = useToast();
@@ -53,29 +50,34 @@ const page = () => {
       <Image
         width={1000}
         height={1000}
-        src={bg}
+        src={
+          "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/down_ncbrxq.png"
+        }
         alt="bg"
-        className="w-full absolute bottom-0 h-[150px] -z-30"
+        className="w-full absolute bottom-0 h-[150px] -z-10"
       />
-      <div className="absolute overflow-hidden w-[50%]  h-[200px] left-0 bottom-0 -z-20">
+      <div className="absolute overflow-hidden w-[50%]  h-[200px] left-0 bottom-0">
         <Image
           width={1000}
           height={1000}
-          src={left}
+          src={
+            "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/left_v68oln.png"
+          }
           alt="bg"
           className="h-[200px] object-contain w-full absolute  left-0 -bottom-10 "
         />
       </div>
-      <div className="absolute  w-[50%] overflow-hidden h-[200px] -z-20  right-0 bottom-0">
+      <div className="absolute  w-[50%] overflow-hidden h-[200px] right-0 bottom-0">
         <Image
           width={1000}
           height={1000}
-          src={right}
+          src={
+            "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/right_jt1tub.png"
+          }
           alt="bg"
           className="h-[280px] object-contain absolute right-0 -bottom-30 "
         />
-      </div>
-
+      </div>{" "}
       <div className="flex justify-center items-center h-[100vh] w-full">
         <main className="w-[85%] md:w-[450px] shadow-sm items-center border p-3 rounded-md mt-5">
           <div className="flex justify-center items-center w-full ">
