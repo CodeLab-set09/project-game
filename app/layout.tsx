@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Poppins, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { dbConfig } from "@/utils/dbConfig";
 import Provider from "./static/Provider";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "./static/ThemeProvider";
 import ReduxProvider from "./global/ReduxProvider";
+import clsx from "clsx";
 
 const inter = Inter({ subsets: ["latin"] });
+const dmSans = DM_Sans({ subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: "300" });
 
 export const metadata: Metadata = {
@@ -21,11 +23,11 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   await dbConfig();
-  
+
   return (
     <ReduxProvider>
       <html lang="en">
-        <body className={poppins.className}>
+        <body className={clsx(dmSans.className, "antialiased")}>
           <Provider>
             <ThemeProvider
               attribute="class"
