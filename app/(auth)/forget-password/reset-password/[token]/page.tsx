@@ -2,9 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
-import bg from "@/public/assets/down.png";
-import left from "@/public/assets/left.png";
-import right from "@/public/assets/right.png";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import Link from "next/link";
@@ -75,7 +72,9 @@ const Page = ({ params }: any) => {
       <Image
         width={1000}
         height={1000}
-        src={bg}
+        src={
+          "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/down_ncbrxq.png"
+        }
         alt="bg"
         className="w-full absolute bottom-0 h-[150px] -z-10"
       />
@@ -83,7 +82,9 @@ const Page = ({ params }: any) => {
         <Image
           width={1000}
           height={1000}
-          src={left}
+          src={
+            "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/left_v68oln.png"
+          }
           alt="bg"
           className="h-[200px] object-contain w-full absolute  left-0 -bottom-10 "
         />
@@ -92,11 +93,13 @@ const Page = ({ params }: any) => {
         <Image
           width={1000}
           height={1000}
-          src={right}
+          src={
+            "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/right_jt1tub.png"
+          }
           alt="bg"
           className="h-[280px] object-contain absolute right-0 -bottom-30 "
         />
-      </div>
+      </div>{" "}
       <div className="z-50 flex justify-center items-center h-[100vh] w-full">
         <form
           action={formAction}

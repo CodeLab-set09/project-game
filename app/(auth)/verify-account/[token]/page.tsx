@@ -13,9 +13,6 @@ import { jwtDecode } from "jwt-decode";
 import { toast } from "@/components/ui/use-toast";
 import Image from "next/image";
 
-import bg from "@/public/assets/down.png";
-import left from "@/public/assets/left.png";
-import right from "@/public/assets/right.png";
 import { Spinner } from "@/app/static/Spinner";
 import { Button } from "@/components/ui/button";
 
@@ -59,7 +56,9 @@ const page = ({ params }: any) => {
       <Image
         width={1000}
         height={1000}
-        src={bg}
+        src={
+          "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/down_ncbrxq.png"
+        }
         alt="bg"
         className="w-full absolute bottom-0 h-[150px] -z-10"
       />
@@ -67,7 +66,9 @@ const page = ({ params }: any) => {
         <Image
           width={1000}
           height={1000}
-          src={left}
+          src={
+            "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/left_v68oln.png"
+          }
           alt="bg"
           className="h-[200px] object-contain w-full absolute  left-0 -bottom-10 "
         />
@@ -76,7 +77,9 @@ const page = ({ params }: any) => {
         <Image
           width={1000}
           height={1000}
-          src={right}
+          src={
+            "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/right_jt1tub.png"
+          }
           alt="bg"
           className="h-[280px] object-contain absolute right-0 -bottom-30 "
         />
