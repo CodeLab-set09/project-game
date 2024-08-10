@@ -4,8 +4,8 @@ import React, { useState, useRef, useEffect } from "react";
 import Editor from "@monaco-editor/react";
 import axios from "axios";
 import { FaSpinner } from "react-icons/fa6";
-import { useDispatch } from "react-redux";
-import { addIndex } from "@/app/global/redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addIndex, setCounter } from "@/app/global/redux";
 import {
   confirmResultFn,
   mainFn,
@@ -17,6 +17,7 @@ import { toast } from "@/components/ui/use-toast";
 const DisplayScreen = ({ val, result, output, defaultcode }: any) => {
   const dispatch = useDispatch();
   const ref: any = useRef(null);
+  const counter = useSelector((state: any) => state.counter);
 
   const mounted = (editor: any) => {
     ref.current = editor;
@@ -38,6 +39,7 @@ const DisplayScreen = ({ val, result, output, defaultcode }: any) => {
   const coded = async () => {
     try {
       dispatch(addIndex());
+      dispatch(setCounter(counter + 1));
       window.location.reload();
     } catch (error) {
       console.log(error);
