@@ -1,7 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import Qualified from "../../../public/cbb.png"
-const Section4 = ()=>{
+
+
+const Section4 =()=>{
   return (
     <div className='w-full h-[90vh] flex justify-center items-center flex-wrap '>
       <div className=' section border w-[90%] h-[70vh] flex flex-col  justify-center items-center flex-wrap gap-12 bg-[#ffffff] rounded-[30px] md:max-w-[90%] '>
