@@ -52,7 +52,8 @@ const page = () => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className=" bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#A46EDB_82%)] relative overflow-clip">
+      <div className="absolute w-[750px] top- sm:w-[1536px] sm:h-[768px] lg:w-[2400px] llg:h-[800px] rounded-[100%] bg-black left-1/2 -translate-x-1/2 border border-[#B48CDE] bg-[radial-gradient(closest-side,#000_82%,#9560EB)] top-[calc(100%-96px)] sm:top-[calc(100%-120px)]" />
       <Image
         width={1000}
         height={1000}
@@ -90,7 +91,14 @@ const page = () => {
             <div className="w-full">
               <div className="flex items-center w-full justify-center mt-3 mb-8">
                 <div className="flex flex-col items-center ">
-                  <Image src={"/cbb.png"} alt="#" width={160} height={160} />
+                  <Image
+                    src={
+                      "https://res.cloudinary.com/duewdl1ua/image/upload/v1722432802/codebook_white_l0et44.png"
+                    }
+                    alt="#"
+                    width={160}
+                    height={160}
+                  />
                   <p className="mt-6 font-bold uppercase">
                     Get your Password back
                   </p>
@@ -124,7 +132,7 @@ const page = () => {
 
               <Link
                 href="/signin"
-                className="text-end  text-[12px] text-[#11192C] -mt-2 font-semibold italic"
+                className="text-end text-white text-[12px] -mt-2 font-semibold italic"
               >
                 I think i now Remember!
               </Link>

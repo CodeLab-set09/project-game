@@ -1,7 +1,11 @@
-import React from "react";
-import Image from "next/image";
-import Qualified from "../../../public/cbb.png";
-const Section4 = () => {
+
+import React from 'react'
+import Image from 'next/image'
+import Qualified from "../../../public/cbb.png"
+
+
+const Section4 =()=>{
+
   return (
     <div className="w-full mt-20 mb-20 flex justify-center items-center flex-wrap px-16">
       <div className=" section border  py-[60px] flex flex-col  justify-center items-center flex-wrap gap-12 bg-[#ffffff] rounded-[30px]  ">

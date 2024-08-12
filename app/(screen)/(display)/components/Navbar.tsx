@@ -1,6 +1,7 @@
 import Image from "next/image";
 import LogoImage from "../assets/icons/logo.svg";
 import MenuIcon from "../assets/icons/menu.svg";
+import Link from "next/link";
 
 export const Navbar = () => {
   return (
@@ -45,9 +46,11 @@ export const Navbar = () => {
                 Directives
               </a>
 
-              <button className="bg-white py-2 px-4 rounded-lg text-black">
-                Get for free
-              </button>
+              <Link href={"/signup"}>
+                <button className="bg-white py-2 px-4 rounded-lg text-black">
+                  Get for free
+                </button>
+              </Link>
             </nav>
           </div>
         </div>
