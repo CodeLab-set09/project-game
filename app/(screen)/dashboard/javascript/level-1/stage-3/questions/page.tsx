@@ -11,6 +11,7 @@ import Congrat from "@/app/(screen)/(display)/components/Congrat";
 
 const page = () => {
   const pathName = usePathname();
+
   const index = useSelector((state: any) => state.index);
   const data = useSelector((state: any) => state.question);
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ const page = () => {
 
       <section className="order-1 lg:order-2 col-span-1 lg:col-span-4 border p-2 rounded-md">
         <DisplayScreen
-          path={"/dashboard/javascript/level-1/stage-2/questions"}
+          path={"/dashboard/javascript/level-1/stage-4/questions"}
           redirect={val?.url}
           result={val?.result}
           output={val?.output}
