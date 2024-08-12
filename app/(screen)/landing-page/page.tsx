@@ -1,3 +1,4 @@
+
 import React from "react";
 import Hero from "./Hero";
 import Sharpencomp from "./Sharpencomp";
@@ -15,8 +16,27 @@ const page = () => {
        <div className="max-w-[1440px] m-auto flex justify-center  items-center flex-col  ">
       <Sharpencomp />
       <Section3 />
+import { Banner } from "../(display)/components/Banner";
+import { CallToAction } from "../(display)/components/CallToAction";
+import { FAQs } from "../(display)/components/FAQs";
+import { Features } from "../(display)/components/Features";
+import { Footer } from "../(display)/components/Footer";
+import { Hero } from "../(display)/components/Hero";
+import { LogoTicker } from "../(display)/components/LogoTicker";
+import { Navbar } from "../(display)/components/Navbar";
+import { Pricing } from "../(display)/components/Pricingdemo";
+import { ProductShowcase } from "../(display)/components/ProductShowcase";
 
-      <Section5 />
+export default function Home() {
+  return (
+    <>
+      <div className="overflow-x-hidden">
+        <Banner />
+        <Navbar />
+        <Hero />
+        <LogoTicker />
+
+        <Features />
 
       <Section4 />
       <LogoCarouselPage/>
@@ -24,5 +44,13 @@ const page = () => {
     </main>
   );
 };
+        <ProductShowcase />
+        <FAQs />
+        <Pricing />
 
-export default page;
+        <CallToAction />
+      </div>
+      <Footer />
+    </>
+  );
+}
