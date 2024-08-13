@@ -10,9 +10,6 @@ import Image from "next/image";
 import { useToast } from "@/components/ui/use-toast";
 import { Spinner } from "@/app/static/Spinner";
 import { signIn } from "next-auth/react";
-import bg from "@/public/assets/down.png";
-import left from "@/public/assets/left.png";
-import right from "@/public/assets/right.png";
 
 const page = () => {
   const { toast } = useToast();
@@ -26,11 +23,14 @@ const page = () => {
     signIn("credentials", { email, password });
   };
   return (
-    <div className="relative w-full">
+    <div className=" bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#A46EDB_82%)] relative overflow-clip">
+      <div className="absolute w-[750px] top- sm:w-[1536px] sm:h-[768px] lg:w-[2400px] llg:h-[800px] rounded-[100%] bg-black left-1/2 -translate-x-1/2 border border-[#B48CDE] bg-[radial-gradient(closest-side,#000_82%,#9560EB)] top-[calc(100%-96px)] sm:top-[calc(100%-120px)]" />
       <Image
         width={1000}
         height={1000}
-        src={bg}
+        src={
+          "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/down_ncbrxq.png"
+        }
         alt="bg"
         className="w-full absolute bottom-0 h-[150px] -z-10"
       />
@@ -38,7 +38,9 @@ const page = () => {
         <Image
           width={1000}
           height={1000}
-          src={left}
+          src={
+            "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/left_v68oln.png"
+          }
           alt="bg"
           className="h-[200px] object-contain w-full absolute  left-0 -bottom-10 "
         />
@@ -47,11 +49,13 @@ const page = () => {
         <Image
           width={1000}
           height={1000}
-          src={right}
+          src={
+            "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/right_jt1tub.png"
+          }
           alt="bg"
           className="h-[280px] object-contain absolute right-0 -bottom-30 "
         />
-      </div>
+      </div>{" "}
       <div className="z-50 flex justify-center items-center h-[100vh] w-full">
         <form
           action={formAction}
@@ -61,7 +65,14 @@ const page = () => {
             <div className="w-full">
               <div className="flex items-center w-full justify-center mt-3 mb-8">
                 <div>
-                  <Image src={"/cbb.png"} alt="#" width={160} height={160} />
+                  <Image
+                    src={
+                      "https://res.cloudinary.com/duewdl1ua/image/upload/v1722432802/codebook_white_l0et44.png"
+                    }
+                    alt="#"
+                    width={160}
+                    height={160}
+                  />
                   <p className="mt-6 font-bold uppercase">
                     Log in Your Account
                   </p>
@@ -109,7 +120,7 @@ const page = () => {
               </div>
               <Link
                 href="/forget-password"
-                className="text-end  text-[12px] text-[#11192C] -mt-2 font-semibold italic"
+                className="text-end text-white text-[12px] text-[#11192C] -mt-2 font-semibold italic"
               >
                 Forget Password
               </Link>

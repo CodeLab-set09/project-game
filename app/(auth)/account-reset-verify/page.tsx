@@ -1,27 +1,26 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-
-import bg from "@/public/assets/down.png";
-import left from "@/public/assets/left.png";
-import right from "@/public/assets/right.png";
 
 const Page = () => {
   return (
-    <div className="relative w-full h-screen">
+    <div className=" bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#A46EDB_82%)] relative overflow-clip">
+      <div className="absolute w-[750px] top- sm:w-[1536px] sm:h-[768px] lg:w-[2400px] llg:h-[800px] rounded-[100%] bg-black left-1/2 -translate-x-1/2 border border-[#B48CDE] bg-[radial-gradient(closest-side,#000_82%,#9560EB)] top-[calc(100%-96px)] sm:top-[calc(100%-120px)]" />
       <Image
         width={1000}
         height={1000}
-        src={bg}
+        src={
+          "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/down_ncbrxq.png"
+        }
         alt="bg"
         className="w-full absolute bottom-0 h-[150px] -z-10"
       />
-
       <div className="absolute overflow-hidden w-[50%]  h-[200px] left-0 bottom-0">
         <Image
           width={1000}
           height={1000}
-          src={left}
+          src={
+            "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/left_v68oln.png"
+          }
           alt="bg"
           className="h-[200px] object-contain w-full absolute  left-0 -bottom-10 "
         />
@@ -30,19 +29,27 @@ const Page = () => {
         <Image
           width={1000}
           height={1000}
-          src={right}
+          src={
+            "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/right_jt1tub.png"
+          }
           alt="bg"
           className="h-[280px] object-contain absolute right-0 -bottom-30 "
         />
-      </div>
-
+      </div>{" "}
       <main className="w-full h-full flex justify-center items-center ">
         <div className="min-h-[250px] max-w-[500px] flex flex-col rounded-md border justify-center items-center gap-5 p-4 ">
           <div className="flex justify-center items-center w-full ">
             <div className="w-full">
               <div className="flex items-center w-full justify-center mt-3 mb-8">
                 <div className="flex flex-col items-center ">
-                  <Image src={"/cbb.png"} alt="#" width={160} height={160} />
+                  <Image
+                    src={
+                      "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/right_jt1tub.png"
+                    }
+                    alt="#"
+                    width={160}
+                    height={160}
+                  />
                 </div>
               </div>
             </div>
