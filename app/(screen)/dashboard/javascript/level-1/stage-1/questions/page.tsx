@@ -30,6 +30,7 @@ const page = () => {
           loading
           tags={val?.tag}
           instruction={val?.instruction}
+          question={val?.question}
           example={val?.example}
           usecase={val?.usecase}
         />

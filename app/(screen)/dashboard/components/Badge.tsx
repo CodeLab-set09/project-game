@@ -3,11 +3,6 @@ import { FaAward } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 const Badge = () => {
-  // const pathName = useSelector((state: any) => state.paths);
-  // const mainLevel = pathName?.split("javascript/")[1]?.split("/")[1];
-  // mainLevel?.pop();
-  // console.log("for::", mainLevel);
-
   return (
     <div className="grid grid-cols-3 gap-1 px-2">
       <div className="col-span-2 bg-gradient-to-r from-[#333232] to-[#404040]  rounded-md p-3 flex gap-3 items-center h-[150px]">
