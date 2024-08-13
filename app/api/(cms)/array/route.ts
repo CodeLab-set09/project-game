@@ -18,7 +18,7 @@ export const POST = async (req: NextRequest) => {
     } = await req.json();
     const getD = await myArrayModel.create({
       instruction,
-      mainAnswer,
+      result: mainAnswer.split(","),
       output,
       example,
       question,

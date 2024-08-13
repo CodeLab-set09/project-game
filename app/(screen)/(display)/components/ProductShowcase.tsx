@@ -1,5 +1,6 @@
 "use client";
 import appScreen from "../assets/images/product.avif";
+import homeimg from "../../../../public/homepageimg.png";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -35,7 +36,7 @@ export const ProductShowcase = () => {
             }}
           >
             <Image
-              src={appScreen}
+              src={homeimg}
               ref={appImage}
               alt="app screen"
               className="mt-14 "

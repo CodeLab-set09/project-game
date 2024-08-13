@@ -17,7 +17,9 @@ const Challenge = () => {
   // console.log(mainLevel);
 
   const val = data[index];
-  const qVa = val?.instruction?.replaceAll("<p>", "");
+  const qVa = val?.question?.replaceAll("<p>", "");
+  const dd = val?.instruction?.replaceAll("<p>", "");
+  const ddd = dd?.replaceAll("</p>", "");
   const vals = qVa?.replaceAll("</p>", "");
   const counter = useSelector((state: any) => state.counter);
   if (counter > 3) {
@@ -76,9 +78,12 @@ const Challenge = () => {
         </div>
 
         <div className="flex flex-col gap-1 ">
-          <h1 className="text-[13px] font-medium leading-6 h-[150px] overflow-x-auto">
-            {vals}
-          </h1>
+          <div>
+            <h1 className="text-[13px] font-medium leading-6 h-[150px] overflow-x-auto">
+              {ddd}
+            </h1>
+          </div>
+
           <div className="flex gap-1 items-end">
             {val?.tag?.map((el: any, id: number) => (
               <button
@@ -88,16 +93,6 @@ const Challenge = () => {
                 {el}
               </button>
             ))}
-
-            {/* <button className="px-2 py-1 text-[12px] bg-[#0c0c0b22] rounded-md font-light">
-              Fundamentals
-            </button>
-            <button className="px-2 py-1 text-[12px] bg-[#0c0c0b22] rounded-md font-light">
-              Algorithms
-            </button>
-            <button className="px-2 py-1 text-[12px] bg-[#0c0c0b22] rounded-md font-light">
-              Arrays
-            </button> */}
           </div>
         </div>
       </div>

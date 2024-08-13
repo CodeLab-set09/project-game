@@ -60,9 +60,8 @@ export const Hero = () => {
         </div>
         <div className="flex justify-center">
           <p className="text-xl text-center mt-8 max-w-[700px]">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit quod
-            dicta, nisi autem dignissimos consequatur? Unde saepe eius nam.
-            Minima at quaerat non quae qui consequatur hic nam neque earum.
+          Test your skill in coding,learn new language and achieve mastery by
+          answering different questions on different programming language.
           </p>
         </div>
         <div className="flex justify-center mt-8">

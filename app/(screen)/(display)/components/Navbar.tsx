@@ -30,7 +30,7 @@ export const Navbar = () => {
                 className="h-12 w-full object-contain"
               />
             </div>
-            <div className="border border-white border-opacity-30 h-10 w-10 inline-flex justify-center items-center rounded-lg sm:hidden" >
+            <div className="border border-white  h-10 w-10 inline-flex justify-center items-center rounded-lg sm:hidden" >
             {toggle ? (
               <MdCancel
                 onClick={() => {
@@ -53,7 +53,7 @@ export const Navbar = () => {
             >
             
               <a
-                href="#"
+                href="/components/About"
                 className="text-opacity-60 text-white hover:text-opacity-100 transition" onClick={() => {
                   setToggle(false);
                 }}
@@ -91,7 +91,7 @@ export const Navbar = () => {
             </div>
             <nav className="text-white gap-6 items-center hidden sm:flex">
               <a
-                href="#"
+                href="/landing-page/About"
                 className="text-opacity-60 text-white hover:text-opacity-100 transition"
               >
                 About

@@ -167,7 +167,7 @@ const DisplayScreen = ({ val, result, output, path, levelPath }: any) => {
         )}
       </div>
       <div className="mt-10 font-bold text-[15px] flex items-center justify-end">
-        {counter === 1 && index === 4 ? (
+        {counter === 1 && index === 49 ? (
           <Congrat confirmResult={confirmResult} path={path} clicked={cody} />
         ) : counter === 1 ? (
           <Congrat confirmResult={confirmResult} path={path} clicked={coded} />

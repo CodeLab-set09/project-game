@@ -1,8 +1,6 @@
-
 import React from 'react'
 import Image from 'next/image'
 import Qualified from "../../../public/cbb.png"
-
 
 const Section4 =()=>{
 
