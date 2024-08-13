@@ -12,8 +12,11 @@ const BlogModel = new Schema<iBlogdata>(
             type:String
         },
        
-        content:{
+        desc:{
             type:String
+        },
+        image:{
+         type:String
         }
     },
    {timestamps:true}
