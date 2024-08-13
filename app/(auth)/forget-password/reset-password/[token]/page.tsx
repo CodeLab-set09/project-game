@@ -104,10 +104,10 @@ const Page = ({ params }: any) => {
           className="h-[280px] object-contain absolute right-0 -bottom-30 "
         />
       </div>{" "}
-      <div className="z-50 flex justify-center items-center h-[100vh] w-full">
+      <div className="z-50 flex justify-center items-center h-[100vh] w-full ">
         <form
           action={formAction}
-          className="w-[85%] md:w-[450px] shadow-sm items-center border p-3 rounded-md mt-5"
+          className="w-[85%] md:w-[450px] shadow-sm items-center border p-3 rounded-md mt-5 z-10 " 
         >
           <div className="flex justify-center items-center w-full ">
             <div className="w-full">
@@ -136,7 +136,7 @@ const Page = ({ params }: any) => {
           </div>
 
           <div>
-            <div className="mt-5 flex flex-col gap-4">
+            <div className="mt-5 flex flex-col gap-4 text-black">
               {toggleOn ? (
                 <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md h-[45px]">
                   <MdPassword className="text-[20px] text-slate-600" />
