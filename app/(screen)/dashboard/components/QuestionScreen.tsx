@@ -14,12 +14,13 @@ const QuestionScreen = ({ tags, instruction, example, usecase }: any) => {
 
   const dispatch = useDispatch();
   const mainLevel = stateStage?.split("javascript/")[1]?.split("/");
+  console.log("main-level: ", mainLevel);
 
   mainLevel?.pop();
   dispatch(setStage(mainLevel));
   const index = useSelector((state: any) => state.index);
   const counter = useSelector((state: any) => state.counter);
-  if (counter > 3) {
+  if (counter > 1) {
     dispatch(setCounter(1));
   }
 
