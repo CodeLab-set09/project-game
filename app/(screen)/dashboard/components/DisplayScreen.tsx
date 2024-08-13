@@ -13,11 +13,14 @@ import {
   confirmMainResultFn,
 } from "@/utils/helper";
 import { toast } from "@/components/ui/use-toast";
+import Congrat from "../../(display)/components/Congrat";
 
-const DisplayScreen = ({ val, result, output, defaultcode }: any) => {
+const DisplayScreen = ({ val, result, output, defaultcode, path }: any) => {
   const dispatch = useDispatch();
   const ref: any = useRef(null);
   const counter = useSelector((state: any) => state.counter);
+
+  console.log("counter: ", counter);
 
   const mounted = (editor: any) => {
     ref.current = editor;
@@ -102,7 +105,6 @@ const DisplayScreen = ({ val, result, output, defaultcode }: any) => {
           Javascript <span className="ml-2 text-slate-500 ">v18.0.1</span>
         </h2>
       </div>
-
       <p className="px-2 py-3 rounded-t-md font-bold text-white bg-neutral-900 text-[12px] mt-10">
         Solution
       </p>
@@ -148,15 +150,19 @@ const DisplayScreen = ({ val, result, output, defaultcode }: any) => {
       </div>
 
       <div className="mt-10 font-bold text-[15px] flex items-center justify-end">
-        <button
-          className={` border px-8 py-2 ${
-            confirmResult ? "bg-red-500" : "bg-red-300"
-          } text-white rounded-md tracking-widest`}
-          onClick={coded}
-          disabled={!confirmResult}
-        >
-          {confirmResult ? "Next" : "Thinking?"}
-        </button>
+        {counter === 3 ? (
+          <Congrat confirmResult={confirmResult} path={path} clicked={coded} />
+        ) : (
+          <button
+            className={` border px-8 py-2 ${
+              confirmResult ? "bg-red-500" : "bg-red-300"
+            } text-white rounded-md tracking-widest`}
+            onClick={coded}
+            disabled={!confirmResult}
+          >
+            {confirmResult ? "Next" : "Thinking?"}
+          </button>
+        )}
       </div>
     </div>
   );

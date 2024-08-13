@@ -18,7 +18,7 @@ const images = [
 
 export const LogoTicker = () => {
   return(
-    <div className="bg-black text-white py-[72px] sm:py-24">
+    <div className="bg-black text-white py-[72px] sm:py-24 mb ">
       <div className="container">
         <h2 className="text-lg text-center text-white/70 mb-16">Trusted by world&apos;s most innovative teams</h2>
         <LogoCarousel/>
