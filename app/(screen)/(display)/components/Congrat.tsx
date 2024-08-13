@@ -12,7 +12,9 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 
 const Congrat = ({ confirmResult, path, clicked }: any) => {
-  console.log("path: ", path);
+  const index = useSelector((state: any) => state.index);
+  const counter = useSelector((state: any) => state.counter);
+
   return (
     <div>
       <Dialog>
@@ -34,7 +36,7 @@ const Congrat = ({ confirmResult, path, clicked }: any) => {
           </DialogHeader>
           <div className="flex justify-center items-center">
             <Button onClick={clicked}>
-              <a href={path}>Next Level</a>
+              <a href={path}>Next STAGE</a>
             </Button>
           </div>
         </DialogContent>

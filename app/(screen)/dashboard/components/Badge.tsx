@@ -1,16 +1,20 @@
 import React from "react";
 import { FaAward } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Badge = () => {
+  // const pathName = useSelector((state: any) => state.paths);
+  // const mainLevel = pathName?.split("javascript/")[1]?.split("/")[1];
+  // mainLevel?.pop();
+  // console.log("for::", mainLevel);
+
   return (
     <div className="grid grid-cols-3 gap-1 px-2">
       <div className="col-span-2 bg-gradient-to-r from-[#333232] to-[#404040]  rounded-md p-3 flex gap-3 items-center h-[150px]">
         <FaAward className="text-[80px] text-[#bebcbc]" />
         <div className="flex flex-col gap-3 text-white">
           <div className="leading-tight">
-            <h1 className="text-[16px]  font-semibold">
-              JavaScrip Array Methods
-            </h1>
+            <h1 className="text-[16px]  font-semibold">Stage 1</h1>
             <p className="text-[11px] font-light">
               Honor is earned for each new codewarrior who joins.
             </p>

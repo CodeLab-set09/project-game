@@ -1,7 +1,6 @@
 import { dbConfig } from "@/utils/dbConfig";
-
+import myArrayModel from "@/utils/model/arrayModel";
 import { NextRequest, NextResponse } from "next/server";
-import myQModel from "../../../../utils/model/q&aModel";
 
 export const POST = async (req: NextRequest) => {
   try {
@@ -17,9 +16,9 @@ export const POST = async (req: NextRequest) => {
       tag,
       usecase,
     } = await req.json();
-    const getD = await myQModel.create({
+    const getD = await myArrayModel.create({
       instruction,
-      result: mainAnswer.split(","),
+      mainAnswer,
       output,
       example,
       question,
@@ -29,7 +28,7 @@ export const POST = async (req: NextRequest) => {
       usecase,
     });
     return NextResponse.json({
-      message: "Created Successfully",
+      message: "Array question Added",
       status: 200,
       data: getD,
     });
@@ -42,20 +41,20 @@ export const POST = async (req: NextRequest) => {
   }
 };
 
-export const GET = async () => {
+export const GET = async (req: NextRequest) => {
   try {
     await dbConfig();
-    const getD = await myQModel.find();
+    const getD = await myArrayModel.find();
     return NextResponse.json({
-      message: "Strings",
+      message: "Arrays found",
       data: getD,
       status: 200,
     });
   } catch (error: any) {
     return NextResponse.json({
       message: "Error Occured",
-      status: 400,
       error: error.message,
+      status: 400,
     });
   }
 };

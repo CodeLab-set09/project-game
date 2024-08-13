@@ -15,12 +15,13 @@ import {
 import { toast } from "@/components/ui/use-toast";
 import Congrat from "../../(display)/components/Congrat";
 
-const DisplayScreen = ({ val, result, output, defaultcode, path }: any) => {
+const DisplayScreen = ({ val, result, output, path, levelPath }: any) => {
   const dispatch = useDispatch();
   const ref: any = useRef(null);
   const counter = useSelector((state: any) => state.counter);
+  const index = useSelector((state: any) => state.index);
 
-  console.log("counter: ", counter);
+  const [user, setUser] = useState<boolean>(false);
 
   const mounted = (editor: any) => {
     ref.current = editor;
@@ -41,13 +42,30 @@ const DisplayScreen = ({ val, result, output, defaultcode, path }: any) => {
 
   const coded = async () => {
     try {
-      dispatch(addIndex());
+      dispatch(addIndex(index + 1));
       dispatch(setCounter(counter + 1));
       window.location.reload();
     } catch (error) {
       console.log(error);
     }
   };
+  const cody = async () => {
+    try {
+      dispatch(addIndex(0));
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // const codex = async () => {
+  //   try {
+  //     dispatch(addIndex(index + 1));
+  //     // dispatch(setCounter(counter + 1));
+  //     window.location.reload();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const runCode = async () => {
     try {
@@ -148,9 +166,10 @@ const DisplayScreen = ({ val, result, output, defaultcode, path }: any) => {
           </div>
         )}
       </div>
-
       <div className="mt-10 font-bold text-[15px] flex items-center justify-end">
-        {counter === 3 ? (
+        {counter === 1 && index === 4 ? (
+          <Congrat confirmResult={confirmResult} path={path} clicked={cody} />
+        ) : counter === 1 ? (
           <Congrat confirmResult={confirmResult} path={path} clicked={coded} />
         ) : (
           <button
