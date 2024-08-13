@@ -48,7 +48,7 @@ const Section5 = () => {
                     <h1 className="font-normal md:font-bold text-[70px] md:text-[70px]">
                       {el.name}
                     </h1>
-                    <p className="">{el.writeup}</p>
+                    <p>{el.writeup}</p>
                   </div>
                 ))}
               </div>
