@@ -57,6 +57,9 @@ const Section5 = () => {
         </div>
       </div>
     </div>
+
+    </div>
+    </div>
   );
 };
 

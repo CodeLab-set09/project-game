@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <div className="overflow-x-hidden">
-        <Banner />
+        {/* <Banner /> */}
         <Navbar />
         <Hero />
         <LogoTicker />
