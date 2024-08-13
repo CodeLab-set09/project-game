@@ -19,8 +19,8 @@ const redux = createSlice({
     onToggled: (state: { toggle: boolean }) => {
       state.toggle = !state.toggle;
     },
-    addIndex: (state) => {
-      state.index = state.index + 1;
+    addIndex: (state, { payload }) => {
+      state.index = payload;
     },
     questionData: (
       state: {

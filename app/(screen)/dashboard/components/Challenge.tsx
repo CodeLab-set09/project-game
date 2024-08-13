@@ -14,6 +14,8 @@ const Challenge = () => {
   const mainLevel = pathName?.split("javascript/")[1]?.split("/");
   mainLevel?.pop();
 
+  // console.log(mainLevel);
+
   const val = data[index];
   const qVa = val?.instruction?.replaceAll("<p>", "");
   const vals = qVa?.replaceAll("</p>", "");
@@ -40,7 +42,7 @@ const Challenge = () => {
             <option>TAILWIND</option>
           </select>
           <p className="text-[#ffffff] text-[15px] bg-[#49414922] w-full outline-none h-[30px] rounded-sm px-2 flex items-center font-bold">
-            {mainLevel[0]?.split("-")?.join(" ")?.toUpperCase()}
+            {/* {mainLevel[0]?.split("-")?.join(" ")?.toUpperCase()} */}
           </p>
         </div>
         <div className="flex gap-3 justify-center">
