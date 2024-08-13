@@ -7,7 +7,13 @@ import { CopyBlock, dracula } from "react-code-blocks";
 import { useDispatch, useSelector } from "react-redux";
 const num = 1;
 
-const QuestionScreen = ({ tags, instruction, example, usecase }: any) => {
+const QuestionScreen = ({
+  tags,
+  instruction,
+  example,
+  usecase,
+  question,
+}: any) => {
   const level = useSelector((state: any) => state.level);
 
   const stateStage = usePathname();
@@ -20,7 +26,7 @@ const QuestionScreen = ({ tags, instruction, example, usecase }: any) => {
   dispatch(setStage(mainLevel));
   const index = useSelector((state: any) => state.index);
   const counter = useSelector((state: any) => state.counter);
-  if (counter > 1) {
+  if (counter > 20) {
     dispatch(setCounter(1));
   }
 
@@ -67,9 +73,14 @@ const QuestionScreen = ({ tags, instruction, example, usecase }: any) => {
                 <div className="w-[60%] h-[10px] bg-slate-400 animate-pulse" />
               </div>
             ) : (
-              <div dangerouslySetInnerHTML={{ __html: instruction }} />
+              <div className="flex flex-col gap-1">
+                {" "}
+                <div className="font-semibold">QUESTION:</div>
+                <div dangerouslySetInnerHTML={{ __html: question }} />
+              </div>
             )}
           </div>
+
           <p className="mt-5">Example: </p>
           <div className="mt-5 bg-[#282A36] min-h-[100px] rounded-md shadow-lg">
             <CopyBlock
@@ -92,6 +103,21 @@ const QuestionScreen = ({ tags, instruction, example, usecase }: any) => {
                 </div>
               ))}
             </p>
+          </div>
+          <br />
+          <div>
+            {loading ? (
+              <div>
+                <div className="w-[100%] h-[10px] bg-slate-400 animate-pulse mt-1 mb-2" />
+                <div className="w-[60%] h-[10px] bg-slate-400 animate-pulse" />
+              </div>
+            ) : (
+              <div className="flex flex-col gap-1">
+                {" "}
+                <div className="font-semibold">INSTRUCTION: </div>
+                <div dangerouslySetInnerHTML={{ __html: instruction }} />
+              </div>
+            )}
           </div>
           <div className="flex">
             <p className="mt-6 border-b pb-1">Use Cases:</p>
