@@ -16,7 +16,7 @@ export interface iUserData extends iUser, Document {}
 
 interface iData {
   instruction: string;
-  result: Array<string>;
+  result: string[];
   output: string;
   example: string;
   question: string;
@@ -27,10 +27,9 @@ interface iData {
 }
 export interface iDataData extends iData, Document {}
 interface iBlog {
-  title:string;
-  video:string;
-  desc:string;
-  image:string;
-  
+  title: string;
+  video: string;
+  desc: string;
+  image: string;
 }
 export interface iBlogdata extends iBlog, Document {}
