@@ -17,7 +17,7 @@ const BlogModel = new Schema<iBlogdata>(
         },
         image:{
          type:String
-        }
+        },
         content:{
             type:String
            }
