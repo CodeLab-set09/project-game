@@ -26,9 +26,12 @@ interface iData {
   usecase: string[];
 }
 export interface iDataData extends iData, Document {}
+
 interface iBlog {
   title:string;
   video:string;
+  desc:string;
+  image:string;
   content:string;
   
 }

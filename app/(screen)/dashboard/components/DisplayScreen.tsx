@@ -57,15 +57,6 @@ const DisplayScreen = ({ val, result, output, path, levelPath }: any) => {
       console.log(error);
     }
   };
-  // const codex = async () => {
-  //   try {
-  //     dispatch(addIndex(index + 1));
-  //     // dispatch(setCounter(counter + 1));
-  //     window.location.reload();
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   const runCode = async () => {
     try {
@@ -167,7 +158,7 @@ const DisplayScreen = ({ val, result, output, path, levelPath }: any) => {
         )}
       </div>
       <div className="mt-10 font-bold text-[15px] flex items-center justify-end">
-        {counter === 1 && index === 49 ? (
+        {counter === 1 && index === 19 ? (
           <Congrat confirmResult={confirmResult} path={path} clicked={cody} />
         ) : counter === 1 ? (
           <Congrat confirmResult={confirmResult} path={path} clicked={coded} />

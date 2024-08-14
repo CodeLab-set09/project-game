@@ -9,19 +9,18 @@ try {
     await dbConfig()
     const {title,video,content } = await req.json()
 
-    const blog = await blogdata.create({title,video,content})
-
+    const blog = blogdata.create({title,video,content })
     return NextResponse.json({
         status:200,
-        message:"blog created",
+        message:"blog created successfully",
         data:blog
-      })
-
-    } catch (error) {
-      return NextResponse.json({
-        status:404,
-        message:"Unable to create blog"
-      })
+    })
+    }
+    catch(error){
+        return NextResponse.json({
+            status:400,
+            message:"unable to create blogs",
+        })
     }
 }
 export const GET =async(req:NextRequest)=>{

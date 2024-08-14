@@ -6,7 +6,7 @@ import Link from 'next/link'
 import img from "../../../../public/herobg.jpeg"
 import Image from 'next/image'
 
-const page = () => {
+const Page = () => {
   const data =[
     {id:1,
       icons:<IoRocketOutline />,
@@ -69,4 +69,4 @@ industry's standard dummy text ever since the 1500s,</p>
   )
 }
 
-export default page
+export default Page

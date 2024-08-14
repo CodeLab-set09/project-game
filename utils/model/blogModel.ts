@@ -12,13 +12,19 @@ const BlogModel = new Schema<iBlogdata>(
             type:String
         },
        
+        desc:{
+            type:String
+        },
+        image:{
+         type:String
+        }
         content:{
             type:String
-        }
-    },
+           }
+       },
    {timestamps:true}
     
 )
- const blogdata =models.blog || model<iBlogdata>("blog", BlogModel);
+ const blogdata = models.blog || model<iBlogdata>("blog", BlogModel);
 
 export default blogdata;
