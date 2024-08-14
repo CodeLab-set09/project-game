@@ -15,6 +15,8 @@ const Congrat = ({ confirmResult, path, clicked }: any) => {
   const index = useSelector((state: any) => state.index);
   const counter = useSelector((state: any) => state.counter);
 
+  console.log("counter: ", counter);
+
   return (
     <div>
       <Dialog>
@@ -28,7 +30,9 @@ const Congrat = ({ confirmResult, path, clicked }: any) => {
 
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Congratulations</DialogTitle>
+            <DialogTitle>
+              Congratulations you just completed stage 1
+            </DialogTitle>
             <DialogDescription>
               This action cannot be undone. This will permanently delete your
               account and remove your data from our servers.
@@ -36,7 +40,7 @@ const Congrat = ({ confirmResult, path, clicked }: any) => {
           </DialogHeader>
           <div className="flex justify-center items-center">
             <Button onClick={clicked}>
-              <a href={path}>Next STAGE</a>
+              <a href={path}>Next</a>
             </Button>
           </div>
         </DialogContent>
