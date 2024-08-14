@@ -21,6 +21,8 @@ const DisplayScreen = ({ val, result, output, path, levelPath }: any) => {
   const counter = useSelector((state: any) => state.counter);
   const index = useSelector((state: any) => state.index);
 
+  console.log("index: ", index);
+
   const [user, setUser] = useState<boolean>(false);
 
   const mounted = (editor: any) => {
@@ -52,6 +54,17 @@ const DisplayScreen = ({ val, result, output, path, levelPath }: any) => {
   const cody = async () => {
     try {
       dispatch(addIndex(0));
+      dispatch(setCounter(1));
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const codys = async () => {
+    try {
+      dispatch(addIndex(index + 1));
+      dispatch(setCounter(1));
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -158,15 +171,15 @@ const DisplayScreen = ({ val, result, output, path, levelPath }: any) => {
         )}
       </div>
       <div className="mt-10 font-bold text-[15px] flex items-center justify-end">
-        {counter === 1 && index === 19 ? (
+        {counter === 3 && index === 8 ? (
           <Congrat confirmResult={confirmResult} path={path} clicked={cody} />
-        ) : counter === 1 ? (
-          <Congrat confirmResult={confirmResult} path={path} clicked={coded} />
+        ) : counter === 3 ? (
+          <Congrat confirmResult={confirmResult} path={path} clicked={codys} />
         ) : (
           <button
             className={` border px-8 py-2 ${
               confirmResult ? "bg-red-500" : "bg-red-300"
-            } text-white rounded-md tracking-widest`}
+            } text-white rounded-md `}
             onClick={coded}
             disabled={!confirmResult}
           >
