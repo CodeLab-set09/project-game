@@ -40,7 +40,7 @@ const Congrat = ({ confirmResult, path, clicked }: any) => {
           </DialogHeader>
           <div className="flex justify-center items-center">
             <Button onClick={clicked}>
-              <a href={path}>Next</a>
+              {confirmResult ? <a href={path}>Next</a> : "Thinking?"}
             </Button>
           </div>
         </DialogContent>
