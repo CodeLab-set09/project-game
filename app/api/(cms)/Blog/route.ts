@@ -7,9 +7,9 @@ import { NextRequest, NextResponse } from "next/server"
 export const POST =async(req:NextRequest)=>{
 try {
     await dbConfig()
-    const {title,video,content } = await req.json()
+    const {title,video,content,image } = await req.json()
 
-    const blog = blogdata.create({title,video,content })
+    const blog = blogdata.create({title,video,content,image })
     return NextResponse.json({
         status:200,
         message:"blog created successfully",
