@@ -42,23 +42,3 @@ try {
       })
     }
 }
-export const GET =async(req:NextRequest)=>{
-  try {
-      await dbConfig()
-  
-      const blog = await blogdata.find()
-  
-      return NextResponse.json({
-          status:200,
-          message:"reading blogs",
-          data:blog
-        })
-  
-      } catch (error) {
-        return NextResponse.json({
-          status:404,
-          message:"Error reading blogs"
-        })
-      }
-  }
-  

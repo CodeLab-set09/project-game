@@ -36,3 +36,4 @@ interface iBlog {
   
 }
 export interface iBlogdata extends iBlog, Document {}
+
