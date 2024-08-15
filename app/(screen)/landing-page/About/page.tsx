@@ -22,22 +22,22 @@ const Page = () => {
   return (
     <main className='h-full w-full '>
         <Navbar/>
-        <div className='h-[calc(120vh-80px)] w-full flex justify-center items-center gap-32 bg-black border-[#B48CDE] bg-[radial-gradient(#000_82%,#9560EB)] py-10   '>
-        <div className='w-[50%] h-full flex flex-col justify-center gap-5 text-white '>
+        <div className='h-[1000px] lg:h-[calc(120vh-80px)] w-full flex justify-center items-center gap-32 bg-black border-[#B48CDE] bg-[radial-gradient(#000_82%,#9560EB)] pt-14 flex-col-reverse lg:flex-row text-center '>
+        <div className='w-full px-7 lg:w-[50%] h-full flex flex-col  pt-10 items-center gap-5 text-white '>
           <p className='font-semibold '>~     WHO WE ARE</p>
           <p className='font-bold text-[25px] '>We Help To Get Solutions</p>
-          <p className='w-[600px] text-[16px]'>Lorem Ipsum is simply dummy text of the printing and
+          <p className='w-[400px] lg:w-[600px] text-[12px] lg:text-[16px]'>Lorem Ipsum is simply dummy text of the printing and
 typesetting industry. Lorem Ipsum has been the
 industry's standard dummy text ever since the 1500s,</p>
    
-          <div className='flex ' >
+          <div className='flex flex-row gap-y-5' >
              {
               data.map((el:any) => (
                 <div key={el.id} className='flex items-center gap-2'>
-                  <div className='text-[50px] text-yellow-200 '>{el.icons}</div>
-                  <div>
-                  <p className='text-[16px] font-semibold  '>{el.caption}</p>
-                  <p className='text-[12px] w-[220px]  '>{el.text}</p>
+                  <div className='text-[20px] lg:text-[50px] text-yellow-200 '>{el.icons}</div>
+                  <div className='text-left' >
+                  <p className='text-[14px] lg:text-[16px] font-bold  '>{el.caption}</p>
+                  <p className='text-[10px] lg:text-[12px] w-[180px] lg:w-[220px]  '>{el.text}</p>
                   </div>
                 </div>
               ))
@@ -53,11 +53,11 @@ industry's standard dummy text ever since the 1500s,</p>
         </div>
 
 
-        <div className='w-[30%] h-full flex flex-col items-center relative'>
+        <div className='w-[400px] lg:w-[30%] h-full flex flex-col items-center relative'>
           <Image src={img} alt= "img" width={1000} height={1000} className='w-full h-[400px] object-cover absolute rounded-md' />
 
-          <div className='w-[280px] h-[180px] bg-white rounded-md flex flex-col gap-3 text-center items-center p-4 absolute bottom-5'>
-             <p className='text-[12px]'>Lorem, ipsum dolor sit amet </p>
+          <div className='w-[280px] h-[180px] bg-white rounded-md flex flex-col gap-3 text-center items-center p-4 absolute top-64 lg:bottom-5'>
+             <p className='text-[12px]  '>Lorem, ipsum dolor sit amet </p>
              <p className='text-[16px] font-semibold '>Lorem ipsum dolor sit amet consectetu</p>
              <p className='text-[12px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati. Accusantium, inventore fugiat ad debitis</p>
           </div>
