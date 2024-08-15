@@ -102,7 +102,7 @@ const page = () => {
               <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md h-[45px]">
                 <MdEmail className="text-[20px] text-slate-600" />
                 <input
-                  className="outline-none bg-inherit placeholder:text-[14px] w-full "
+                  className="outline-none text-black bg-inherit placeholder:text-[14px] w-full "
                   type="text"
                   placeholder="Email"
                   name="email"
@@ -112,7 +112,7 @@ const page = () => {
               <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md h-[45px] ">
                 <MdPassword className="text-[20px] text-slate-600" />
                 <input
-                  className="outline-none bg-inherit placeholder:text-[14px] w-full "
+                  className="outline-none text-black bg-inherit placeholder:text-[14px] w-full "
                   type="text"
                   placeholder="Password"
                   name="password"
@@ -120,7 +120,7 @@ const page = () => {
               </div>
               <Link
                 href="/forget-password"
-                className="text-end text-white text-[12px] text-[#11192C] -mt-2 font-semibold italic"
+                className="text-end text-white text-[12px] mt-2 font-semibold italic"
               >
                 Forget Password
               </Link>
