@@ -1,20 +1,19 @@
 "use client"
-
-import { Toaster } from '@/components/ui/toaster';
-import { toast, useToast } from '@/components/ui/use-toast'
 import { LIVE_URL } from '@/utils/constant'
-import React, { CSSProperties, useState } from 'react'
+import React, { CSSProperties, useRef, useState } from 'react'
 import BeatLoader from 'react-spinners/BeatLoader';
+
+const override: CSSProperties = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+};
 
 const page = () => {
 
-  const override: CSSProperties = {
-    display: "block",
-    margin: "0 auto",
-    borderColor: "red",
-  };
-    
+  const ref: any = useRef(null);
   const [loading, setLoading] = useState(false);
+  const base = process.env.BASE as string;
 
    const createblog = async(formdata:FormData) => {
      
@@ -22,33 +21,43 @@ const page = () => {
     const image = formdata.get("image")
     const video = formdata.get("video")
     const content = formdata.get("content")
+    const desc = formdata.get("desc")
 
 
 
-    await fetch(`${LIVE_URL}/api/Blog` ,{
+    await fetch(`/api/Blog` ,{
        method: 'POST',
-       headers: {
-         'content-Type': 'application/json'
-       },
-       body: JSON.stringify({title, image, video, content})
+       headers: { "Content-Type": "application/json" },
+       body: JSON.stringify({title, image, video, content,desc})
  
+    }).then(async (res) => {
+      return await res.json();
+      // window.location.reload();
     })
-  
+    .then((res) => {
+      ref.current.reset();
+      console.log(res);
+      setLoading(false);
+    });
    }
 
   return (
-     <main className='w-full h-screen flex justify-center items-center '>
+     <main className='w-full h-screen flex justify-center items-center py-4 '>
          <div className='min-h-[200px] w-[400px] border rounded-md p-4' >
 
             <p className='text-[18px] font-semibold ' >Create a Blog</p>
 
             <div className='w-full mt-6 '><hr /></div>
 
-            <form action={createblog} className='mt-5 flex flex-col gap-5'>
+            <form ref={ref} action={createblog} className='mt-5 flex flex-col gap-5'>
 
                 <div  >
                     <label className='font-semibold text-[16px]'>Title</label>
                     <input type="text" name="title" placeholder='title' className='w-full h-[40px] p-2 border outline-none ' />
+                </div>
+                <div  >
+                    <label className='font-semibold text-[16px]'>Description</label>
+                    <input type="text" name="desc" placeholder='description' className='w-full h-[40px] p-2 border outline-none ' />
                 </div>
 
                 <div>

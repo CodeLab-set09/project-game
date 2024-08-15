@@ -1,14 +1,14 @@
 import { dbConfig } from "@/utils/dbConfig"
 import blogdata from "@/utils/model/blogModel"
-import {NextResponse } from "next/server"
+import {NextRequest, NextResponse } from "next/server"
 
 
 
-export const GET =async({params}:any)=>{
+export const GET =async(req:NextRequest, {params}:any)=>{
   try {
       await dbConfig()
       
-      const {blogID} = params;
+      const {blogID} = await params;
     
       const personal = await blogdata.findById(blogID)
       
@@ -19,10 +19,11 @@ export const GET =async({params}:any)=>{
           data:personal
         })
   
-      } catch (error) {
+      } catch (error:any) {
         return NextResponse.json({
           status:404,
-          message:"Error getting blog"
+          message:"Error getting blog",
+          error:error.message
         })
       }
   }
