@@ -8,6 +8,7 @@ import blog from "../../landing-page/blog/page";
 import { MenuSquareIcon } from "lucide-react";
 import { useState } from "react";
 import { MdCancel, MdCancelPresentation, MdMenu } from "react-icons/md";
+import logo from "../../../../public/cbb.png"
 
 export const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false)
@@ -22,7 +23,7 @@ export const Navbar = () => {
               {/* <div className="h-10 w-10 relative mt-1"></div> */}
               <Image
                 src={
-                  "https://res.cloudinary.com/duewdl1ua/image/upload/v1722432802/codebook_white_l0et44.png"
+                  logo
                 }
                 alt="/"
                 width={1000}
@@ -49,7 +50,7 @@ export const Navbar = () => {
    <div className='flex justify-end'>
           {toggle && (
             <div
-              className={`flex flex-col w-[230px] items-start bg-black px-6 py-5  h-[300px]  gap-10 z-10 relative top-48 right-24 `}
+              className={`flex flex-col w-[230px] items-start bg-black px-6 py-5  h-[300px]  gap-10 z-50 relative top-48 right-24 `}
             >
             
               <a
