@@ -19,6 +19,17 @@ const Section5 = () => {
     },
   ];
   return (
+<<<<<<< HEAD
+    <div  className="w-full mt-20 flex justify-center items-center px-4">
+    <div  className="w-full mt-[100px]  h-[100vh] flex justify-center items-center">
+      <div className="flex items-center justify-center">
+        <div className="w-[90vw]">
+          <div className="flex items-center  justify-center">
+            <h1 className="text-black text-center text-[40px] md:text-[70px] font-semibold ">
+              COMMUNITY FORUM
+            </h1>
+          </div>
+=======
     <div className="w-full mt-20 flex justify-center items-center px-4">
       <div className="w-full mt-[100px]  h-[100vh] flex justify-center items-center">
         <div className="flex items-center justify-center">
@@ -28,6 +39,7 @@ const Section5 = () => {
                 COMMUNITY FORUM
               </h1>
             </div>
+>>>>>>> e1ba4669322d06950954c0bf7556e9fb4387ba40
 
             <p className="text-center mb-10 md:text-[20px]">
               Join a community of coders to share knowledge and resources. By
@@ -57,7 +69,10 @@ const Section5 = () => {
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 3f20e9209078baf2dfdfe41005c8928ff2835374
     </div>
     </div>
   );
