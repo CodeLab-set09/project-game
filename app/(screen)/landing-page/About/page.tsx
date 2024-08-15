@@ -22,7 +22,7 @@ const Page = () => {
   return (
     <main className='h-full w-full '>
         <Navbar/>
-        <div className='h-[1000px] lg:h-[calc(120vh-80px)] w-full flex justify-center items-center gap-32 bg-black border-[#B48CDE] bg-[radial-gradient(#000_82%,#9560EB)] pt-14 flex-col-reverse lg:flex-row text-center '>
+        <div className='h-[1000px] lg:h-[calc(120vh-80px)] w-full flex justify-center items-center gap-32 bg-black border-[#B48CDE] bg-[radial-gradient(#3F1A80_82%,#9560EB)] pt-14 flex-col-reverse lg:flex-row text-center '>
         <div className='w-full px-7 lg:w-[50%] h-full flex flex-col  pt-10 items-center gap-5 text-white '>
           <p className='font-semibold '>~     WHO WE ARE</p>
           <p className='font-bold text-[25px] '>We Help To Get Solutions</p>
@@ -45,7 +45,7 @@ industry's standard dummy text ever since the 1500s,</p>
           </div>
 
           <Link href={"#"}>
-            <button className='w-[150px] h-[45px] flex justify-center items-center rounded-none border bg-black text-white hover:bg-[#B48CDE] hover:text-white '>
+            <button className='w-[150px] h-[45px] flex justify-center items-center rounded-none border text-white '>
                 Donate
             </button>
           </Link>

@@ -3,7 +3,7 @@ import { iBlogdata } from "../interfaces";
 
 
 
-const BlogModel = new Schema<iBlogdata>(
+const blogModel = new Schema<iBlogdata>(
     {
         video:{
             type:String
@@ -25,6 +25,6 @@ const BlogModel = new Schema<iBlogdata>(
    {timestamps:true}
     
 )
- const blogdata = models.blog || model<iBlogdata>("blog", BlogModel);
+ const blogdata = models.blog || model<iBlogdata>("blog", blogModel);
 
 export default blogdata;
