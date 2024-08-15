@@ -50,7 +50,7 @@ export const Navbar = () => {
    <div className='flex justify-end'>
           {toggle && (
             <div
-              className={`flex flex-col w-[230px] items-start bg-black px-6 py-5  h-[300px]  gap-10 z-50 relative top-48 right-24 `}
+              className={`flex flex-col w-[230px] items-start bg-black px-6 py-5  h-[300px]  gap-10 z-50 relative top-44 right-24 `}
             >
             
               <a

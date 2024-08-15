@@ -25,7 +25,7 @@ const page = async({params}:any) => {
       <Navbar/>
         <div className='w-full h-[500px]'>
        <h1>{data.data.title}</h1>
-       <Image src={data.data.image} alt='img' width={1000} height={1000} className=''  />
+       <Image src={data.data.image} alt='img' width={1000} height={1000} className='w-[500px] h-[500px]  '  />
        <p>{data.data.content}</p>
     </div>
     <Footer/>
