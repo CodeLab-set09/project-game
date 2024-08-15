@@ -30,7 +30,7 @@ export const Navbar = () => {
                 className="h-12 w-full object-contain"
               />
             </div>
-            <div className="border border-white  h-10 w-10 inline-flex justify-center items-center rounded-lg sm:hidden" >
+            <div className="border border-white  h-10 w-10 inline-flex justify-center items-center rounded-lg lg:hidden " >
             {toggle ? (
               <MdCancel
                 onClick={() => {
@@ -49,11 +49,11 @@ export const Navbar = () => {
    <div className='flex justify-end'>
           {toggle && (
             <div
-              className={`flex flex-col w-[250px] items-start bg-black px-6 py-5  h-[250px]  gap-5 `}
+              className={`flex flex-col w-[230px] items-start bg-black px-6 py-5  h-[300px]  gap-10 z-10 relative top-48 right-24 `}
             >
             
               <a
-                href="/components/About"
+                href="/landing-page/About"
                 className="text-opacity-60 text-white hover:text-opacity-100 transition" onClick={() => {
                   setToggle(false);
                 }}
@@ -78,7 +78,7 @@ export const Navbar = () => {
               </a>
 
               <Link href={"/signup"}>
-                <button className="bg-white py-2 px-4 rounded-lg text-black" onClick={() => {
+                <button className="w-full flex bg-white py-2 px-4 rounded-sm text-black" onClick={() => {
                     setToggle(false);
                   }}>
                   Get for free
@@ -89,7 +89,7 @@ export const Navbar = () => {
           )}
         </div>
             </div>
-            <nav className="text-white gap-6 items-center hidden sm:flex">
+            <nav className="text-white gap-6 items-center hidden lg:flex">
               <a
                 href="/landing-page/About"
                 className="text-opacity-60 text-white hover:text-opacity-100 transition"
