@@ -1,7 +1,4 @@
-import InstaIcon from "../assets/icons/insta.svg";
-import XIcon from "../assets/icons/x-social.svg";
-import LinkedInIcon from "../assets/icons/linkedin.svg";
-import YoutubeIcon from "../assets/icons/youtube.svg";
+"use client";
 
 export const Footer = () => {
   return (
