@@ -17,7 +17,7 @@ export default function Home() {
   const formAction = async (formData: FormData) => {
     const question = formData.get("question");
     const dQ = `<p>${question}</p>`;
-    const mainAnswer = formData.get("answer");
+    const answer = formData.get("answer");
     const output = formData.get("output");
     const example = formData.get("example");
     const instruction = formData.get("instruction");
@@ -28,12 +28,12 @@ export default function Home() {
     const usecase = formData.get("usecase");
     const rUseCase = usecase?.toString().split(",");
 
-    await fetch(`/api/function`, {
+    await fetch("/api/function", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         question: dQ,
-        mainAnswer,
+        answer,
         output,
         example,
         instruction: `<p>${instruction}</p>`,
@@ -161,7 +161,7 @@ export default function Home() {
                 data-testid="loader"
               />
             ) : (
-              " Add Entry"
+              " Add Entry Function"
             )}{" "}
           </button>
         </form>

@@ -16,6 +16,6 @@ const functionModel = new Schema(
 );
 
 const myFunctionModel =
-  models.numbers || model<iDataData>("numbers", functionModel);
+  models.functions || model<iDataData>("functions", functionModel);
 
 export default myFunctionModel;
