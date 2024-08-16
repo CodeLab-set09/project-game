@@ -161,7 +161,7 @@ export default function Home() {
                 data-testid="loader"
               />
             ) : (
-              " Add Entry"
+              " Add Entry Function"
             )}{" "}
           </button>
         </form>
