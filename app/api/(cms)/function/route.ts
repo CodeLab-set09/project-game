@@ -8,7 +8,7 @@ export const POST = async (req: NextRequest) => {
     await dbConfig();
     const {
       instruction,
-      mainAnswer,
+      answer,
       output,
       example,
       question,
@@ -19,7 +19,7 @@ export const POST = async (req: NextRequest) => {
     } = await req.json();
     const getD = await myFunctionModel.create({
       instruction,
-      result: mainAnswer.split(","),
+      result: answer.split(","),
       output,
       example,
       question,
@@ -29,14 +29,14 @@ export const POST = async (req: NextRequest) => {
       usecase,
     });
     return NextResponse.json({
-      message: "Array question Added",
+      message: "Functions question Added",
       status: 200,
       data: getD,
     });
   } catch (error: any) {
     return NextResponse.json({
       message: "Error Occured",
-      status: 400,
+      status: 404,
       error: error.message,
     });
   }
@@ -47,7 +47,7 @@ export const GET = async (req: NextRequest) => {
     await dbConfig();
     const getD = await myFunctionModel.find();
     return NextResponse.json({
-      message: "Arrays found",
+      message: "Functions found",
       data: getD,
       status: 200,
     });
