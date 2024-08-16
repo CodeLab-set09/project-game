@@ -20,7 +20,7 @@ const page = async() => {
               <div className="text-[30px] h-[200px] w-full bg-black rounded-t-[15px] rounded-tr-[15px] object-fill"><img src={el.image}/></div>
               <div className="w-full px-5 py-8">
               <p className="text-[25px] pb-2 font-medium">{el.title}</p>
-              <p className="text-balance text-[15px] font-normal"> hello{el.desc}</p>
+              <p className="text-balance text-[15px] font-normal"> {el.desc}</p>
               </div>
 
             </div>
