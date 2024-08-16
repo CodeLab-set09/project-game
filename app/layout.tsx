@@ -23,7 +23,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   await dbConfig();
-
   return (
     <ReduxProvider>
       <html lang="en">
