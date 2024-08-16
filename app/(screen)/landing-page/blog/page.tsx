@@ -23,10 +23,10 @@ const page = async() => {
           data?.data?.map((el:any) => (
             <div key={el._id} className=" bg-slate-500 rounded-[15px]">
 
-              <div className="text-[30px] h-[200px] w-full bg-black rounded-t-[15px] rounded-tr-[15px] object-fill"><img src={el.image}/></div>
+              <div className="text-[30px] h-[200px] w-full bg-black rounded-t-[15px] rounded-tr-[15px] object-cover"><img src={el.image}/></div>
               <div className="w-full px-5 py-8">
               <p className="text-[25px] text-white pb-2 font-medium">{el.title}</p>
-              <p className="text-balance text-white text-[15px] font-normal"> hello{el.desc} <Link href={`./blog/${el._id}`} className="text-blue-400" >see more..</Link></p>
+              <p className="text-balance text-white text-[15px] font-normal">{el.desc} <Link href={`./blog/${el._id}`} className="text-blue-400" >see more..</Link></p>
               </div>
 
             </div>

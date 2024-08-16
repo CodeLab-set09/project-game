@@ -2,6 +2,8 @@
 import { LIVE_URL } from '@/utils/constant'
 import React, { CSSProperties, useRef, useState } from 'react'
 import BeatLoader from 'react-spinners/BeatLoader';
+// import ReactQuill from 'react-quill';
+// import 'react-quill/dist/quill.snow.css';
 
 const override: CSSProperties = {
   display: "block",
@@ -14,6 +16,7 @@ const page = () => {
   const ref: any = useRef(null);
   const [loading, setLoading] = useState(false);
   const base = process.env.BASE as string;
+  // const[value,setValue]=useState(" ")
 
    const createblog = async(formdata:FormData) => {
      
@@ -73,6 +76,8 @@ const page = () => {
                     <label className='font-semibold text-[16px]'>Content</label>
                     <textarea name="content" placeholder='content' className='h-[150px] w-full border outline-none resize-none p-2 '></textarea>
                 </div>
+
+                {/* <ReactQuill theme="snow" value={value} onChange={setValue} /> */}
 
                 <button
             type="submit"
