@@ -2,6 +2,8 @@
 import { LIVE_URL } from '@/utils/constant'
 import React, { CSSProperties, useRef, useState } from 'react'
 import BeatLoader from 'react-spinners/BeatLoader';
+// import ReactQuill from 'react-quill';
+// import 'react-quill/dist/quill.snow.css';
 
 const override: CSSProperties = {
   display: "block",
@@ -14,6 +16,7 @@ const page = () => {
   const ref: any = useRef(null);
   const [loading, setLoading] = useState(false);
   const base = process.env.BASE as string;
+  // const[value,setValue]=useState(" ")
 
    const createblog = async(formdata:FormData) => {
      
@@ -53,26 +56,28 @@ const page = () => {
 
                 <div  >
                     <label className='font-semibold text-[16px]'>Title</label>
-                    <input type="text" name="title" placeholder='title' className='w-full h-[40px] p-2 border outline-none ' />
+                    <input type="text" name="title" required placeholder='title' className='w-full h-[40px] p-2 border outline-none ' />
                 </div>
                 <div  >
                     <label className='font-semibold text-[16px]'>Description</label>
-                    <input type="text" name="desc" placeholder='description' className='w-full h-[40px] p-2 border outline-none ' />
+                    <input type="text" name="desc" required placeholder='description' className='w-full h-[40px] p-2 border outline-none ' />
                 </div>
 
                 <div>
                     <label className='font-semibold text-[16px]'>Image</label>
-                    <input type="text" name="image" placeholder='image' className='w-full h-[40px] p-2 border outline-none ' />
+                    <input type="file" name="image" required placeholder='image' className='w-full h-[40px] p-2 border outline-none ' />
                 </div>
 
                 <div>
                     <label className='font-semibold text-[16px]'>Video</label>
-                    <input type="text" name="video" placeholder='video' className='w-full h-[40px] p-2 border outline-none ' />
+                    <input type="text" name="video" required placeholder='video' className='w-full h-[40px] p-2 border outline-none ' />
                 </div>
                 <div>
                     <label className='font-semibold text-[16px]'>Content</label>
-                    <textarea name="content" placeholder='content' className='h-[150px] w-full border outline-none resize-none p-2 '></textarea>
+                    <textarea name="content" required placeholder='content' className='h-[150px] w-full border outline-none resize-none p-2 '></textarea>
                 </div>
+
+                {/* <ReactQuill theme="snow" value={value} onChange={setValue} /> */}
 
                 <button
             type="submit"
