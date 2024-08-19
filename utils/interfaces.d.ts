@@ -28,7 +28,7 @@ interface iData {
 export interface iDataData extends iData, Document {}
 
 interface iBlog {
-  title:string;
+  title:string ; 
   video:string;
   desc:string;
   image:string;

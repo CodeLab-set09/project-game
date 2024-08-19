@@ -65,7 +65,7 @@ const page = () => {
 
                 <div>
                     <label className='font-semibold text-[16px]'>Image</label>
-                    <input type="text" name="image" required placeholder='image' className='w-full h-[40px] p-2 border outline-none ' />
+                    <input type="file" name="image" required placeholder='image' className='w-full h-[40px] p-2 border outline-none ' />
                 </div>
 
                 <div>
