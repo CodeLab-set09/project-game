@@ -1,13 +1,13 @@
 "use client";
 
-import { setCounter, setRandom, setStage } from "@/app/global/redux";
+import { setCounter, setStage } from "@/app/global/redux";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
 import { useDispatch, useSelector } from "react-redux";
 const num = 1;
 
-const QuestionScreen = ({
+const CssQuestion = ({
   tags,
   instruction,
   example,
@@ -20,7 +20,7 @@ const QuestionScreen = ({
 
   const dispatch = useDispatch();
   const mainLevel = stateStage?.split("javascript/")[1]?.split("/");
-  // console.log("main-level: ", mainLevel);
+  console.log("main-level: ", mainLevel);
 
   mainLevel?.pop();
   dispatch(setStage(mainLevel));
@@ -42,19 +42,6 @@ const QuestionScreen = ({
   const choose = Math.floor(Math.random() * usecase?.length);
   return (
     <main>
-      <div className=" items-center h-[30px]">
-        <div className="flex items-center gap-3">
-          {mainLevel?.map((el: any) => (
-            <p className="capitalize py-1 px-4 mt-2 text-[12px] font-bold rounded-full bg-orange-500 [&:nth-child(2)]:bg-purple-600 [&:nth-child(3)]:bg-red-600 text-white">
-              {el.split("-").join(" ")}
-            </p>
-          ))}
-          <p className="capitalize py-1 px-4 mt-2 text-[12px] font-bold rounded-full bg-orange-500 [&:nth-child(2)]:bg-purple-600 [&:nth-child(3)]:bg-red-600 text-white">
-            Question {counter}
-          </p>
-        </div>
-      </div>
-
       <section className="mt-10">
         <div className="my-5">
           <hr />
@@ -143,4 +130,4 @@ const QuestionScreen = ({
   );
 };
 
-export default QuestionScreen;
+export default CssQuestion;

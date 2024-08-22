@@ -4,7 +4,7 @@ import DisplayScreen from "@/app/(screen)/dashboard/components/DisplayScreen";
 import QuestionScreen from "@/app/(screen)/dashboard/components/QuestionScreen";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getJSQuestions } from "@/app/apiCalls/apiCall";
+import { getJSQuestions, getSpicy } from "@/app/apiCalls/apiCall";
 import { questionData, setPaths } from "@/app/global/redux";
 import { usePathname } from "next/navigation";
 import Congrat from "@/app/(screen)/(display)/components/Congrat";
@@ -13,13 +13,14 @@ const page = () => {
   const pathName = usePathname();
   const index = useSelector((state: any) => state.index);
   const data = useSelector((state: any) => state.question);
-  
+
   const dispatch = useDispatch();
   const random = useSelector((state: any) => state.random);
-  const val = data[random[index]];
+  const arr = [2, 1, 3, 0, 4];
+  const val = data[arr[index]];
 
   useEffect(() => {
-    getJSQuestions().then((res) => {
+    getSpicy().then((res) => {
       dispatch(questionData(res));
     });
   }, []);

@@ -7,6 +7,7 @@ const initialState = {
   counter: 1,
   level: 1,
   question: [],
+  random: [],
   stage: [],
   paths: "",
 };
@@ -50,6 +51,9 @@ const redux = createSlice({
     setLevel: (state, { payload }) => {
       state.level = payload;
     },
+    setRandom: (state, { payload }) => {
+      state.random = payload;
+    },
   },
 });
 
@@ -63,6 +67,7 @@ export const {
   setPaths,
   setCounter,
   setLevel,
+  setRandom,
 } = redux.actions;
 
 export default redux.reducer;
