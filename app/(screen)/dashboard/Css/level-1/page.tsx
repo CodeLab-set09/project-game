@@ -13,10 +13,8 @@ const page = () => {
   const pathName = usePathname();
   const index = useSelector((state: any) => state.index);
   const data = useSelector((state: any) => state.question);
-  
   const dispatch = useDispatch();
-  const random = useSelector((state: any) => state.random);
-  const val = data[random[index]];
+  const val = data[index];
 
   useEffect(() => {
     getJSQuestions().then((res) => {

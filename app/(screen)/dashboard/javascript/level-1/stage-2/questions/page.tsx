@@ -15,8 +15,8 @@ const page = () => {
   const index = useSelector((state: any) => state.index);
   const data = useSelector((state: any) => state.question);
   const dispatch = useDispatch();
-  const val = data[index];
-
+  const random = useSelector((state: any) => state.random);
+  const val = data[random[index]];
   useEffect(() => {
     getJSQuestions().then((res) => {
       dispatch(questionData(res));
@@ -33,6 +33,7 @@ const page = () => {
           instruction={val?.instruction}
           example={val?.example}
           usecase={val?.usecase}
+          question={val?.question}
         />
       </section>
 
