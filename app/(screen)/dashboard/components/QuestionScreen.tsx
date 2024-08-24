@@ -1,6 +1,7 @@
 "use client";
 
 import { setCounter, setRandom, setStage } from "@/app/global/redux";
+import { color } from "framer-motion";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
@@ -82,14 +83,15 @@ const QuestionScreen = ({
           </div>
 
           <p className="mt-5">Example: </p>
-          <div className="mt-5 bg-[#282A36] min-h-[100px] rounded-md shadow-lg">
-            <CopyBlock
+          <div className="mt-5 bg-[#282A36] min-h-[100px] rounded-md shadow-lg p-2">
+            {/* <CopyBlock
+              codeContainerStyle={{ width: "30px" }}
               text={example}
               language="text"
               showLineNumbers
               theme={dracula}
-              //   codeBlock
-            />
+            /> */}
+            <h1>{example}</h1>
           </div>
 
           <div className="flex">
