@@ -5,7 +5,7 @@ const Page = () => {
   return (
     <div className=" bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#A46EDB_82%)] relative overflow-clip">
       <div className="absolute w-[750px] top- sm:w-[1536px] sm:h-[768px] lg:w-[2400px] llg:h-[800px] rounded-[100%] bg-black left-1/2 -translate-x-1/2 border border-[#B48CDE] bg-[radial-gradient(closest-side,#000_82%,#9560EB)] top-[calc(100%-96px)] sm:top-[calc(100%-120px)]" />
-      <Image
+      {/* <Image
         width={1000}
         height={1000}
         src={
@@ -13,7 +13,7 @@ const Page = () => {
         }
         alt="bg"
         className="w-full absolute bottom-0 h-[150px] -z-10"
-      />
+      /> */}
       <div className="absolute overflow-hidden w-[50%]  h-[200px] left-0 bottom-0">
         <Image
           width={1000}
@@ -36,9 +36,9 @@ const Page = () => {
           className="h-[280px] object-contain absolute right-0 -bottom-30 "
         />
       </div>{" "}
-      <main className="w-full h-full flex justify-center items-center ">
-        <div className="min-h-[250px] max-w-[500px] flex flex-col rounded-md border justify-center items-center gap-5 p-4 ">
-          <div className="flex justify-center items-center w-full ">
+      <main className="w-full h-screen flex justify-center items-center ">
+        <div className="min-h-[200px] max-w-[500px] flex flex-col rounded-md border justify-center items-center  p-4 z-10 ">
+          <div className="flex justify-center items-center w-full  ">
             <div className="w-full">
               <div className="flex items-center w-full justify-center mt-3 mb-8">
                 <div className="flex flex-col items-center ">

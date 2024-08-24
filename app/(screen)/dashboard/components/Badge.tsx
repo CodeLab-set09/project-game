@@ -1,5 +1,6 @@
 import React from "react";
 import { FaAward } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Badge = () => {
   return (
@@ -8,9 +9,7 @@ const Badge = () => {
         <FaAward className="text-[80px] text-[#bebcbc]" />
         <div className="flex flex-col gap-3 text-white">
           <div className="leading-tight">
-            <h1 className="text-[16px]  font-semibold">
-              JavaScrip Array Methods
-            </h1>
+            <h1 className="text-[16px]  font-semibold">Stage 1</h1>
             <p className="text-[11px] font-light">
               Honor is earned for each new codewarrior who joins.
             </p>
