@@ -1,0 +1,82 @@
+[
+{
+    "question": "const first = [1,  2, 3,15 ,-2]",
+    "answer": "Math.min()",
+    "example": "Math.min(10, 20); // 10",
+    "output": "-2",
+    "instruction": "Find the minimum number from the given array elements ",
+    "default value": "const first = [1,  2, 3,15 ,-2]"
+},
+{
+    "question": "const numbers = [2,  4,  6,  8]",
+    "answer": "Math.min()",
+    "example": "Math.min(10, 20); // 10",
+    "output": "2",
+    "instruction": "find the minimun number from the given array elements ",
+    "default value": "const numbers = [2,  4,  6,  8]"
+},
+{
+    "question": "const numbers = [22,  40,  63]",
+    "answer": "Math.min()",
+    "example": "Math.min(11, 21); // 11",
+    "output": "22",
+    "instruction": "find the min number from the given array elements ",
+    "default value": "const numbers = [22,  40,  63,]"
+},
+{
+    "question": "const numbers = [2,  4,  z]",
+    "answer": "Math.min()",
+    "example": "Math.min(10, 20); // 20",
+    "output": "NaN",
+    "instruction": "find the min number from the given array elements ",
+    "default value": "const numbers = [2,  4,  z,]"
+},
+{
+    "question": "const numbers = [-2, -4, -6]",
+    "answer": "Math.min()",
+    "example": "Math.min(10, 20); // 10",
+    "output": "-6",
+    "instruction": "find the min number from the given array elements ",
+    "default value": "const numbers = [-2, -4, -6]"
+},
+{
+    "question": "const numbers = [2.5, 4.5, 6.5]",
+    "answer": "Math.min()",
+    "example": "Math.min(10, 20); // 10",
+    "output": "2.5",
+    "instruction": "find the min number from the given array elements ",
+    "default value": "const numbers = [2.5, 4.5, 6.5]"
+},
+{
+  "question": "const numbers = [4.5, 8.5, 9.5]",
+  "answer": "Math.min()",
+  "example": "Math.min(10, 20); // 10",
+  "output": "4.5",
+  "instruction": "find the min number from the given array elements ",
+  "default value": "const numbers = [4.5, 8.5, 9.5]"
+},
+{
+"question": "const numbers = [-8, -10, -18]",
+"answer": "Math.min()",
+"example": "Math.min(10, 20); // 10",
+"output": "-18",
+"instruction": "find the min number from the given array elements ",
+"default value": "const numbers = [-8, -10, -18]"
+},
+{
+"question": "const numbers = [-11, -13, -16]",
+"answer": "Math.min()",
+"example": "Math.min(10, 20); // 10",
+"output": "-16",
+"instruction": "find the min number from the given array elements ",
+"default value": "const numbers = [-11, -13, -16]"
+},
+{
+"question": "const numbers = [x, y, z]",
+"answer": "Math.min()",
+"example": "Math.min(10, 20); // 10",
+"output": "NaN",
+"instruction": "find the min number from the given array elements ",
+"default value": "const numbers = [x, y, z]"
+}
+]

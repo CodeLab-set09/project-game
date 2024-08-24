@@ -56,7 +56,7 @@ export const MainHero = () => {
               <div className="max-w-3xl mx-auto mb-8">
                 <p className="text-center text-[12px] md:text-[16px] w-[500px]  gap-3 md:w-[600px] text-white">
                 Test your skill in coding,learn new language and achieve mastery by
-                answering different questions on different programming language.
+                answering different questions on different programming languages.
                 </p>
               </div>
               <Link href={"/signup"}>

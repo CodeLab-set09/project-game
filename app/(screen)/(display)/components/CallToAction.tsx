@@ -5,13 +5,14 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { use, useRef } from "react";
 
-export const CallToAction = () => {
+export const CallToAction =()=>{
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end end"],
   });
+
 
   const translateY = useTransform(scrollYProgress, [0, 1], [50, -50]);
 

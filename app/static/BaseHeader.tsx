@@ -4,8 +4,9 @@ import { ModeToggle } from "./ModeToggle";
 import Link from "next/link";
 import { MdCancel, MdMenu } from "react-icons/md";
 import Image from "next/image";
+import Logo from "../../public/cbb.png"
 
-const BaseHeader = () => {
+const BaseHeader = () =>{
   const navs = [
     { id: 0, name: "Home", url: "/landing-page" },
     { id: 1, name: "Blog", url: "/landing-page/blog" },
@@ -19,7 +20,7 @@ const BaseHeader = () => {
         <div className="w-[100%] p-5 md:px-16 flex  h-full items-center justify-between">
           <div className="flex gap-20 items-center">
             <div>
-              <Image src={"/cbb.png"} alt="#" width={160} height={160} />
+              <Image src={Logo} alt="#" width={160} height={160} />
             </div>
             <div className="md:flex gap-5 hidden">
               {navs.map((el: any) => (

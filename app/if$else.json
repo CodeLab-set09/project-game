@@ -1,0 +1,196 @@
+
+  {
+    "if_else_questions": [
+      {
+        "question": "Is the number even or odd?",
+        "method": "isEvenOrOdd",
+        "instruction": "Check if the given number is even or odd.",
+        "use_cases": [
+          "Input: 4, Output: Even",
+          "Input: 7, Output: Odd"
+        ]
+      },
+      {
+        "question": "Is the temperature below freezing?",
+        "method": "isBelowFreezing",
+        "instruction": "Check if the temperature is below 0°C.",
+        "use_cases": [
+          "Input: -5, Output: Yes",
+          "Input: 10, Output: No"
+        ]
+      },
+      {
+        "question": "Is the word a palindrome?",
+        "method": "isPalindrome",
+        "instruction": "Check if the given word reads the same forwards and backwards.",
+        "use_cases": [
+          "Input: radar, Output: Yes",
+          "Input: apple, Output: No"
+        ]
+      },
+      {
+        "question": "Is the list empty?",
+        "method": "isEmptyList",
+        "instruction": "Determine if the provided list has any elements.",
+        "use_cases": [
+          "Input: [], Output: Yes",
+          "Input: [1, 2, 3], Output: No"
+        ]
+      },
+      {
+        "question": "Is the number positive, negative, or zero?",
+        "method": "checkNumberSign",
+        "instruction": "Check if the number is positive, negative, or zero.",
+        "use_cases": [
+          "Input: 10, Output: Positive",
+          "Input: -3, Output: Negative",
+          "Input: 0, Output: Zero"
+        ]
+      },
+      {
+        "question": "Is the string length greater than 5?",
+        "method": "isStringLengthGreaterThanFive",
+        "instruction": "Determine if the length of the string exceeds 5 characters.",
+        "use_cases": [
+          "Input: Hello, Output: No",
+          "Input: WorldWide, Output: Yes"
+        ]
+      },
+      {
+        "question": "Is the sum of two numbers greater than 100?",
+        "method": "isSumGreaterThanHundred",
+        "instruction": "Check if the sum of two given numbers is greater than 100.",
+        "use_cases": [
+          "Input: 50, 60, Output: Yes",
+          "Input: 30, 40, Output: No"
+        ]
+      },
+      {
+        "question": "Is the year a leap year?",
+        "method": "isLeapYear",
+        "instruction": "Determine if the given year is a leap year.",
+        "use_cases": [
+          "Input: 2020, Output: Yes",
+          "Input: 2019, Output: No"
+        ]
+      },
+      {
+        "question": "Is the user a premium member?",
+        "method": "isPremiumMember",
+        "instruction": "Check if the user has a premium membership status.",
+        "use_cases": [
+          "Input: True, Output: Yes",
+          "Input: False, Output: No"
+        ]
+      },
+      {
+        "question": "Is the string empty?",
+        "method": "isEmptyString",
+        "instruction": "Check if the provided string is empty.",
+        "use_cases": [
+          "Input: '', Output: Yes",
+          "Input: 'Hello', Output: No"
+        ]
+      },
+      {
+        "question": "Is the file type supported?",
+        "method": "isFileTypeSupported",
+        "instruction": "Check if the file type is among the supported formats (e.g., .jpg, .png, .pdf).",
+        "use_cases": [
+          "Input: 'document.pdf', Output: Yes",
+          "Input: 'image.bmp', Output: No"
+        ]
+      },
+      {
+        "question": "Is the student passing?",
+        "method": "isStudentPassing",
+        "instruction": "Determine if the student's grade is greater than or equal to 50%.",
+        "use_cases": [
+          "Input: 75, Output: Yes",
+          "Input: 45, Output: No"
+        ]
+      },
+      {
+        "question": "Is the light on?",
+        "method": "isLightOn",
+        "instruction": "Check if the light status is 'on'.",
+        "use_cases": [
+          "Input: 'on', Output: Yes",
+          "Input: 'off', Output: No"
+        ]
+      },
+      {
+        "question": "Is the item in stock?",
+        "method": "isInStock",
+        "instruction": "Check if the quantity of the item is greater than zero.",
+        "use_cases": [
+          "Input: 5, Output: Yes",
+          "Input: 0, Output: No"
+        ]
+      },
+      {
+        "question": "Is the user logged in?",
+        "method": "isUserLoggedIn",
+        "instruction": "Check if the user session is active.",
+        "use_cases": [
+          "Input: True, Output: Yes",
+          "Input: False, Output: No"
+        ]
+      },
+      {
+        "question": "Is the number divisible by 3?",
+        "method": "isDivisibleByThree",
+        "instruction": "Check if the given number is divisible by 3.",
+        "use_cases": [
+          "Input: 9, Output: Yes",
+          "Input: 10, Output: No"
+        ]
+      },
+      {
+        "question": "Is the discount applicable?",
+        "method": "isDiscountApplicable",
+        "instruction": "Determine if the user is eligible for a discount based on criteria (e.g., coupon code or minimum spend).",
+        "use_cases": [
+          "Input: 'DISCOUNT20', Output: Yes",
+          "Input: 'NONE', Output: No"
+        ]
+      },
+      {
+        "question": "Is the traffic light green?",
+        "method": "isTrafficLightGreen",
+        "instruction": "Check if the current traffic light color is green.",
+        "use_cases": [
+          "Input: 'green', Output: Yes",
+          "Input: 'red', Output: No"
+        ]
+      },
+      {
+        "question": "Is the day a weekend?",
+        "method": "isWeekend",
+        "instruction": "Determine if the given day is a Saturday or Sunday.",
+        "use_cases": [
+          "Input: 'Saturday', Output: Yes",
+          "Input: 'Monday', Output: No"
+        ]
+      },
+      {
+        "question": "Is the password strong?",
+        "method": "isPasswordStrong",
+        "instruction": "Check if the password meets the strength criteria (e.g., minimum length, includes special characters).",
+        "use_cases": [
+          "Input: 'Passw0rd!', Output: Yes",
+          "Input: '12345', Output: No"
+        ]
+      },
+      {
+        "question": "Is the user above 18 years old?",
+        "method": "isAdult",
+        "instruction": "Determine if the user's age is greater than or equal to 18.",
+        "use_cases": [
+          "Input: 20, Output: Yes",
+          "Input: 15, Output: No"
+        ]
+      }
+    ]
+  }
+  

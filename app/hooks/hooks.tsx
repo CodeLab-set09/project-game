@@ -9,11 +9,12 @@ export const useUserHook = (id: string) => {
   useEffect(() => {
     getSingleUser(id).then((res) => {
       console.log("resdaing: ", res);
-      //   setUser(res.data);
+        // setUser(res.data);
     });
   }, [id]);
 
   console.log(user);
 
   return { user };
+  
 };

@@ -5,7 +5,7 @@ import Editor from "@monaco-editor/react";
 import axios from "axios";
 import { FaSpinner } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
-import { addIndex, setCounter } from "@/app/global/redux";
+import { addIndex, setCounter, setRandom } from "@/app/global/redux";
 import {
   confirmResultFn,
   mainFn,
@@ -13,33 +13,71 @@ import {
   confirmMainResultFn,
 } from "@/utils/helper";
 import { toast } from "@/components/ui/use-toast";
+import Congrat from "../../(display)/components/Congrat";
 
-const DisplayScreen = ({ val, result, output, defaultcode }: any) => {
+const DisplayScreen = ({ val, result, output, path, levelPath }: any) => {
   const dispatch = useDispatch();
   const ref: any = useRef(null);
   const counter = useSelector((state: any) => state.counter);
+  const index = useSelector((state: any) => state.index);
+  const data = useSelector((state: any) => state.question);
+  const random = useSelector((state: any) => state.random);
+
+  let comp: number[] = [];
+  const generator = () => {
+    const rand = Math.floor(Math.random() * data.length);
+
+    if (!comp.includes(rand)) {
+      comp.push(rand);
+      return rand;
+    } else {
+      if (comp.length < data.length) {
+        return generator();
+      } else {
+        dispatch(setRandom(comp));
+      }
+    }
+  };
+  data.map(() => {
+    generator();
+  });
 
   const mounted = (editor: any) => {
     ref.current = editor;
     editor.focus;
   };
-
   function handleEditorChange(value?: string) {
     setState(value!);
   }
-
   const url: string = "https://emkc.org/api/v2/piston/execute";
-
   const [state, setState] = useState<string>(``);
   const [code, setCode] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [confirmResult, setConfirmResult] = useState(false);
-  const [confirmResultLoader, setConfirmResultLoader] = useState(false);
 
   const coded = async () => {
     try {
-      dispatch(addIndex());
+      dispatch(addIndex(index + 1));
       dispatch(setCounter(counter + 1));
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const cody = async () => {
+    try {
+      dispatch(addIndex(0));
+      dispatch(setCounter(1));
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const codys = async () => {
+    try {
+      dispatch(addIndex(index + 1));
+      dispatch(setCounter(1));
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -102,7 +140,6 @@ const DisplayScreen = ({ val, result, output, defaultcode }: any) => {
           Javascript <span className="ml-2 text-slate-500 ">v18.0.1</span>
         </h2>
       </div>
-
       <p className="px-2 py-3 rounded-t-md font-bold text-white bg-neutral-900 text-[12px] mt-10">
         Solution
       </p>
@@ -146,17 +183,22 @@ const DisplayScreen = ({ val, result, output, defaultcode }: any) => {
           </div>
         )}
       </div>
-
       <div className="mt-10 font-bold text-[15px] flex items-center justify-end">
-        <button
-          className={` border px-8 py-2 ${
-            confirmResult ? "bg-red-500" : "bg-red-300"
-          } text-white rounded-md tracking-widest`}
-          onClick={coded}
-          disabled={!confirmResult}
-        >
-          {confirmResult ? "Next" : "Thinking?"}
-        </button>
+        {counter === 3 && index === 8 ? (
+          <Congrat confirmResult={confirmResult} path={path} clicked={cody} />
+        ) : counter === 3 ? (
+          <Congrat confirmResult={confirmResult} path={path} clicked={codys} />
+        ) : (
+          <button
+            className={` border px-8 py-2 ${
+              confirmResult ? "bg-red-500" : "bg-red-300"
+            } text-white rounded-md `}
+            onClick={coded}
+            disabled={!confirmResult}
+          >
+            {confirmResult ? "Next" : "Thinking?"}
+          </button>
+        )}
       </div>
     </div>
   );

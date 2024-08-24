@@ -1,5 +1,6 @@
 "use client";
 import appScreen from "../assets/images/product.avif";
+import homeimg from "../../../../public/homepageimg.png";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -14,8 +15,8 @@ export const ProductShowcase = () => {
   const opacity = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
 
   return (
-    <div className="bg-black text-white bg-gradient-to-b from-black to-[#5D2CA8] py-[72px] sm:py-24">
-      <div className="container">
+    <div className="bg-black text-white bg-gradient-to-b from-black to-[#5D2CA8] py-[72px] sm:py-24 ">
+      <div className="container ">
         <h2 className="text-center text-5xl font-bold tracking-tighter">
           Intituve interface
         </h2>
@@ -35,10 +36,10 @@ export const ProductShowcase = () => {
             }}
           >
             <Image
-              src={appScreen}
+              src={homeimg}
               ref={appImage}
               alt="app screen"
-              className="mt-14"
+              className="mt-14 "
             />
           </motion.div>
         </div>

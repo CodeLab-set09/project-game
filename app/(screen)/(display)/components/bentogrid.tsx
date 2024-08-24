@@ -293,7 +293,7 @@ const BentoBox1 = () => {
 
 function Bentodemo() {
   return (
-    <div className="h-screen flex items-center justify-center  ">
+    <div className="min-h-screen flex items-center justify-center  ">
       <BentoBox1 />
     </div>
   );

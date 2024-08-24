@@ -48,15 +48,15 @@ const page = () => {
   return (
     <div className=" bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#A46EDB_82%)] relative overflow-clip">
       <div className="absolute w-[750px] top- sm:w-[1536px] sm:h-[768px] lg:w-[2400px] llg:h-[800px] rounded-[100%] bg-black left-1/2 -translate-x-1/2 border border-[#B48CDE] bg-[radial-gradient(closest-side,#000_82%,#9560EB)] top-[calc(100%-96px)] sm:top-[calc(100%-120px)]" />
-      <Image
+      {/* <Image
         width={1000}
         height={1000}
         src={
           "https://res.cloudinary.com/duewdl1ua/image/upload/v1723317841/down_ncbrxq.png"
         }
         alt="bg"
-        className="w-full absolute bottom-0 h-[150px] -z-10"
-      />
+        className="w-full absolute bottom-0 h-[150px]"
+      /> */}
       <div className="absolute overflow-hidden w-[50%]  h-[200px] left-0 bottom-0">
         <Image
           width={1000}
@@ -79,8 +79,8 @@ const page = () => {
           className="h-[280px] object-contain absolute right-0 -bottom-30 "
         />
       </div>{" "}
-      <div className="flex justify-center items-center h-[100vh] w-full">
-        <main className="w-[85%] md:w-[450px] shadow-sm items-center border p-3 rounded-md mt-5">
+      <div className="flex justify-center items-center h-[100vh] w-full z-20 ">
+        <main className="w-[85%] md:w-[450px] shadow-sm items-center border p-3 rounded-md mt-5 z-20 ">
           <div className="flex justify-center items-center w-full ">
             <div className="w-full">
               <div className="flex items-center w-full justify-center mt-3 mb-8">
@@ -122,7 +122,7 @@ const page = () => {
               <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md h-[45px]">
                 <MdPerson className="text-[20px] text-slate-600" />
                 <input
-                  className="outline-none bg-inherit placeholder:text-[14px] w-full"
+                  className="outline-none text-black bg-inherit placeholder:text-[14px] w-full"
                   type="text"
                   placeholder="User Name"
                   name="userName"
@@ -133,7 +133,7 @@ const page = () => {
               <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md h-[45px]">
                 <MdEmail className="text-[20px] text-slate-600" />
                 <input
-                  className="outline-none bg-inherit placeholder:text-[14px] w-full"
+                  className="outline-none text-black bg-inherit placeholder:text-[14px] w-full"
                   type="text"
                   placeholder="Email"
                   name="email"
@@ -145,8 +145,8 @@ const page = () => {
               <div className="flex gap-2 p-1 px-3  items-center bg-gray-100 rounded-md h-[45px] ">
                 <MdPassword className="text-[20px] text-slate-600" />
                 <input
-                  className="outline-none bg-inherit placeholder:text-[14px] w-full"
-                  type="text"
+                  className="outline-none text-black bg-inherit placeholder:text-[14px] w-full"
+                  type="password"
                   placeholder="Password"
                   name="password"
                   value={password}

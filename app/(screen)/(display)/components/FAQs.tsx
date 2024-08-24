@@ -41,8 +41,8 @@ const AccordinationItem = ({
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex items-center ">
-        <span className="flex-1 text-lg font-bold">{question}</span>
-        {isOpen ? <p>Open</p> : <p>Close</p>}
+        <span className="flex-1 text-lg font-bold cursor-pointer">{question}</span>
+        {isOpen ? <p className="cursor-pointer" >Open</p> : <p className="cursor-pointer">Close</p>}
       </div>
       <AnimatePresence>
         {isOpen && (

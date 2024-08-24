@@ -47,7 +47,7 @@ export const GET = async () => {
     await dbConfig();
     const getD = await myQModel.find();
     return NextResponse.json({
-      message: "All Q and A",
+      message: "Strings",
       data: getD,
       status: 200,
     });
