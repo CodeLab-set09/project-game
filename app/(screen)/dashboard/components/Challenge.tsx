@@ -22,7 +22,7 @@ const Challenge = () => {
   const ddd = dd?.replaceAll("</p>", "");
   const vals = qVa?.replaceAll("</p>", "");
   const counter = useSelector((state: any) => state.counter);
-  if (counter > 3) {
+  if (counter > 20) {
     dispatch(setCounter(1));
   }
   return (
