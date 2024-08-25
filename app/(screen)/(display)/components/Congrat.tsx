@@ -30,17 +30,14 @@ const Congrat = ({ confirmResult, path, clicked }: any) => {
 
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>
-              Congratulations you just completed stage 1
-            </DialogTitle>
+            <DialogTitle>Congratulations You've Completed The Game</DialogTitle>
             <DialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
+              Greate Job, you just completed this Game
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-center items-center">
             <Button onClick={clicked}>
-              {confirmResult ? <a href={path}>Next</a> : "Thinking?"}
+              {confirmResult ? <a href={path}>OK</a> : "Thinking?"}
             </Button>
           </div>
         </DialogContent>
