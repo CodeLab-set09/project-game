@@ -1,6 +1,6 @@
 import { connect } from "mongoose";
 import { DB_URL } from "./constant";
-import { number } from "zod";
+// import { number } from "zod";
 
 export const dbConfig = async () =>{
   try {
@@ -14,3 +14,10 @@ export const dbConfig = async () =>{
 };
 
 
+let number:number=100;
+
+if (number % 2 === 0) {
+    console.log("The number is even.");
+} else {
+    console.log("The number is odd.");
+}
