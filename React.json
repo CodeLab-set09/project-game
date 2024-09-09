@@ -1,0 +1,27 @@
+{
+    "_id": {
+      "$oid": "66bf69a08597bb755a9168e5"
+    },
+    "instruction": "<p>you are Declare  a functional component that displays : \"Html is not a programming language\"</p>",
+    "result": [
+      " Html is not a programming language"
+    ],
+    "output": " \"Html is not a programming language",
+    "example": "function Func() {\n    return \"Learning how to code\";\n}\n\nconsole.log(Func());  // Output: \"Learning how to code\"",
+    "question": "<p>Declare a functional component that returns : \"Html is not a programming language  \"</p>",
+    "defaultcode": "//Declare a functional component  \"  \"",
+    "tag": [
+      "React ",
+      "Fundamental"
+    ],
+    "usecase": [
+      "to render the view and the data to the browser"
+    ],
+    "createdAt": {
+      "$date": "2024-09-16T15:02:48.183Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-16T15:02:48.183Z"
+    },
+    "__v": 0
+  }

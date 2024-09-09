@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getJSQuestions } from "@/app/apiCalls/apiCall";
 import { questionData, setPaths } from "@/app/global/redux";
 import { usePathname } from "next/navigation";
-import Congrat from "@/app/(screen)/(display)/components/Congrat";
+import Congrat from "@/app/(screen)/(display)/components/Congrat"; 
 
 const page = () => {
   const pathName = usePathname();
