@@ -60,7 +60,7 @@ export default function Home() {
         please make sure that your entry has been closely observed and corrected
         should in case of any error!
       </h1>
-      <div className="flex justify-center items-center  p-4 ">
+      <div className="flex justify-center items-center  p-4">
         <form
           ref={ref}
           action={formAction}
