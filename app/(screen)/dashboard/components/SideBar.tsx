@@ -26,48 +26,37 @@ const SideBar = () => {
 
   return (
     <main
-      className={`w-[60px] md:w-[${
+      className={`w-[60px] lg:w-[100px] md:w-[${
         toggled ? "60px" : "150px"
-      }] transition-all duration-300 h-[100vh] border-r bg-slate-100 flex flex-col items-center pt-5
+      }] transition-all duration-300 h-[100vh] border-r bg-slate-100 flex flex-col pt-5
         
         `}
     >
       <section className=" flex flex-col justify-center items-center gap-2">
-        {toggled ? (
-          <HiOutlineLightBulb
-            className="text-[30px] text-slate-900 hover:text-slate-500 cursor-pointer transition-all duration-300"
-            onClick={() => dispatch(onToggled())}
-          />
-        ) : (
-          <HiLightBulb
-            className="text-[30px] text-slate-900 hover:text-slate-500 cursor-pointer transition-all duration-300"
-            onClick={() => dispatch(onToggled())}
-          />
-        )}
+        <p className="flex gap-2 items-center">
+          <HiOutlineLightBulb className="lg:hidden" />
+          <span className="hidden lg:flex ">blog</span>
+        </p>
 
         <p> {toggled ? "" : "SideBar"} </p>
       </section>
       <section className="flex flex-col justify-center items-center gap-5 mt-3">
-        <h1>
-          {" "}
-          {toggled ? (
-            <div className="w-5 h-5 text-[10px] rounded-full bg-green-600 flex items-center justify-center">
-              T
-            </div>
-          ) : (
-            <div className="px-7 text-[12px] font-bold">TRAINING</div>
-          )}
-        </h1>
+        <div>
+          <span className="w-5 h-5 text-[10px] lg:hidden rounded-full bg-green-600 flex items-center justify-center">
+            T
+          </span>
+          <span className="hidden lg:flex px-7 text-[12px] font-bold">
+            TRAINING
+          </span>
+        </div>
         {training.map((el: any) => (
           <div className="" key={el.id}>
-            {toggled ? (
-              <div className="text-[28px] font-bold">{el.icon}</div>
-            ) : (
-              <div className="flex items-center justify-center">
-                <div className="text-[28px] font-bold"> {el.icon}</div>
-                <p className=" flex items-center justify-center">{el.name}</p>
-              </div>
-            )}
+            <div className="flex gap-2">
+              <div className="text-[28px] font-bold lg:hidden "> {el.icon}</div>
+              <p className="hidden lg:flex text-[12px] items-center justify-center">
+                {el.name}
+              </p>
+            </div>
           </div>
         ))}
       </section>
